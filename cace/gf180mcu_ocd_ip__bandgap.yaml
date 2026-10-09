@@ -1,0 +1,273 @@
+name: gf180mcu_ocd_ip__bandgap
+description: Trimmable bandgap voltage reference for the Chipalooza harness
+PDK: gf180mcuD
+cace_format: 5.2
+
+authorship:
+  designer: R. Timothy Edwards
+  company: Open Circuit Design, LLC
+  creation_date: September 22, 2026
+  license: Apache 2.0
+
+paths:
+  root: ..
+  schematic: xschem
+  magic: magic
+  layout: gds
+  netlist: netlist
+  documentation: doc
+  runs: cace/runs
+
+pins:
+  vdd:
+    description: >
+      3.3 V analog supply.  The bandgap core and its output buffer are
+      built from 3.3 V devices.  Only the voltage bias generator
+      downstream of it may run from a 5 V rail.
+    direction: inout
+    type: power
+    Vmin: 3.0
+    Vmax: 3.6
+  vss:
+    description: Analog ground
+    direction: inout
+    type: ground
+  dvdd:
+    description: 3.3 V digital supply;  the trim bits and ena are in this domain
+    direction: inout
+    type: power
+    Vmin: 3.0
+    Vmax: 3.6
+  dvss:
+    description: Digital ground
+    direction: inout
+    type: ground
+  ena:
+    description: Circuit enable
+    direction: input
+    type: digital
+  trim[15:0]:
+    description: Trim, as a THERMOMETER code.  Only the number of bits set
+      is meaningful, so there are 17 distinct settings, 0 through 16.
+    direction: input
+    type: digital
+  ibias1_250n:
+    description: 250 nA bias current input
+    direction: input
+    type: signal
+  ibias2_1u:
+    description: 1 uA bias current input
+    direction: input
+    type: signal
+  vbg:
+    description: Buffered bandgap reference output
+    direction: output
+    type: signal
+
+default_conditions:
+  corner:
+    display: Corner
+    description: MOS process corner
+    typical: typical
+  corner_pnp:
+    display: PNP corner
+    description: >
+      Vertical PNP corner.  SWEPT INDEPENDENTLY of the MOS corner, not
+      correlated with it:  the bipolar is formed by different implants
+      than the MOS Vt adjust, and the PDK ships it as its own library
+      for that reason.  Correlating them would silently exclude real
+      dice, e.g. (MOS ff, PNP wcs).
+
+      Note the direction is the opposite of what "best case speed"
+      suggests.  bcs raises the saturation current (is x1.13), and
+      V_BE = V_T*ln(I_C/I_S), so a HIGHER I_S gives a LOWER V_BE and
+      pushes the reference DOWN:
+          bcs   -V_T*ln(1.13)    = -3.16 mV at 27 C
+          wcs   +V_T*ln(1/0.87)  = +3.60 mV
+      About 6.8 mV of spread, against a 7.2 mV trim step at nominal ---
+      roughly one trim code.  It shifts the CTAT term only:  I_S cancels
+      in the PTAT term, since both PNPs take the same corner multiplier.
+    typical: typical
+  corner_cap:
+    display: Capacitor corner
+    description: >
+      MOM capacitor corner.  Left at typical:  the caps are compensation
+      and decoupling, and every parameter here is a DC measurement, in
+      which capacitors are open circuits.  It matters for stability and
+      startup -- which is exactly what the v2 capacitor correction was
+      for, and why those need their own parameters.
+    typical: typical
+  corner_dio:
+    display: Diode corner
+    description: >
+      Left at typical deliberately.  The only non-PNP diodes in this
+      block are antenna tie-downs on the digital trim inputs, which have
+      no bearing on the reference.
+    typical: typical
+  corner_res:
+    display: Resistor corner
+    description: Resistor model corner
+    typical: typical
+  temperature:
+    display: Temperature
+    description: >
+      Ambient temperature.  DELIBERATELY NOT declared with minimum,
+      maximum and step:  the sweep is done inside the testbench by the
+      ngspice "dc temp -40 125 1" statement, and declaring it here as a
+      stepped condition makes CACE enumerate it into one netlist per
+      temperature point as well -- 168 runs for what should be one.
+      The range lives in the template;  this entry only pins the
+      nominal so every parameter gets a single run per corner.
+    unit: °C
+    typical: 27
+  trim:
+    display: Trim
+    description: Number of thermometer bits set, 0 to 16
+    typical: 8
+
+parameters:
+
+  # -------------------------------------------------------------------
+  # 1.  Temperature coefficient at the nominal (half) trim setting.
+  # -------------------------------------------------------------------
+  bandgap_tempco:
+    display: Bandgap temperature coefficient
+    description: Peak-to-peak variation of vbg over temperature, at the
+      nominal half-trim setting, across process corners.
+    unit: ppm/°C
+    spec:
+      tempco_m40_125_ppmC:
+        display: Tempco -40 to 125 C
+        unit: ppm/°C
+        maximum:
+          value: 50          # PLACEHOLDER -- set from the first run
+      tempco_m0_85_ppmC:
+        display: Tempco 0 to 85 C
+        unit: ppm/°C
+        maximum:
+          value: 25          # PLACEHOLDER
+      vbg_27:
+        display: Vbg at 27 C
+        unit: V
+        minimum:
+          value: 1.15
+        maximum:
+          value: 1.30
+    tool:
+      ngspice:
+        template: bandgap_trim_tc_tb.sch
+        format: ascii
+        suffix: .data
+        variables: [tempco_m40_125_ppmC, tempco_m0_85_ppmC, vbg_27, vslope_mV]
+    conditions:
+      corner:
+        enumerate: [typical, ss, ff, sf, fs]
+      corner_res:
+        enumerate: [typical, ff, ss]
+      corner_pnp:
+        enumerate: [typical, ff, ss]
+      trim:
+        typical: 8
+
+  # -------------------------------------------------------------------
+  # 2 and 3.  The bracket test.
+  #
+  # The flat point is where the CTAT and PTAT contributions balance, and
+  # its voltage is not a number anyone gets to choose -- it falls out of
+  # the physics and moves with corner.  So rather than checking vbg
+  # against a guessed target, check the SIGN of the slope at each end of
+  # the trim range:  negative at minimum trim (CTAT dominates), positive
+  # at maximum trim (PTAT dominates).  A sign change between the two
+  # proves a zero crossing exists inside the range, at every corner, with
+  # two simulations and no search.
+  #
+  # If the first run shows both signs the same way round, the trim
+  # polarity is the other way and these two limits simply swap.
+  # -------------------------------------------------------------------
+  trim_low_end_is_ctat:
+    display: Slope at minimum trim
+    description: At trim = 0 the reference must still be CTAT-dominated,
+      i.e. falling with temperature, so that increasing trim can reach
+      the flat point from below.
+    unit: mV
+    spec:
+      vslope_mV:
+        display: V(125C) - V(-40C)
+        unit: mV
+        maximum:
+          value: 0
+    tool:
+      ngspice:
+        template: bandgap_trim_tc_tb.sch
+        format: ascii
+        suffix: .data
+        variables: [tempco_m40_125_ppmC, tempco_m0_85_ppmC, vbg_27, vslope_mV]
+    conditions:
+      corner:
+        enumerate: [typical, ss, ff, sf, fs]
+      corner_res:
+        enumerate: [typical, ff, ss]
+      corner_pnp:
+        enumerate: [typical, ff, ss]
+      trim:
+        typical: 0
+
+  trim_high_end_is_ptat:
+    display: Slope at maximum trim
+    description: At trim = 16 the reference must be PTAT-dominated, i.e.
+      rising with temperature.  Together with the parameter above this
+      brackets the flat point inside the trim range at every corner.
+    unit: mV
+    spec:
+      vslope_mV:
+        display: V(125C) - V(-40C)
+        unit: mV
+        minimum:
+          value: 0
+    tool:
+      ngspice:
+        template: bandgap_trim_tc_tb.sch
+        format: ascii
+        suffix: .data
+        variables: [tempco_m40_125_ppmC, tempco_m0_85_ppmC, vbg_27, vslope_mV]
+    conditions:
+      corner:
+        enumerate: [typical, ss, ff, sf, fs]
+      corner_res:
+        enumerate: [typical, ff, ss]
+      corner_pnp:
+        enumerate: [typical, ff, ss]
+      trim:
+        typical: 16
+
+  # -------------------------------------------------------------------
+  # 4.  The curve itself, at nominal conditions only.
+  # -------------------------------------------------------------------
+  bandgap_curve:
+    display: Vbg over temperature
+    description: The reference voltage across the full temperature range
+      at nominal corner and nominal trim.
+    unit: V
+    tool:
+      ngspice:
+        template: bandgap_curve_tb.sch
+        format: ascii
+        suffix: .data
+        variables: [temperature, vbg]
+    variables:
+      temperature:
+        display: Temperature
+        unit: °C
+      vbg:
+        display: Vbg
+        unit: V
+    plot:
+      vbg_vs_temperature:
+        type: xyplot
+        xaxis: temperature
+        yaxis: vbg
+    conditions:
+      corner:
+        typical: typical
+      trim:
+        typical: 8

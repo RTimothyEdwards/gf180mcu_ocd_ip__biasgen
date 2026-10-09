@@ -1,0 +1,85 @@
+magic
+tech gf180mcuD
+magscale 1 2
+timestamp 1774205518
+<< pwell >>
+rect -273 -2290 273 2290
+<< psubdiff >>
+rect -211 2214 211 2228
+rect -211 2182 -119 2214
+rect 119 2182 211 2214
+rect -211 2168 211 2182
+rect -211 2136 -151 2168
+rect -211 -2136 -197 2136
+rect -165 -2136 -151 2136
+rect 151 2136 211 2168
+rect -211 -2168 -151 -2136
+rect 151 -2136 165 2136
+rect 197 -2136 211 2136
+rect 151 -2168 211 -2136
+rect -211 -2182 211 -2168
+rect -211 -2214 -119 -2182
+rect 119 -2214 211 -2182
+rect -211 -2228 211 -2214
+<< psubdiffcont >>
+rect -119 2182 119 2214
+rect -197 -2136 -165 2136
+rect 165 -2136 197 2136
+rect -119 -2214 119 -2182
+<< poly >>
+rect -69 2072 69 2086
+rect -69 2040 -55 2072
+rect 55 2040 69 2072
+rect -69 2000 69 2040
+rect -69 -2040 69 -2000
+rect -69 -2072 -55 -2040
+rect 55 -2072 69 -2040
+rect -69 -2086 69 -2072
+<< polycont >>
+rect -55 2040 55 2072
+rect -55 -2072 55 -2040
+<< xpolyres >>
+rect -69 -2000 69 2000
+<< metal1 >>
+rect -197 2182 -119 2214
+rect 119 2182 197 2214
+rect -197 2136 -165 2182
+rect 165 2136 197 2182
+rect -65 2076 65 2077
+rect -65 2020 -55 2076
+rect 55 2020 65 2076
+rect -65 2019 65 2020
+rect -65 -2020 65 -2019
+rect -65 -2076 -55 -2020
+rect 55 -2076 65 -2020
+rect -65 -2077 65 -2076
+rect -197 -2182 -165 -2136
+rect 165 -2182 197 -2136
+rect -197 -2214 -119 -2182
+rect 119 -2214 197 -2182
+<< via1 >>
+rect -55 2072 55 2076
+rect -55 2040 55 2072
+rect -55 2020 55 2040
+rect -55 -2040 55 -2020
+rect -55 -2072 55 -2040
+rect -55 -2076 55 -2072
+<< metal2 >>
+rect -55 2076 55 2085
+rect -55 2011 55 2020
+rect -55 -2020 55 -2011
+rect -55 -2085 55 -2076
+<< labels >>
+rlabel psubdiffcont 0 -2198 0 -2198 0 B
+port 61 nsew
+rlabel polycont 0 2056 0 2056 0 R1
+port 62 nsew
+rlabel polycont 0 -2056 0 -2056 0 R2
+port 63 nsew
+<< properties >>
+string FIXED_BBOX -181 -2198 181 2198
+string gencell ppolyf_u_1k
+string library gf180mcu
+string MASKHINTS_CONTBAR
+string parameters w 0.69 l 20.0 m 1 nx 1 wmin 0.50 lmin 0.50 class resistor rho 1360 val 39.42k dummy 0 dw 0.0 term 0.0 sterm 0.0 caplen 0 bar 1 guard 1 glc 1 grc 1 gtc 1 gbc 1 snake 0 full_metal 1 n_guard 0 hv_guard 0 vias 1 viagb 0 viagt 0 viagl 0 viagr 0 doports 1 b 0
+<< end >>

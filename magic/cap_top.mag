@@ -1,0 +1,43 @@
+magic
+tech gf180mcuD
+magscale 1 2
+timestamp 1788119166
+<< metal1 >>
+rect 5947 213 6034 363
+rect 11193 354 11361 414
+rect 11037 224 11105 354
+<< metal2 >>
+rect 5947 213 6034 363
+rect 11011 225 11110 355
+rect 11152 300 11426 431
+rect 11272 125 11426 300
+rect 11156 85 11426 125
+<< metal3 >>
+rect 5947 213 6034 363
+rect 11244 64 11305 1964
+rect 15894 1767 16094 1967
+rect 15901 194 16041 1767
+rect 11244 3 11475 64
+rect 15811 54 16041 194
+rect 15811 -1153 15951 54
+<< metal4 >>
+rect 11152 1908 11379 1954
+rect 5947 213 6034 363
+rect 11038 230 11101 361
+rect 11173 354 11367 444
+rect 11468 230 11541 358
+rect 11038 167 11541 230
+use capacitor_HA3XPS  capacitor_HA3XPS_0
+timestamp 0
+transform 0 1 11349 -1 0 1954
+box 0 0 1 1
+use capacitor_V68Z9B  capacitor_V68Z9B_0
+timestamp 0
+transform 0 1 1798 1 0 354
+box 0 0 1 1
+<< labels >>
+flabel metal3 15894 1767 16094 1967 0 FreeSans 1600 0 0 0 vout1
+port 12 nsew
+flabel metal3 11244 1764 11305 1964 0 FreeSans 1600 0 0 0 ibias1u_2
+port 10 nsew
+<< end >>

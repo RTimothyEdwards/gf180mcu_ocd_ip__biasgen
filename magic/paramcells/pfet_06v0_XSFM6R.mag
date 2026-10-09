@@ -1,0 +1,56 @@
+magic
+tech gf180mcuD
+magscale 1 2
+timestamp 1774382718
+<< nwell >>
+rect -292 -405 292 443
+<< hvpmos >>
+rect -100 -281 100 319
+<< mvpdiff >>
+rect -168 305 -100 319
+rect -168 -267 -154 305
+rect -122 -267 -100 305
+rect -168 -281 -100 -267
+rect 100 305 168 319
+rect 100 -267 122 305
+rect 154 -267 168 305
+rect 100 -281 168 -267
+<< mvpdiffc >>
+rect -154 -267 -122 305
+rect 122 -267 154 305
+<< poly >>
+rect -100 319 100 355
+rect -100 -309 100 -281
+rect -100 -341 -78 -309
+rect 78 -341 100 -309
+rect -100 -355 100 -341
+<< polycont >>
+rect -78 -341 78 -309
+<< metal1 >>
+rect -164 -267 -154 305
+rect -122 -267 -112 305
+rect 112 -267 122 305
+rect 154 -267 164 305
+rect -88 -305 88 -304
+rect -88 -345 -78 -305
+rect 78 -345 88 -305
+rect -88 -346 88 -345
+<< via1 >>
+rect -78 -309 78 -305
+rect -78 -341 78 -309
+rect -78 -345 78 -341
+<< metal2 >>
+rect -78 -305 78 -296
+rect -78 -354 78 -345
+<< labels >>
+rlabel mvpdiffc -138 19 -138 19 0 D
+port 1 nsew
+rlabel mvpdiffc 138 19 138 19 0 S
+port 2 nsew
+rlabel polycont 0 -325 0 -325 0 G
+port 3 nsew
+<< properties >>
+string gencell pfet_06v0
+string library gf180mcu
+string parameters w 3.0 l 1.0 m 1 ng 1 diffcov 100 polycov 100 guard 0 glc 1 grc 1 gtc 1 gbc 1 tbcov 100 rlcov 100 topc 0 botc 1 poverlap 0 doverlap 1 lmin 0.4 wmin 0.15 class mosfet compatible {pfet_05v0 pfet_06v0} full_metal 1 conn_gates 0 gate_ring 0 ccols 1 viasrc 0 viadrn 0 viagate 100 viagb 0 viagr 0 viagl 0 viagt 0 doports 1
+<< end >>

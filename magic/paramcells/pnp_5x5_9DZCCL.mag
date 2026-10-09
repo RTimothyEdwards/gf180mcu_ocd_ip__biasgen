@@ -1,0 +1,101 @@
+magic
+tech gf180mcuD
+magscale 1 2
+timestamp 1774369900
+<< pwell >>
+rect -636 234 636 506
+rect -636 -234 -364 234
+rect 364 -234 636 234
+rect -636 -506 636 -234
+<< nbase >>
+rect -364 -234 364 234
+<< pdiff >>
+rect -200 56 200 70
+rect -200 -56 -186 56
+rect 186 -56 200 56
+rect -200 -70 200 -56
+<< pdiffc >>
+rect -186 -56 186 56
+<< psubdiff >>
+rect -574 430 574 444
+rect -574 388 -472 430
+rect 472 388 574 430
+rect -574 374 574 388
+rect -574 342 -504 374
+rect -574 -342 -560 342
+rect -518 -342 -504 342
+rect 504 342 574 374
+rect -574 -374 -504 -342
+rect 504 -342 518 342
+rect 560 -342 574 342
+rect 504 -374 574 -342
+rect -574 -388 574 -374
+rect -574 -430 -472 -388
+rect 472 -430 574 -388
+rect -574 -444 574 -430
+<< nsubdiff >>
+rect -302 158 302 172
+rect -302 126 -210 158
+rect 210 126 302 158
+rect -302 112 302 126
+rect -302 80 -242 112
+rect -302 -80 -288 80
+rect -256 -80 -242 80
+rect 242 80 302 112
+rect -302 -112 -242 -80
+rect 242 -80 256 80
+rect 288 -80 302 80
+rect 242 -112 302 -80
+rect -302 -126 302 -112
+rect -302 -158 -210 -126
+rect 210 -158 302 -126
+rect -302 -172 302 -158
+<< psubdiffcont >>
+rect -472 388 472 430
+rect -560 -342 -518 342
+rect 518 -342 560 342
+rect -472 -430 472 -388
+<< nsubdiffcont >>
+rect -210 126 210 158
+rect -288 -80 -256 80
+rect 256 -80 288 80
+rect -210 -158 210 -126
+<< metal1 >>
+rect -560 388 -472 430
+rect 472 388 560 430
+rect -560 342 -518 388
+rect 518 342 560 388
+rect -288 126 -210 158
+rect 210 126 288 158
+rect -288 80 -256 126
+rect 256 80 288 126
+rect -196 56 196 57
+rect -196 -56 -186 56
+rect 186 -56 196 56
+rect -196 -57 196 -56
+rect -288 -126 -256 -80
+rect 256 -126 288 -80
+rect -288 -158 -210 -126
+rect 210 -158 288 -126
+rect -560 -388 -518 -342
+rect 518 -388 560 -342
+rect -560 -430 -472 -388
+rect 472 -430 560 -388
+<< via1 >>
+rect -186 -56 186 56
+<< metal2 >>
+rect -186 56 186 65
+rect -186 -65 186 -56
+<< labels >>
+rlabel psubdiffcont 0 -409 0 -409 0 C
+port 3 nsew
+rlabel nsubdiffcont 0 -142 0 -142 0 B
+port 4 nsew
+rlabel pdiffc 0 0 0 0 0 E
+port 5 nsew
+<< properties >>
+string FIXED_BBOX -272 -142 272 142
+string gencell pnp_5x5
+string library gf180mcu
+string parameters w 2.0 l 0.7 area 1.4 peri 5.4 nx 1 ny 1 dummy 0 lmin 0.7 wmin 2.0 class bjt elc 1 erc 1 etc 1 ebc 1 doverlap 0 doports 1 full_metal 1 vias 1 viagb 0 viagt 0 viagl 0 viagr 0 a 1.4e-12 p 5.4e-06
+<< end >>

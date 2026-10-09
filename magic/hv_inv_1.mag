@@ -1,0 +1,55 @@
+magic
+tech gf180mcuD
+magscale 1 2
+timestamp 1774453470
+<< nwell >>
+rect 423 -529 1115 266
+<< mvpsubdiff >>
+rect 548 -953 991 -939
+rect 548 -985 562 -953
+rect 932 -985 991 -953
+rect 548 -999 991 -985
+<< mvnsubdiff >>
+rect 547 128 990 142
+rect 547 96 562 128
+rect 937 96 990 128
+rect 547 81 990 96
+<< mvpsubdiffcont >>
+rect 562 -985 932 -953
+<< mvnsubdiffcont >>
+rect 562 96 937 128
+<< metal1 >>
+rect 535 128 1002 147
+rect 535 96 562 128
+rect 937 96 1002 128
+rect 535 17 1002 96
+rect 618 -390 715 17
+rect 848 -431 887 -19
+rect 725 -492 786 -449
+rect 588 -560 786 -492
+rect 725 -611 786 -560
+rect 848 -604 928 -431
+rect 613 -875 710 -667
+rect 848 -839 887 -604
+rect 534 -953 1001 -875
+rect 534 -985 562 -953
+rect 932 -985 1001 -953
+rect 534 -1003 1001 -985
+use pfet_06v0_CVGX38  XM1 paramcells
+timestamp 1774450949
+transform -1 0 766 0 1 -224
+box -232 -305 232 343
+use nfet_06v0_83DLAQ  XM2 paramcells
+timestamp 1774450949
+transform 1 0 766 0 -1 -734
+box -113 -155 113 155
+<< labels >>
+flabel metal1 535 17 735 85 0 FreeSans 640 0 0 0 vdd
+port 0 nsew
+flabel metal1 534 -939 734 -875 0 FreeSans 640 0 0 0 vss
+port 3 nsew
+flabel metal1 588 -560 658 -492 0 FreeSans 640 0 0 0 A
+port 1 nsew
+flabel metal1 848 -559 928 -486 0 FreeSans 640 0 0 0 X
+port 2 nsew
+<< end >>

@@ -1,0 +1,795 @@
+name: gf180mcu_ocd_ip__voltgen
+description: >
+  Tapped-resistor voltage bias generator, GF180MCU port of the IHP
+  voltgen_v3:  one on-board folded-cascode output buffer, plus an
+  unbuffered output taken to an external class-AB buffer that sits
+  beside it in chipalooza_frame.
+PDK: gf180mcuD
+cace_format: 5.2
+
+authorship:
+  designer: R. Timothy Edwards
+  company: Open Circuit Design, LLC
+  creation_date: October 8, 2026
+  license: Apache 2.0
+
+paths:
+  root: ..
+  schematic: xschem
+  magic: magic
+  layout: gds
+  netlist: netlist
+  documentation: doc
+  runs: cace/runs
+
+# ---------------------------------------------------------------------
+# WHAT THIS BLOCK IS, AND WHAT THE TWO REGRESSION CHECKS ARE FOR.
+#
+# The IHP original went through a v2 in which both output buffers took
+# their bias through a series stack of three pFETs that could not pass
+# the 1 uA they were given.  The stacks saturated -- se_folded_cascode_p
+# at 766 nA, se_folded_cascode_np_ab at 494 nA -- so the external bias
+# had no control at all and the iDAC trimming it did nothing.  Nothing in
+# any performance measurement showed this.
+#
+# v3 removed the series enable switch from both stacks and disabled
+# instead with a shunt pFET that pulls the bias node to vdd, which is
+# why the enables are sense-positive.  One buffer was removed entirely
+# and the unbuffered tap exported, so the class-AB buffer that now
+# drives it lives outside the cell.  This port carries that arrangement
+# over, so it carries the two checks that guard it:
+#
+#   1. The bias stacks must actually accept their current.  That is
+#      voltgen_bias_headroom.
+#
+#   2. The two buffers share one output node, so whichever is not
+#      selected must let go of it.  That is voltgen_disabled_z.
+#
+# A disabled amplifier must also have its bias current removed:  the
+# shunt pFET holds the bias node at vdd, and a current source would
+# simply fight it.  That is why the bias currents are separate
+# conditions rather than one.
+#
+# ---------------------------------------------------------------------
+# THREE THINGS THAT ARE DIFFERENT HERE FROM THE IHP VERSION.
+#
+# SUPPLIES.  The analog supply may be 5 V in this process, and the
+# digital domain is 3.3 V rather than 1.2 V.  Vdd is therefore nominally
+# 5.0 and is ENUMERATED over 3.3 and 5.0 on the parameters where the
+# difference matters, because the output buffers are being built from
+# 5/6 V devices and the open question is whether one 5 V-capable version
+# performs acceptably at 3.3 V.  The supply sweep in voltgen_dc_tb is
+# taken relative to Vdd for the same reason.
+#
+# DEVICE CLASSES.  Both output buffers are built from 05v0 devices:
+# se_folded_cascode_p_5v inside this cell, and
+# se_folded_cascode_np_ab_5v inside gf180mcu_ocd_ip__classab_buffer_5v
+# beside it.  The 3.3 V versions of both still exist and belong to the
+# BANDGAP, which runs entirely on 3.3 V.  Only the level shifters and
+# the digital inputs here are 03v3.
+#
+# nfet_05v0 and nfet_06v0 are the same subckt wrapping the same .model
+# with the same mismatch parameters, so the two classes are
+# electrically identical in simulation and differ only in layout rules.
+# The choice of 05v0 therefore costs nothing in simulation and buys the
+# shorter switch lengths (0.6 um nFET, 0.5 um pFET).
+#
+# CORNERS ARE PARTLY DEGENERATE, AND IT IS THE PDK, NOT THE SETUP.
+# sm141064.ngspice has skewed models for the 03v3 devices only:  the
+# sections typical, ss, ff, sf and fs all pull nfet_06v0_t and
+# pfet_06v0_t, the TYPICAL 6 V models.  There is no nfet_06v0_s or
+# pfet_06v0_f to pull.  Since both output buffers are now 05v0, the MOS
+# corner axis moves only the level shifters and the digital inputs, and
+# a corner sweep over the analog path will look flat because it IS
+# flat.  Corner coverage of these amplifiers has to come from the
+# resistor and capacitor corners, the temperature and the supply.
+#
+# NOISE ACTUALLY WORKS HERE.  The IHP noise parameter was dropped
+# because every MOSFET there is psp103va and every resistor r3_cmc, both
+# OSDI, and ngspice gets no noise contribution from an OSDI device.
+# GF180MCU ships native BSIM model cards and native r models, so
+# voltgen_noise is a real measurement in this port.
+# ---------------------------------------------------------------------
+
+pins:
+  vdd:
+    description: >
+      Analog supply.  Nominally 5 V;  nothing in this datasheet is
+      specced, run or measured above 5.5 V (5 V + 10 %).
+    direction: inout
+    type: power
+    Vmin: 3.0
+    Vmax: 5.5
+  vss:
+    description: Analog ground
+    direction: inout
+    type: ground
+  dvdd:
+    description: 3.3 V digital supply for the enables and the tap select
+    direction: inout
+    type: power
+    Vmin: 3.0
+    Vmax: 3.6
+  dvss:
+    description: Digital ground
+    direction: inout
+    type: ground
+  ena:
+    description: Master enable, active high
+    direction: input
+    type: digital
+  ena1:
+    description: Enable the on-board folded-cascode buffer, active high
+    direction: input
+    type: digital
+  ena2:
+    description: >
+      Enable the external class-AB buffer, active high.  Level shifted
+      inside this cell and exported as vgen_ena2_h.
+    direction: input
+    type: digital
+  high:
+    description: >
+      Range select.  0 gives vbg/4 steps, 1 gives vbg/3 steps.
+      high = 1 IS VALID ONLY ON A 5 V SUPPLY -- see the note above the
+      parameters.  May become a 2-bit range select, giving a low and a
+      high range for 3.3 V and a separate pair for 5 V;  if it does,
+      the parameter split below becomes an enumeration over that field
+      instead of over two supplies.
+    direction: input
+    type: digital
+  s[2:0]:
+    description: Tap select, binary, 0 to 7
+    direction: input
+    type: digital
+  vbg:
+    description: Bandgap reference input, nominally 1.2 V
+    direction: input
+    type: signal
+  ibias1u_1:
+    description: 1 uA bias SOURCE for the feedback amplifier
+    direction: inout
+    type: signal
+  ibias1u_2:
+    description: 1 uA bias SINK for the folded-cascode buffer
+    direction: inout
+    type: signal
+  vout_buf:
+    description: >
+      Folded-cascode buffered output.  Tied in chipalooza_frame to the
+      output of the external class-AB buffer.
+    direction: output
+    type: signal
+  vout_unbuf:
+    description: >
+      Unbuffered resistor tap, taken to the external class-AB buffer.
+      High impedance:  any load on it is an uncorrected error, since it
+      sits outside the feedback loop that regulates the chain.
+    direction: output
+    type: signal
+  vgen_ena2_h:
+    description: Level-shifted ena2, for the external class-AB buffer
+    direction: output
+    type: digital
+
+default_conditions:
+  corner:
+    display: Corner
+    description: >
+      MOS process corner.  Skews the 03v3 devices only;  the 5/6 V
+      devices have no skewed models in this PDK and stay at typical.
+    typical: typical
+  corner_res:
+    display: Resistor corner
+    description: >
+      Matters more here than in most blocks:  the output is set by
+      ratios along a tapped ppolyf_u chain, so the ratio tracks but the
+      absolute value moves the chain current and the loop gain with it.
+    typical: typical
+  corner_cap:
+    display: Capacitor corner
+    description: MIM capacitor corner
+    typical: typical
+  corner_dio:
+    display: Diode corner
+    description: Antenna tie-downs on the digital inputs only
+    typical: typical
+  temperature:
+    display: Temperature
+    unit: °C
+    typical: 27
+  Vdd:
+    display: Analog supply
+    description: >
+      Nominally 5 V in this process.  Enumerated over 3.3 and 5.0 where
+      the difference matters, since both output buffers are built from
+      5 V-capable devices and must also work on a 3.3 V supply.
+    unit: V
+    typical: 5.0
+  Vdvdd:
+    display: Digital supply
+    description: 3.3 V here, not the 1.2 V of the IHP original
+    unit: V
+    typical: 3.3
+  Vbg:
+    display: Reference voltage
+    description: Ideal bandgap reference presented to vbg
+    unit: V
+    typical: 1.2
+  Ibias:
+    display: Feedback amp bias
+    description: >
+      Bias SOURCE into ibias1u_1.  Plain numeric rather than 1u because
+      bracket expressions go through safe_eval, which reads 1u as a
+      malformed Python literal rather than a SPICE suffix.
+    unit: A
+    typical: 1e-6
+  Ibias2:
+    display: Cascode buffer bias
+    description: Bias SINK from ibias1u_2.  Set to 0 when ena1 is 0.
+    unit: A
+    typical: 1e-6
+  Ibias3:
+    display: Class-AB buffer bias
+    description: Bias SINK from the class-AB buffer.  Set to 0 when ena2 is 0.
+    unit: A
+    typical: 1e-6
+  Ena:
+    display: Master enable
+    typical: 1
+  Ena1:
+    display: Cascode buffer enable
+    typical: 1
+  Ena2:
+    display: Class-AB buffer enable
+    typical: 1
+  Istep:
+    display: Load step
+    description: >
+      Load current step for the settling parameter.  Kept to 100 nA
+      because that is inside what this buffer can drive:  it is class A
+      at 1 uA, and the +/-1% load limit is a few hundred nA.  Plain
+      numeric for the same reason as Ibias.
+    unit: A
+    typical: 100e-9
+  Cload:
+    display: Load capacitance
+    description: Stands in for the shared vbias trunk and its 18 slot switches
+    unit: F
+    typical: 1p
+  s:
+    display: Tap select
+    typical: 3
+  high:
+    display: Range select
+    typical: 0
+
+parameters:
+
+  # -------------------------------------------------------------------
+  # 1.  Bias stack headroom -- the regression test carried over from the
+  #     IHP v2 defect.
+  # -------------------------------------------------------------------
+  voltgen_bias_headroom:
+    display: Bias stack headroom
+    description: >
+      Voltage on each of the three bias pins at the nominal bias current
+      and at twice it.  Sink pins are pulled down by an nstack and must
+      stay above about 0.6 V;  the source pin is driven by a pstack and
+      must stay below vdd - 0.6 V.  A saturated stack is driven outside
+      the rails, so the result is unambiguous rather than marginal.
+      Checked at both supplies:  the source-pin headroom limit moves
+      with vdd.
+      THIS IS THE PARAMETER THAT THE 03v3 -> 05v0 CHANGE BROKE, and the
+      only one.  Both sink stacks lost a uniform 0.33 V to the higher
+      threshold and now sit below the floor at 3.3 V in the slow corner,
+      at nominal current as well as at twice it.  At 5 V both have
+      almost 2 V of margin.  See the two specs below for what each one
+      costs to fix.  Note also that 0.6 V was chosen for 03v3 devices;
+      an 05v0 stack needs MORE compliance voltage, not less, so the
+      floor itself is now optimistic.
+    unit: V
+    spec:
+      vb1_2x:
+        display: ibias1u_1 at 2x bias
+        description: >
+          Limit set for the 3.3 V supply (vdd - 0.6), since Vdd is
+          enumerated and a 5 V-based limit would not constrain the 3.3 V
+          case at all.  NOTE:  the measured value sits at 0.46 to 0.76 V
+          and does not move with vdd, which is the behaviour of an
+          n-side mirror input rather than the pstack the IHP datasheet
+          describes.  It passes either limit by a wide margin, so this
+          is a description to revisit rather than a failure.
+        unit: V
+        maximum:
+          value: 2.7
+      vb2_2x:
+        display: ibias1u_2 at 2x bias
+        description: >
+          FAILS AT 3.3 V WITH THE 05v0 AMPLIFIERS, and this is the one
+          thing the device change cost.  The node sits two series
+          diode-connected pFETs below vdd, and the 05v0 threshold raised
+          each of them:  measured against the 03v3 version the node
+          dropped a uniform 0.33 V at every corner and both supplies.
+          At 5 V that is irrelevant -- 1.98 to 2.66 V of margin.  At
+          3.3 V in the ss corner it is 0.486 V at NOMINAL current and
+          0.283 V at twice it, so the stack is compressed at the
+          operating point, not merely out of trim range.
+          Scaling both pFET mirror families in se_folded_cascode_p_5v by
+          4 (XM22/XM23/XM25 1.0 -> 4.0 um, XM1/XM30/XM31 2.0 -> 8.0 um)
+          restores it to 0.745 V nominal and 0.625 V at 2x, clearing the
+          floor.  That is not free:  XM30 and XM31 are the folding
+          devices in the signal path, so their gm and the compensation
+          move with it.
+        unit: V
+        minimum:
+          value: 0.6
+      vb3_2x:
+        display: class-AB bias at 2x bias
+        description: >
+          Same mechanism as vb2_2x and slightly worse, because the lower
+          of its two series diodes is W=1.0 um rather than 2.0 um:
+          0.385 V nominal and 0.136 V at 2x, in the ss corner at 3.3 V.
+          At 5 V it has 1.84 to 2.54 V of margin.
+          HERE THERE IS A FREE FIX:  in se_folded_cascode_np_ab_5v
+          nothing mirrors off the bias node -- XM11 is the only device
+          with its gate there, so it is a pure series diode and its
+          width changes no ratio.  Widening XM11 from 1.0 to 8.0 um
+          gives 0.614 V nominal, clearing the floor;  16.0 um gives
+          0.661 V.  Neither clears the 2x point (0.456 and 0.513 V),
+          because the recovery is logarithmic in width.
+          So the nominal operating point can be made legal at 3.3 V for
+          nothing;  the 2x stress margin cannot.
+        unit: V
+        minimum:
+          value: 0.6
+    tool:
+      ngspice:
+        template: voltgen_bias_tb.sch
+        format: ascii
+        suffix: .data
+        variables: [vb1_1x, vb1_2x, vb2_1x, vb2_2x, vb3_1x, vb3_2x]
+    conditions:
+      corner:
+        enumerate: [typical, ss, ff]
+      Vdd:
+        enumerate: [3.3, 5.0]
+      s:
+        typical: 3
+      high:
+        typical: 0
+
+  # -------------------------------------------------------------------
+  # Performance of the BUFFERED output.
+  #
+  # All of these measure vout_buf, the on-board folded-cascode buffer.
+  # The high-drive class-AB buffer lives outside this cell and belongs
+  # to the frame-level characterisation;  vout_unbuf is the bare
+  # resistor tap it consumes, outside the feedback loop, and nothing
+  # here loads it.
+  #
+  # SPEC LIMITS ARE SET FROM A CLEAN RUN at Vdd = 5.0, the nominal
+  # supply.  They are NOT the IHP numbers:  the supply and the device
+  # class both changed, and two of the IHP limits (20 mV overshoot,
+  # 200 kohm output impedance) turned out to be orders of magnitude
+  # loose here.
+  #
+  # WHY THE PARAMETERS ARE SPLIT BY SUPPLY.  high = 1 divides the chain
+  # by 3 instead of 4, so the CHAIN TOP sits near 3.2 V whichever tap is
+  # selected.  On a 3.3 V supply that leaves the top of the chain and
+  # the buffer with no headroom at all:  measured on the 3.3 V-device
+  # version, line regulation and supply rejection failed at EVERY code
+  # in the high range (91 mV/V and 19 dB even at s=0, against 9 mV/V and
+  # 41 dB at 5 V), and at s=7 the output could not reach its 3.2 V
+  # target at all, landing at 2.74 V with 1.9 Mohm of output impedance.
+  #
+  # high = 1 IS THEREFORE SPECCED AS 5 V ONLY.  That is a design
+  # decision, not a measurement artefact, and it is not a device-class
+  # problem -- 05v0 buffers do not change it, because what runs out is
+  # the resistor chain's supply.  So the parameters below come in pairs:
+  # the 5 V ones exercise both ranges, and the 3.3 V ones are restricted
+  # to high = 0.  CACE cannot express "high = 1 only when Vdd = 5.0"
+  # inside one parameter, which is why this is a split rather than an
+  # enumeration.  If high becomes a 2-bit range select with its own
+  # 3.3 V and 5 V pairs, these collapse back into single parameters
+  # enumerated over that field.
+  # -------------------------------------------------------------------
+
+  voltgen_accuracy_5v:
+    display: Output accuracy and line regulation (5 V, all codes, both ranges)
+    description: >
+      Buffered output against the design equation
+      vout = (s+1)*vbg/(4-high), and line regulation over a +/-0.3 V
+      window about the 5 V supply, for every tap in both ranges.  The
+      sweep reaches 5.4 V at its widest, inside the 5.5 V ceiling.
+    unit: V
+    spec:
+      err_V:
+        display: Output error
+        description: >
+          Set from the first clean run:  at 5 V the error spans -95 to
+          -1 mV over all 16 codes, and the 3.3 V low range spans -89 to
+          -7 mV.  The error is one-sided because the chain always reads
+          low, so the limits are too.
+        unit: mV
+        minimum:
+          value: -150
+        maximum:
+          value: 50
+      linereg_VperV:
+        display: Line regulation
+        unit: mV/V
+        description: >
+          21 mV/V worst at 5 V, 46 mV/V worst in the 3.3 V low range.
+        minimum:
+          value: -60
+        maximum:
+          value: 60
+    tool:
+      ngspice:
+        template: voltgen_dc_tb.sch
+        format: ascii
+        suffix: .data
+        variables: [vout_V, err_V, linereg_VperV]
+    conditions:
+      corner:
+        typical: typical
+      Vdd:
+        typical: 5.0
+      s:
+        enumerate: [0, 1, 2, 3, 4, 5, 6, 7]
+      high:
+        enumerate: [0, 1]
+
+  voltgen_accuracy_3v3:
+    display: Output accuracy and line regulation (3.3 V, low range)
+    description: >
+      The same measurement restricted to what is valid on a 3.3 V
+      supply:  the low range only.  This is the secondary supply claim,
+      so it gets its own looser limits -- the chain runs at a lower
+      current and the buffer has less headroom, and both show up as a
+      larger error and a worse line regulation than at 5 V.
+    unit: V
+    spec:
+      err_V:
+        display: Output error
+        unit: mV
+        minimum:
+          value: -150
+        maximum:
+          value: 50
+      linereg_VperV:
+        display: Line regulation
+        description: >
+          Rises smoothly with code -- 5.4 mV/V at s=0 through 39 mV/V at
+          s=6 -- and then jumps to 68 mV/V at s=7, where 2.31 V of
+          output on a 3.3 V supply leaves the top of the chain tight.
+          The limit admits s=7;  tighten it to 45 and drop the claim to
+          s <= 6 if the top code is not wanted at 3.3 V.
+        unit: mV/V
+        minimum:
+          value: -60
+        maximum:
+          value: 80
+    tool:
+      ngspice:
+        template: voltgen_dc_tb.sch
+        format: ascii
+        suffix: .data
+        variables: [vout_V, err_V, linereg_VperV]
+    conditions:
+      corner:
+        typical: typical
+      Vdd:
+        typical: 3.3
+      s:
+        enumerate: [0, 1, 2, 3, 4, 5, 6, 7]
+      high:
+        typical: 0
+
+  voltgen_accuracy_corners:
+    display: Output accuracy and line regulation (corners, extreme codes)
+    description: >
+      The four codes that stress headroom:  s=0 and s=7 in both ranges,
+      giving 0.3, 2.4, 0.4 and 3.2 V.  Run at 5.0 V and at 4.5 V, the
+      low end of the 5 V tolerance, since that is where the 3.2 V code
+      has least headroom within the specced supply range.
+      The high end of the tolerance, 5.5 V, is NOT run:  this template
+      sweeps the supply +/-0.4 V to get the line-regulation slope, which
+      from 5.5 would reach 5.9 V and exceed the 5.5 V ceiling.  The
+      slope measured here covers that end instead.
+      Expect the MOS corner axis to move this very little, since both
+      output buffers are 05v0 and those have no skewed models.
+    unit: V
+    spec:
+      err_V:
+        display: Output error
+        description: >
+          -117 to +1 mV over all five MOS corners and all three resistor
+          corners at 5 V.
+        unit: mV
+        minimum:
+          value: -200
+        maximum:
+          value: 50
+    tool:
+      ngspice:
+        template: voltgen_dc_tb.sch
+        format: ascii
+        suffix: .data
+        variables: [vout_V, err_V, linereg_VperV]
+    conditions:
+      corner:
+        enumerate: [typical, ss, ff, sf, fs]
+      corner_res:
+        enumerate: [typical, ff, ss]
+      Vdd:
+        enumerate: [4.5, 5.0]
+      s:
+        enumerate: [0, 7]
+      high:
+        enumerate: [0, 1]
+
+  voltgen_load:
+    display: Output impedance and load capability
+    description: >
+      Small-signal output impedance at zero load, and the source and
+      sink currents at which the output leaves a +/-1% window about its
+      own no-load value.  Reported as capability rather than against an
+      assumed load, because nothing specifies what a project will draw.
+    unit: Ω
+    spec:
+      rout_ohm:
+        display: Output impedance
+        description: >
+          25.5 to 26.9 kohm at 5 V, essentially flat with code.  A value
+          far above this band means the buffer has fallen out of
+          regulation rather than that its impedance has drifted.
+        unit: kΩ
+        maximum:
+          value: 50
+      ilim_src:
+        display: Source limit
+        description: >
+          118 nA at the lowest code, rising to about 1.1 uA at the
+          highest;  the low-code end sets the limit.  This is the
+          class-A cascode buffer only -- the high-drive end is the
+          external class-AB buffer and belongs to the frame.
+        unit: nA
+        minimum:
+          value: 100
+    tool:
+      ngspice:
+        template: voltgen_loadreg_tb.sch
+        format: ascii
+        suffix: .data
+        variables: [rout_ohm, ilim_src, ilim_snk]
+    conditions:
+      corner:
+        typical: typical
+      Vdd:
+        typical: 5.0
+      s:
+        enumerate: [0, 1, 2, 3, 4, 5, 6, 7]
+      high:
+        enumerate: [0, 1]
+
+  voltgen_psrr_5v:
+    display: Supply rejection (5 V, both ranges)
+    description: >
+      Rejection from the analog supply to the buffered output at 10 Hz,
+      1 kHz and 100 kHz, in both ranges on the nominal supply.
+    unit: dB
+    spec:
+      psrr_1kHz:
+        display: PSRR at 1 kHz
+        description: >
+          33.6 to 41.8 dB at 5 V across all codes;  28.4 to 46.6 dB in
+          the 3.3 V low range.  The 3.3 V high range is far below this
+          and is expected to fail -- see the note on the parameter.
+        unit: dB
+        minimum:
+          value: 25
+    tool:
+      ngspice:
+        template: voltgen_psrr_tb.sch
+        format: ascii
+        suffix: .data
+        variables: [psrr_10Hz, psrr_1kHz, psrr_100kHz]
+    conditions:
+      corner:
+        typical: typical
+      Vdd:
+        typical: 5.0
+      s:
+        enumerate: [0, 3, 7]
+      high:
+        enumerate: [0, 1]
+
+  voltgen_psrr_3v3:
+    display: Supply rejection (3.3 V, low range)
+    description: >
+      The same measurement on the secondary supply, low range only.
+      This is the parameter that showed the high range to be unusable at
+      3.3 V:  in the low range the rejection is respectable, in the high
+      range it fell to 19 dB at s=0 and to nothing at all at s=7.
+    unit: dB
+    spec:
+      psrr_1kHz:
+        display: PSRR at 1 kHz
+        unit: dB
+        minimum:
+          value: 25
+    tool:
+      ngspice:
+        template: voltgen_psrr_tb.sch
+        format: ascii
+        suffix: .data
+        variables: [psrr_10Hz, psrr_1kHz, psrr_100kHz]
+    conditions:
+      corner:
+        typical: typical
+      Vdd:
+        typical: 3.3
+      s:
+        enumerate: [0, 3, 7]
+      high:
+        typical: 0
+
+  voltgen_settling:
+    display: Load step settling
+    description: >
+      Response to a 100 nA load step into Cload:  the DC shift, and the
+      excursion either side of the settled value.  The only parameter
+      here that would catch ringing into a capacitive trunk, which is
+      worth having in this PDK:  the GF180MCU bandgap port rang at
+      20 MHz purely because a MIM capacitor came out 17x too small.
+      NOTE that corner_cap currently moves nothing -- all three corners
+      give identical results to the microvolt.  The compensation
+      capacitor that matters is XC2 inside classab_buffer_5v, and this
+      testbench does not instantiate the class-AB buffer.  The corner is
+      kept because it costs nothing and will start to matter if this
+      template is extended to the shared output node.
+    unit: V
+    spec:
+      under_V:
+        display: Settling excursion
+        description: >
+          THIS IS THE SIDE THAT MOVES.  Iload is a SINK, so the step
+          pulls the output down and it recovers monotonically:  nothing
+          ever goes above the settled value, which is why over_V below
+          reads exactly 0.000 in every run rather than being broken.
+          The real excursion is the dip below the final value, and it is
+          9 to 42 uV.  The IHP datasheet specced the overshoot side,
+          which for a sinking step is vacuous.
+        unit: mV
+        maximum:
+          value: 0.5
+      over_V:
+        display: Overshoot
+        description: >
+          Kept as a RINGING DETECTOR rather than a settling number.  For
+          a sinking step a well-behaved output never rises above its
+          final value, so 0.000 is the expected reading and any nonzero
+          value means the loop rang.  The 20 mV the IHP datasheet
+          carried would not have caught that.
+        unit: mV
+        maximum:
+          value: 0.1
+    tool:
+      ngspice:
+        template: voltgen_step_tb.sch
+        format: ascii
+        suffix: .data
+        variables: [dstep_V, over_V, under_V]
+    conditions:
+      corner:
+        typical: typical
+      Vdd:
+        typical: 5.0
+      corner_cap:
+        enumerate: [typical, ff, ss]
+      s:
+        enumerate: [0, 3, 7]
+      high:
+        enumerate: [0, 1]
+
+  # This parameter has no IHP counterpart that produced numbers:  the
+  # IHP noise testbench returns zero because psp103va and r3_cmc are
+  # OSDI and ngspice gets no noise from an OSDI device.  GF180MCU uses
+  # native BSIM and native r models, and the corner sections pull in
+  # noise_corner, so this is a real measurement here.
+  #
+  # Remember the block SCALES its reference rather than rejecting it:
+  # vout = (s+1)*vbg/(4-high) is a gain of 0.25 to 2.67, so bandgap
+  # noise arrives multiplied by up to 8.5 dB.  These numbers are the
+  # buffer and the chain, measured against an ideal reference.
+  voltgen_noise:
+    display: Output noise
+    description: >
+      Output-referred noise spectral density at 10 Hz and 1 kHz, and the
+      total integrated noise from 0.1 Hz to 10 MHz, at the buffered
+      output with an ideal reference.
+    unit: V/√Hz
+    spec:
+      n_1kHz_VrtHz:
+        display: Noise density at 1 kHz
+        description: >
+          344 to 701 nV/√Hz at 5 V, rising with code because the chain
+          gain rises with it.
+        unit: nV/√Hz
+        maximum:
+          value: 1000
+      ntot_Vrms:
+        display: Total integrated noise
+        description: 177 to 357 µV rms at 5 V, over 0.1 Hz to 10 MHz.
+        unit: µV
+        maximum:
+          value: 500
+    tool:
+      ngspice:
+        template: voltgen_noise_tb.sch
+        format: ascii
+        suffix: .data
+        variables: [n_10Hz_VrtHz, n_1kHz_VrtHz, ntot_Vrms]
+    conditions:
+      corner:
+        typical: typical
+      Vdd:
+        typical: 5.0
+      s:
+        enumerate: [0, 3, 7]
+      high:
+        enumerate: [0, 1]
+
+  # UNITS CONVENTION, learned the hard way on this parameter:  the
+  # testbench emits BASE SI units (amps, ohms) and CACE scales them for
+  # display using the unit: field -- but the spec LIMITS are read in
+  # that display unit, not in base units.  So a leakage limit of one
+  # nanoamp under unit: nA is written as 1.0, not as 1e-9.  Getting
+  # either half of this wrong fails a working circuit by nine orders of
+  # magnitude.
+  voltgen_disabled_z:
+    display: Disabled output impedance
+    description: >
+      Current drawn from the shared output node when it is forced to
+      0.3, 1.2, 2.4 V and to vdd - 0.3 V, plus the equivalent shunt
+      resistance at mid-rail.  With both buffers disabled the node must
+      be genuinely high impedance;  with one enabled, the other must not
+      drag it.
+    unit: nA
+    spec:
+      leak_1v2_A:
+        display: Leakage at 1.2 V
+        unit: nA
+        minimum:
+          value: -1.0
+        maximum:
+          value: 1.0
+      rshunt_ohm:
+        display: Shunt resistance at mid-rail
+        unit: MΩ
+        minimum:
+          value: 100
+    tool:
+      ngspice:
+        template: voltgen_disabled_tb.sch
+        format: ascii
+        suffix: .data
+        variables: [leak_0v3_A, leak_1v2_A, leak_2v4_A, leak_hi_A,
+                    rshunt_ohm]
+    conditions:
+      corner:
+        enumerate: [typical, ss, ff]
+      Vdd:
+        enumerate: [3.3, 5.0]
+      Ena:
+        typical: 1
+      Ena1:
+        typical: 0
+      Ena2:
+        typical: 0
+      Ibias2:
+        typical: 0
+      Ibias3:
+        typical: 0

@@ -1,0 +1,84 @@
+magic
+tech gf180mcuD
+magscale 1 2
+timestamp 1774450949
+<< error_p >>
+rect -41 128 -31 160
+rect -103 -29 -63 74
+rect 63 -74 103 29
+rect -41 -160 -31 -128
+<< hvnmos >>
+rect -45 -100 45 100
+<< mvndiff >>
+rect -113 86 -45 100
+rect -113 -86 -99 86
+rect -67 -86 -45 86
+rect -113 -100 -45 -86
+rect 45 86 113 100
+rect 45 -86 67 86
+rect 99 -86 113 86
+rect 45 -100 113 -86
+<< mvndiffc >>
+rect -99 -86 -67 86
+rect 67 -86 99 86
+<< poly >>
+rect -45 160 45 174
+rect -45 128 -31 160
+rect 31 128 45 160
+rect -45 100 45 128
+rect -45 -128 45 -100
+rect -45 -160 -31 -128
+rect 31 -160 45 -128
+rect -45 -174 45 -160
+<< polycont >>
+rect -31 128 31 160
+rect -31 -160 31 -128
+<< metal1 >>
+rect -41 128 -31 160
+rect 31 128 41 160
+rect -109 66 -99 86
+rect -113 65 -99 66
+rect -67 66 -57 86
+rect -67 65 -53 66
+rect -113 -20 -103 65
+rect -63 -20 -53 65
+rect 57 21 67 86
+rect -113 -21 -99 -20
+rect -109 -86 -99 -21
+rect -67 -21 -53 -20
+rect 53 20 67 21
+rect 99 21 109 86
+rect 99 20 113 21
+rect -67 -86 -57 -21
+rect 53 -65 63 20
+rect 103 -65 113 20
+rect 53 -66 67 -65
+rect 57 -86 67 -66
+rect 99 -66 113 -65
+rect 99 -86 109 -66
+rect -41 -160 -31 -128
+rect 31 -160 41 -128
+<< via1 >>
+rect -103 -20 -99 65
+rect -99 -20 -67 65
+rect -67 -20 -63 65
+rect 63 -65 67 20
+rect 67 -65 99 20
+rect 99 -65 103 20
+<< metal2 >>
+rect -103 65 -63 74
+rect -103 -29 -63 -20
+rect 63 20 103 29
+rect 63 -74 103 -65
+<< labels >>
+rlabel mvndiffc -83 0 -83 0 0 D
+port 1 nsew
+rlabel mvndiffc 83 0 83 0 0 S
+port 2 nsew
+rlabel polycont 0 144 0 144 0 G
+port 3 nsew
+<< properties >>
+string gencell nfet_06v0
+string library gf180mcu
+string parameters w 1.0 l 0.45 m 1 ng 1 diffcov 100 polycov 100 guard 0 glc 1 grc 1 gtc 1 gbc 1 tbcov 100 rlcov 100 topc 1 botc 1 poverlap 0 doverlap 1 lmin 0.45 wmin 0.15 class mosfet compatible {nfet_05v0 nfet_06v0} full_metal 1 conn_gates 0 gate_ring 0 doports 1 viasrc +50 viadrn -50 viagate 0 ccols 1 viagb 0 viagr 0 viagl 0 viagt 0
+<< end >>

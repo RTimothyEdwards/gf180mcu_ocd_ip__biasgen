@@ -1,0 +1,15 @@
+magic
+tech gf180mcuD
+timestamp 1774617508
+<< via4 >>
+rect -199 -199 199 199
+<< metal5 >>
+rect -231 199 231 231
+rect -231 -199 -199 199
+rect 199 -199 231 199
+rect -231 -231 231 -199
+<< properties >>
+string gencell via
+string library gf180mcu
+string parameters metalbot metal4 metaltop metal5 nxcuts 5 nycuts 5 orient default pattern none
+<< end >>

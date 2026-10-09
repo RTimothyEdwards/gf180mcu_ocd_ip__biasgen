@@ -1,0 +1,88 @@
+magic
+tech gf180mcuD
+magscale 1 2
+timestamp 1774373177
+<< error_p >>
+rect -36 23611 36 23685
+rect -36 -23685 36 -23611
+<< pwell >>
+rect -254 -23890 254 23890
+<< psubdiff >>
+rect -192 23814 192 23828
+rect -192 23782 -100 23814
+rect 100 23782 192 23814
+rect -192 23768 192 23782
+rect -192 23736 -132 23768
+rect -192 -23736 -178 23736
+rect -146 -23736 -132 23736
+rect 132 23736 192 23768
+rect -192 -23768 -132 -23736
+rect 132 -23736 146 23736
+rect 178 -23736 192 23736
+rect 132 -23768 192 -23736
+rect -192 -23782 192 -23768
+rect -192 -23814 -100 -23782
+rect 100 -23814 192 -23782
+rect -192 -23828 192 -23814
+<< psubdiffcont >>
+rect -100 23782 100 23814
+rect -178 -23736 -146 23736
+rect 146 -23736 178 23736
+rect -100 -23814 100 -23782
+<< poly >>
+rect -50 23672 50 23686
+rect -50 23640 -36 23672
+rect 36 23640 50 23672
+rect -50 23600 50 23640
+rect -50 -23640 50 -23600
+rect -50 -23672 -36 -23640
+rect 36 -23672 50 -23640
+rect -50 -23686 50 -23672
+<< polycont >>
+rect -36 23640 36 23672
+rect -36 -23672 36 -23640
+<< xpolyres >>
+rect -50 -23600 50 23600
+<< metal1 >>
+rect -178 23782 -100 23814
+rect 100 23782 178 23814
+rect -178 23736 -146 23782
+rect 146 23736 178 23782
+rect -46 23676 46 23677
+rect -46 23620 -36 23676
+rect 36 23620 46 23676
+rect -46 23619 46 23620
+rect -46 -23620 46 -23619
+rect -46 -23676 -36 -23620
+rect 36 -23676 46 -23620
+rect -46 -23677 46 -23676
+rect -178 -23782 -146 -23736
+rect 146 -23782 178 -23736
+rect -178 -23814 -100 -23782
+rect 100 -23814 178 -23782
+<< via1 >>
+rect -36 23672 36 23676
+rect -36 23640 36 23672
+rect -36 23620 36 23640
+rect -36 -23640 36 -23620
+rect -36 -23672 36 -23640
+rect -36 -23676 36 -23672
+<< metal2 >>
+rect -36 23676 36 23685
+rect -36 23611 36 23620
+rect -36 -23620 36 -23611
+rect -36 -23685 36 -23676
+<< labels >>
+rlabel psubdiffcont 0 -23798 0 -23798 0 B
+port 1 nsew
+rlabel polycont 0 23656 0 23656 0 R1
+port 2 nsew
+rlabel polycont 0 -23656 0 -23656 0 R2
+port 3 nsew
+<< properties >>
+string FIXED_BBOX -162 -23798 162 23798
+string gencell ppolyf_u_1k
+string library gf180mcu
+string MASKHINTS_CONTBAR
+string parameters w 0.50 l 236.0 m 1 nx 1 wmin 0.50 lmin 0.50 class resistor rho 1360 val 917.028k dummy 0 dw 0.0 term 0.0 sterm 0.0 caplen 0 bar 1 guard 1 glc 1 grc 1 gtc 1 gbc 1 snake 0 full_metal 1 n_guard 0 hv_guard 0 vias 1 viagb 0 viagt 0 viagl 0 viagr 0 doports 1 b 0
+<< end >>

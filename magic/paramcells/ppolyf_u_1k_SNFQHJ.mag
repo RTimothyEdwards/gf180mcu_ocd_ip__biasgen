@@ -1,0 +1,88 @@
+magic
+tech gf180mcuD
+magscale 1 2
+timestamp 1774397579
+<< error_p >>
+rect -36 261 36 335
+rect -36 -335 36 -261
+<< pwell >>
+rect -254 -540 254 540
+<< psubdiff >>
+rect -192 464 192 478
+rect -192 432 -100 464
+rect 100 432 192 464
+rect -192 418 192 432
+rect -192 386 -132 418
+rect -192 -386 -178 386
+rect -146 -386 -132 386
+rect 132 386 192 418
+rect -192 -418 -132 -386
+rect 132 -386 146 386
+rect 178 -386 192 386
+rect 132 -418 192 -386
+rect -192 -432 192 -418
+rect -192 -464 -100 -432
+rect 100 -464 192 -432
+rect -192 -478 192 -464
+<< psubdiffcont >>
+rect -100 432 100 464
+rect -178 -386 -146 386
+rect 146 -386 178 386
+rect -100 -464 100 -432
+<< poly >>
+rect -50 322 50 336
+rect -50 290 -36 322
+rect 36 290 50 322
+rect -50 250 50 290
+rect -50 -290 50 -250
+rect -50 -322 -36 -290
+rect 36 -322 50 -290
+rect -50 -336 50 -322
+<< polycont >>
+rect -36 290 36 322
+rect -36 -322 36 -290
+<< xpolyres >>
+rect -50 -250 50 250
+<< metal1 >>
+rect -178 432 -100 464
+rect 100 432 178 464
+rect -178 386 -146 432
+rect 146 386 178 432
+rect -46 326 46 327
+rect -46 270 -36 326
+rect 36 270 46 326
+rect -46 269 46 270
+rect -46 -270 46 -269
+rect -46 -326 -36 -270
+rect 36 -326 46 -270
+rect -46 -327 46 -326
+rect -178 -432 -146 -386
+rect 146 -432 178 -386
+rect -178 -464 -100 -432
+rect 100 -464 178 -432
+<< via1 >>
+rect -36 322 36 326
+rect -36 290 36 322
+rect -36 270 36 290
+rect -36 -290 36 -270
+rect -36 -322 36 -290
+rect -36 -326 36 -322
+<< metal2 >>
+rect -36 326 36 335
+rect -36 261 36 270
+rect -36 -270 36 -261
+rect -36 -335 36 -326
+<< labels >>
+rlabel psubdiffcont 0 -448 0 -448 0 B
+port 22 nsew
+rlabel polycont 0 306 0 306 0 R1
+port 23 nsew
+rlabel polycont 0 -306 0 -306 0 R2
+port 24 nsew
+<< properties >>
+string FIXED_BBOX -162 -448 162 448
+string gencell ppolyf_u_1k
+string library gf180mcu
+string MASKHINTS_CONTBAR
+string parameters w 0.5 l 2.5 m 1 nx 1 wmin 0.50 lmin 0.50 class resistor rho 1360 val 6.8k dummy 0 dw 0.0 term 0.0 sterm 0.0 caplen 0 bar 1 guard 1 glc 1 grc 1 gtc 1 gbc 1 snake 0 full_metal 1 n_guard 0 hv_guard 0 vias 1 viagb 0 viagt 0 viagl 0 viagr 0 doports 1 b 0
+<< end >>

@@ -1,0 +1,567 @@
+%!PS-Adobe-3.0
+%%Title: gf180mcu_ocd_ip__bandgap.ps
+%%Creator: XCircuit v0.0 rev1956786677
+%%CreationDate: Thu Oct  8 12:11:12 2026
+%%Pages: 2
+%%BoundingBox: 0 0 612 792
+%%DocumentNeededResources: font Helvetica Times-Roman HelveticaISO 
+%%+ font Helvetica-BoldISO Helvetica-ObliqueISO Symbol 
+%%EndComments
+%%BeginProlog
+%
+%  PostScript prolog for output from xcircuit
+%  Version: 3.9
+%
+%  Electrical circuit (and otherwise general) drawing program
+%
+%  Written by Tim Edwards 8/5/93--4/12/16  (tim@opencircuitdesign.com)
+%  The Johns Hopkins University (1993-2004)
+%  MultiGiG, Inc. (2004-2012)
+%  Open Circuit Design (2012-2016)
+%
+%%BeginResource: procset XCIRCproc 3.9 1
+%
+% supporting definitions --- these are the primary xcircuit types.
+
+/XCIRCsave save def
+/topmat matrix currentmatrix def
+
+/fontslant { /slant exch def [1 0 slant 1 0 0] 
+    exch findfont exch makefont dup length dict /ndict exch def
+    { 1 index /FID ne { ndict 3 1 roll put } { pop pop } ifelse } forall
+    ndict definefont pop} def
+/ul { count 0 gt { dup type /stringtype eq showflag 1 eq and { gsave 
+   currentpoint topmat setmatrix 0 0 moveto 2 index stringwidth pop (_)
+   false charpath flattenpath pathbbox grestore exch pop 1 index
+   sub setlinewidth exch pop currentpoint 3 -1 roll add moveto 0
+   rlineto stroke moveto } if } if } def
+/ol { count 0 gt { dup type /stringtype eq showflag 1 eq and { gsave gsave
+   currentpoint topmat setmatrix 2 index stringwidth pop 3 index
+   true charpath flattenpath pathbbox grestore exch pop
+   exch pop topmat setmatrix (_) true charpath pathbbox grestore
+   exch pop 1 index sub setlinewidth exch pop currentpoint
+   exch 4 1 roll exch sub add moveto pop 0 rlineto stroke
+   moveto } if } if } def
+/stW { gsave currentpoint newpath moveto true charpath flattenpath
+	pathbbox pop exch pop sub grestore } def
+/Ts {mark Tabs aload pop counttomark 1 add array astore /Tabs exch def Tabs
+	0 currentpoint pop put} def
+/Tbn {mark Tabs aload pop counttomark dup 2 add 1 roll cleartomark 1 sub} def
+/Tb { 0 1 Tbn {Tabs exch get dup currentpoint pop lt
+	{currentpoint exch pop moveto exit} {pop} ifelse } for } def
+/Tf { Tbn -1 0 {Tabs exch get dup currentpoint pop gt
+	{currentpoint exch pop moveto exit} {pop} ifelse } for } def
+/qS { (aa) stW (a a) stW sub 4 div 0 Kn } def
+/hS { qS qS } def
+/pspc 0 def
+/cf0 { scalefont setfont } bind def
+/Kn { dup kY add /kY exch def rmoveto } bind def
+/ss { /fscale fscale 0.67 mul def currentfont 0.67 cf0 0 fscale0 fscale mul
+	0.33 mul neg Kn} def
+/Ss { /fscale fscale 0.67 mul def currentfont 0.67 cf0 0 fscale0 fscale mul
+	0.67 mul Kn } def
+/ns { 0 kY neg Kn /kY 0 def /fscale 1.0 def xfont0 1.0 cf0 } def
+/MR { /twidth exch def } def
+/CRx { } def
+/CR { ns 0 /Bline Bline fscale0 neg add def Bline moveto CRx } def
+/cf { dup type /realtype ne {1.0} if exch findfont exch kY 0 eq
+	{ 40 mul dup /fscale0 exch def cf0 /xfont0 currentfont def}
+	{fscale0 mul fscale mul cf0} ifelse } def
+/ctmk { counttomark dup 2 add -1 roll pop } bind def
+/label { gsave translate 0 0 moveto dup scale neg
+	/rotval exch def /twidth 100000 def /just exch def just 128 and
+	0 gt {/mshow {pop} def} {/mshow {show} def} ifelse just 16 and 0
+	gt {gsave rotval rotate 0 1 dtransform gsave pagemat setmatrix
+	idtransform exch grestore 1 0 dtransform gsave pagemat setmatrix
+	idtransform exch grestore dup abs 1e-9 lt {pop mul 0 gt} {3 1 roll
+	pop pop 0 lt} ifelse grestore {-1 /rotval rotval neg def /just just
+	dup 3 and 1 ne {3 xor} if def} {1} ifelse exch -1e-9 lt {-1 /rotval
+	rotval neg def /just just dup 12 and 4 ne {12 xor} if def} {1}
+	ifelse scale } if /showflag 0 def /fspc pspc def /Bline 0 def
+	/numlines 0 def /padding 0 array def /Tabs 0 array def
+	/fscale 1.0 def /kY 0 def gsave /CRx { linewid padding
+	aload pop numlines 1 add dup /numlines exch def array astore
+	/padding exch def /linewid 0 def } def dup 1 add copy dup 1 0
+	dtransform exch atan rotate {exch dup type /stringtype eq {gsave dup
+	gsave newpath 0 0 moveto true charpath flattenpath pathbbox pop exch
+	pop exch pop grestore currentpoint pop add dup /linewid exch def twidth
+	ge {grestore CR exch 1 add dup 2 add {CR} exch 1 roll exch} {grestore}
+	ifelse true charpath flattenpath} {dup type /arraytype eq {exec} {12
+	string cvs true charpath flattenpath} ifelse} ifelse} repeat
+	CRx /CRx {padding aload pop just 1280 and 0 gt {blockwid exch sub just
+	1024 and 0 gt {0.5 mul} if} {pop 0} ifelse 0 rmoveto numlines 1 sub
+	dup /numlines exch def array astore /padding exch def} def exch pop
+	pathbbox grestore 4 copy pop exch pop exch sub /blockwid exch def
+	3 -1 roll pop 3 1 roll just 1 and 0 gt {just 2 and
+	0 gt {exch pop neg fspc sub} {exch sub 0.5 mul neg} ifelse} {pop neg
+	fspc add} ifelse exch Bline exch just 4 and 0 gt {just 8 and 0 gt
+	{exch pop neg fspc sub} {add 0.5 mul neg} ifelse} {pop neg fspc add}
+	ifelse rotval rotate Kn currentpoint translate /showflag 1 def /Bline
+	0 def /Tabs 0 array def /fscale 1.0 def /kY 0 def CRx {dup type
+	/stringtype eq {mshow} {dup type /arraytype eq {exec} {12 string cvs
+	mshow} ifelse} ifelse} repeat grestore endclip} def
+/pinlabel { 4 index 32 and 0 ne hlevel 0 eq or { /pspc 10 def label
+	/pspc 0 def } { pop pop pop pop pop {pop} repeat } ifelse } def
+/pinglobal { pinlabel } def
+/infolabel { pinlabel } def
+/graphic { gsave 4 index cvx exec /DataSource get resetfile translate 0 0
+	moveto neg rotate dup scale cvx exec image grestore endclip} def
+
+/scb { setrgbcolor } bind def  /sce { defColor aload pop scb } bind def
+/cRedef {/defColor currentcolor 3 array astore def} def
+/begingate {dup type /dicttype ne {1 dict} if begin	% default params
+	dup type /dicttype ne {1 dict} if begin		% instanced params
+	/hlevel hlevel 1 add def /defColor currentcolor sce 3 array astore
+	def gsave sce dup type /nametype eq { pop } if translate 0 0 moveto
+	neg rotate dup type /nametype eq not { dup abs currentlinewidth exch
+	div setlinewidth } { pop } ifelse dup abs scale clipped 1 and 1 eq
+	{/clipped clipped 1 add def} if} bind def
+/endgate { /hlevel hlevel 1 sub def grestore defColor aload pop cRedef
+	scb end end endclip} bind def
+
+/hlevel 0 def
+/endclip {clipped 1 and 1 eq {grestore /clipped clipped 1 sub def} if} def
+/tmpa [1 0 0 1 0 0] def
+/gar {8 8 true tmpa {<c0 c0 00 00 0c 0c 00 00>} imagemask} bind
+{8 8 true tmpa {<30 70 60 02 03 07 06 20>} imagemask} bind
+{8 8 true tmpa {<0c 1e 1e 0c c0 e1 e1 c0>} imagemask} bind
+{8 8 true tmpa {<0f 0f 0f 0f f0 f0 f0 f0>} imagemask} bind
+{8 8 true tmpa {<3f f3 e1 e1 f3 3f 1e 1e>} imagemask} bind
+{8 8 true tmpa {<df cf 8f 9f fd fc f8 f9>} imagemask} bind
+{8 8 true tmpa {<ff 3f 3f ff ff f3 f3 ff>} imagemask} bind 7 array astore def
+/ppaint { gsave clip tmpa dup setmatrix pathbbox neg exch neg 4 2 roll
+  neg 4 -1 roll 2 copy gt {exch} if 8 div ceiling 8 mul 4 2 roll neg 2 copy
+  gt {exch} if 8 div ceiling 8 mul 3 -1 roll -8 5 -1 roll
+  { 3 index exch 5 exch put dup -8 3 index { 3 index
+  exch 4 exch put 3 index exec } for } for pop pop pop pop grestore } bind def
+/setstyles {
+  currentlinewidth mul setlinewidth /style exch def style 2048 and 0 gt
+  clipped 1 and 0 eq and {clip newpath /clipped clipped 1 add def} {
+  style 1 and 0 gt not {closepath} if
+  style 1024 and 0 gt {2 setlinecap 0 setlinejoin} if
+  style 2 and 0 gt {currentlinewidth 4 mul dup 2 array astore 0 setdash} if
+  style 4 and 0 gt {0.5 currentlinewidth 4 mul 2 array astore 0 setdash} if
+  gsave style 16 and 0 gt { style 224 and -5 bitshift style 256 and 0 gt {
+  7 exch sub 8 div dup 1 exch sub currentrgbcolor 3 array astore
+  {3 copy mul add 4 1 roll pop} forall pop pop setrgbcolor eofill}
+  {dup 7 lt {gar exch get ppaint} {pop eofill} ifelse} ifelse}
+  {style 256 and 0 gt {1 setgray eofill} if} ifelse grestore style 8 and 0 gt 
+  style 512 eq or {newpath} {stroke} ifelse grestore endclip} ifelse} def     
+
+/addtoy {exch dup dup 2 mul 3 add 1 roll -1 1 { 4 1 roll dup 4 1 roll add
+	4 -1 roll 2 mul 1 add index 2 mul 2 add 2 roll} for pop} def
+/addtoy1 {1 exch addtoy pop} def
+/addtoy3 {3 exch addtoy pop} def
+/addtoy4 {4 exch addtoy pop} def
+/addtox {exch dup dup 2 mul 3 add 1 roll -1 1 { 4 1 roll dup 4 1 roll 3 -1 roll
+	add exch 4 -1 roll 2 mul 1 add index 2 mul 2 add 2 roll} for pop} def
+/addtox1 {1 exch addtox pop} def
+/addtox3 {3 exch addtox pop} def
+/addtox4 {4 exch addtox pop} def
+/polygon { gsave /num exch def moveto num 1 sub {lineto} repeat setstyles } def
+/xcarc   { gsave newpath arc setstyles } def
+/elb { matrix currentmatrix 7 -1 roll 7 -1 roll translate 5 1 roll 4 -1 roll
+	3 index div 1 scale } def
+/ele { 0 4 1 roll 0 4 1 roll } bind def
+/ellipse { gsave elb newpath ele arc setmatrix setstyles } def
+/pellip  { elb ele arc setmatrix } def
+/nellip  { elb ele arcn setmatrix } def
+/spline  { gsave moveto curveto setstyles } def
+/polyc   { {lineto} repeat } bind def
+/beginpath { gsave moveto } bind def
+/endpath { setstyles } bind def
+/bop	 { 1 setlinecap 2 setlinejoin 6 setmiterlimit 0 0 0 scb cRedef
+	/clipped 0 def} def
+/psinsertion {/PSobj save def /showpage {} def /setpagedevice {pop} def bop
+	rotate translate dup scale} def
+/end_insert {PSobj restore} def
+/setpagemat {/pagemat matrix currentmatrix def} def
+/inchscale  {setpagemat 0.375 mul dup scale} def
+/cmscale    {setpagemat 0.35433071 mul dup scale} def
+
+%%EndResource
+%%EndProlog
+/Helvetica findfont dup length dict begin
+{1 index /FID ne {def} {pop pop} ifelse} forall
+/Encoding ISOLatin1Encoding def currentdict end
+/HelveticaISO exch definefont pop
+
+/Helvetica-Bold findfont dup length dict begin
+{1 index /FID ne {def} {pop pop} ifelse} forall
+/Encoding ISOLatin1Encoding def currentdict end
+/Helvetica-BoldISO exch definefont pop
+
+/Helvetica-Oblique findfont dup length dict begin
+{1 index /FID ne {def} {pop pop} ifelse} forall
+/Encoding ISOLatin1Encoding def currentdict end
+/Helvetica-ObliqueISO exch definefont pop
+
+% XCircuit output starts here.
+
+%%BeginSetup
+
+/analog::opamp {
+begingate
+0 1.000 -80 -80 -80 80 80 0 3 polygon
+(-) {/Symbol cf} 2 5 0.000 1.000 -61 42 label
+(+) {/Symbol cf} 2 5 0.000 1.000 -61 -50 label
+1.000 0.000 0.000 scb
+(in.m) {/Times-Roman cf} 2 7 0.000 1.000 -80 48 pinlabel
+(in.p) {/Times-Roman cf} 2 7 0.000 1.000 -80 -48 pinlabel
+(out) {/Times-Roman cf} 2 4 0.000 1.000 80 0 pinlabel
+endgate
+} def
+
+/analog::pmos {
+begingate
+1 1.000 -44 -28 -44 28 2 polygon
+1 1.000 -60 0 -64 0 2 polygon
+1 1.000 0 -64 0 -28 -32 -28 -32 28 0 28 0 64 6 polygon
+1 1.000 -52 0 8 0.000 360.000 xcarc
+1.000 0.000 0.000 scb
+(S) {/Times-Roman cf} 2 9 0.000 1.000 0 64 pinlabel
+(D) {/Times-Roman cf} 2 13 0.000 1.000 0 -64 pinlabel
+(G) {/Times-Roman cf} 2 7 0.000 1.000 -64 0 pinlabel
+0.180 0.545 0.341 scb
+(spice:M%i %pD %pG %pS Vdd pmos) {/Times-Roman cf} 2 4 0.000 1.000 -196 -139 
+infolabel
+(sim:p %pG %pS %pD) {/Times-Roman cf} 2 4 0.000 1.000 -196 -187 infolabel
+endgate
+} def
+
+/analog::vdd {
+% trivial
+begingate
+1 1.000 0 0 0 32 2 polygon
+1 1.000 -32 32 32 32 2 polygon
+(Vdd) {/Times-Roman cf} 2 17 0.000 0.900 0 38 label
+0.934 0.604 0.000 scb
+(Vdd) {/Times-Roman cf} 2 13 0.000 1.000 0 0 pinglobal
+endgate
+} def
+
+/generic::dot {
+% trivial
+begingate
+248 1.000 0 0 6 0.000 360.000 xcarc
+1.000 0.000 0.000 scb
+(x) {/Times-Roman cf} 2 29 -0.000 1.000 0 0 pinlabel
+endgate
+} def
+
+/analog::resistor {
+begingate
+1 1.000 0 64 0 36 2 polygon
+1 1.000 0 -64 0 -36 2 polygon
+1 1.000 0 -36 14 -30 -14 -18 14 -6 -14 6 14 18 -14 30 0 36 8 polygon
+1.000 0.000 0.000 scb
+(r.1) {/Times-Roman cf} 2 9 0.000 1.000 0 64 pinlabel
+(r.2) {/Times-Roman cf} 2 13 0.000 1.000 0 -64 pinlabel
+0.180 0.545 0.341 scb
+(spice:R%i %pr.1 %pr.2 1.0K) {/Times-Roman cf} 2 0 0.000 1.000 -208 -160 
+infolabel
+(sim:r %pr.1 %pr.2) {/Times-Roman cf} 2 0 0.000 1.000 -208 -208 infolabel
+endgate
+} def
+
+/generic::arrowhead {
+% nonetwork
+begingate
+8 -28 beginpath
+3 -18 3 -15 0 0 curveto
+-3 -15 -3 -18 -8 -28 curveto
+-2 -26 2 -26 8 -28 curveto
+249 
+1.000 endpath
+endgate
+} def
+
+/analog::pnp {
+begingate
+1 1.000 -48 0 -64 0 2 polygon
+1 1.000 -48 48 -48 -48 2 polygon
+1 1.000 0 48 -48 22 2 polygon
+1 1.000 0 48 0 64 2 polygon
+1 1.000 0 -48 -48 -22 2 polygon
+1 1.000 0 -48 0 -64 2 polygon
+1.000 240.000 -48 22 generic::arrowhead
+1.000 0.000 0.000 scb
+(C) {/Times-Roman cf} 2 13 0.000 1.000 0 -64 pinlabel
+(B) {/Times-Roman cf} 2 7 0.000 1.000 -64 0 pinlabel
+(E) {/Times-Roman cf} 2 9 0.000 1.000 0 64 pinlabel
+0.180 0.545 0.341 scb
+(spice:Q%i %pC %pB %pE pnp) {/Times-Roman cf} 2 4 0.000 1.000 -244 -139 
+infolabel
+endgate
+} def
+
+/analog::gnd {
+% trivial
+begingate
+1 1.000 0 0 0 -32 2 polygon
+1 1.000 -32 -32 32 -32 2 polygon
+1 1.000 -18 -46 18 -46 2 polygon
+1 1.000 -4 -60 4 -60 2 polygon
+0.934 0.604 0.000 scb
+(GND) {/Times-Roman cf} 2 1 0.000 1.000 0 0 pinglobal
+endgate
+} def
+
+/generic::circle {
+% trivial
+begingate
+1 1.000 16 0 6 0.000 360.000 xcarc
+1 1.000 0 0 10 0 2 polygon
+1.000 0.000 0.000 scb
+(out) {/Times-Roman cf} 2 4 -0.000 1.000 16 0 pinlabel
+(out) {/Times-Roman cf} 2 7 -0.000 1.000 0 0 pinlabel
+endgate
+} def
+
+
+%%EndSetup
+
+%%Page: sg13cmos5l_ocd_ip__bandgap 1
+%%PageOrientation: Portrait
+%%PageBoundingBox: 0 0 612 792
+/pgsave save def bop
+0.5838 inchscale
+2.6000 setlinewidth 1597 1976 translate
+
+(Circuit layout) {/Helvetica-ObliqueISO cf} 2 17 0.000 1.000 208 1056 label
+(gf180mcu_ocd_ip__bandgap) {/Helvetica-BoldISO cf} 2 16 0.000 1.500 -1264 1248 
+label
+1 1.000 -1264 1216 800 1216 2 polygon
+(Bandgap voltage reference for GF180MCU) {/HelveticaISO cf} 2 16 0.000 1.000 
+-1264 1152 label
+(Circuit description:) {/Helvetica-ObliqueISO cf} 2 16 0.000 1.000 -1264 1040 
+label
+(Pinout:) {/Helvetica-ObliqueISO cf} 2 16 0.000 1.000 -1264 352 label
+(vdd) {/Helvetica-BoldISO cf} 2 16 0.000 1.000 -1248 288 label
+(vss) {/Helvetica-BoldISO cf} 2 16 0.000 1.000 -1248 224 label
+(dvdd) {/Helvetica-BoldISO cf} 2 16 0.000 1.000 -1248 160 label
+(dvss) {/Helvetica-BoldISO cf} 2 16 0.000 1.000 -1248 96 label
+(ena) {/Helvetica-BoldISO cf} 2 16 0.000 1.000 -1248 32 label
+(vbg) {/Helvetica-BoldISO cf} 2 16 0.000 1.000 -1248 -80 label
+(trim) {/Helvetica-BoldISO cf} 2 16 0.000 1.000 -1248 -144 label
+(ibias1_250n) {/Helvetica-BoldISO cf} 2 16 0.000 1.000 -1248 -208 label
+(ibias2_1u) {/Helvetica-BoldISO cf} 2 16 0.000 1.000 -1248 -272 label
+(Analog power supply, nominally 5.0V) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 
+288 label
+(Analog ground) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 224 label
+(Digital power supply, nominaly 3.3V) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 
+160 label
+(Digital ground) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 96 label
+(Bandgap enable, digital \(3.3V\) domain) {/HelveticaISO cf} 2 16 0.000 1.000 
+-1120 32 label
+(1 = enabled, 0 = disabled) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 -16 label
+(Bandgap voltage output, nominally 1.25V) {/HelveticaISO cf} 2 16 0.000 1.000 
+-1120 -80 label
+(16-bit thermometer-encoded trim, digital \(3.3V\) domain.  See table below) 
+{/HelveticaISO cf} 2 16 0.000 1.000 -1120 -144 label
+
+(Bias current for bandgap, 250nA sink.  Can be provided by the bias current generator in this repository.) 
+{/HelveticaISO cf} 2 16 0.000 1.000 -960 -208 label
+
+(Bias current for output buffer, 1\265A sink.  Can be provided by the bias current generator in this repository.) 
+{/HelveticaISO cf} 2 16 0.000 1.000 -1024 -272 label
+(generator.) {CR} 
+(the current sinks are self-biased.  The bandgap uses only current sinks to avoid a feedback loop with the current bias) 
+{CR} 
+(Please note that the bias current generator circuit only stabilizes the current sources with the bandgap reference, while) 
+{/HelveticaISO cf} 6 16 0.000 1.000 -1248 -432 label
+(is buffered by a follower amplifier.) {CR} 
+(thermometer-encoded trim setting.  The output) {CR} 
+(circuit, with output trimmable by a 16-bit) {CR} 
+(This is a standard bipolar bandgap reference) {/HelveticaISO cf} 8 16 0.000 
+1.000 -1264 848 label
+(vbg \(nom.\)) {/HelveticaISO cf} 2 16 0.000 1.000 -688 -544 label
+1 1.000 -1248 -576 -464 -576 2 polygon
+(0) {/HelveticaISO cf} 2 16 0.000 1.000 -1248 -640 label
+(1) {/HelveticaISO cf} 2 16 0.000 1.000 -1248 -688 label
+(2) {/HelveticaISO cf} 2 16 0.000 1.000 -1248 -736 label
+(3) {/HelveticaISO cf} 2 16 0.000 1.000 -1248 -784 label
+(4) {/HelveticaISO cf} 2 16 0.000 1.000 -1248 -832 label
+(5) {/HelveticaISO cf} 2 16 0.000 1.000 -1248 -880 label
+(6) {/HelveticaISO cf} 2 16 0.000 1.000 -1248 -928 label
+(7) {/HelveticaISO cf} 2 16 0.000 1.000 -1248 -976 label
+(8) {/HelveticaISO cf} 2 16 0.000 1.000 -1248 -1024 label
+(9) {/HelveticaISO cf} 2 16 0.000 1.000 -1248 -1072 label
+(10) {/HelveticaISO cf} 2 16 0.000 1.000 -1248 -1120 label
+(11) {/HelveticaISO cf} 2 16 0.000 1.000 -1248 -1168 label
+(12) {/HelveticaISO cf} 2 16 0.000 1.000 -1248 -1216 label
+(13) {/HelveticaISO cf} 2 16 0.000 1.000 -1248 -1264 label
+(14) {/HelveticaISO cf} 2 16 0.000 1.000 -1248 -1312 label
+(15) {/HelveticaISO cf} 2 16 0.000 1.000 -1248 -1360 label
+1 1.000 -1152 -512 -1152 -1408 2 polygon
+(1.295V) {/HelveticaISO cf} 2 16 0.000 1.000 -688 -1408 label
+(1.231V) {/HelveticaISO cf} 2 16 0.000 1.000 -688 -1024 label
+(to the correct nominal output.) {CR} 
+(been manufactured and tested, it will be re-trimmed) {CR} 
+(Note that this is a test version.  Once this circuit has) {/HelveticaISO cf} 6 
+16 0.000 1.000 -1264 672 label
+(trim) {/HelveticaISO cf} 2 16 0.000 1.000 -1248 -544 label
+(trim[15:0]) {/HelveticaISO cf} 2 16 0.000 1.000 -1104 -544 label
+1 1.000 -720 -512 -720 -1408 2 polygon
+(16) {/HelveticaISO cf} 2 16 0.000 1.000 -1248 -1408 label
+(1.184V) {/HelveticaISO cf} 2 16 0.000 1.000 -688 -640 label
+(0000000000000000) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 -640 label
+(0000000000000001) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 -688 label
+(0000000000000011) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 -736 label
+(0000000000000111) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 -784 label
+(0000000000001111) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 -832 label
+(0000000000011111) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 -880 label
+(0000000000111111) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 -928 label
+(0000000001111111) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 -976 label
+(0000000011111111) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 -1024 label
+(0000000111111111) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 -1072 label
+(0000001111111111) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 -1120 label
+(0000011111111111) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 -1168 label
+(0000111111111111) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 -1216 label
+(0001111111111111) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 -1264 label
+(0011111111111111) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 -1312 label
+(0111111111111111) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 -1360 label
+(1111111111111111) {/HelveticaISO cf} 2 16 0.000 1.000 -1120 -1408 label
+(4-bit binary trim input value.) {CR} 
+(replace the thermometer-encoded trim with a) {CR} 
+(Also note:  Future versions of this bandgap may) {/HelveticaISO cf} 6 16 0.000 
+1.000 -1264 512 label
+0.679 1.000 0.184 scb
+512 1.000 -1264 1312 -1264 -1648 864 -1648 864 1312 4 polygon
+sce
+(1.188V) {/Helvetica cf} 2 16 0.000 1.000 -688 -688 label
+(1.192V) {/Helvetica cf} 2 16 0.000 1.000 -688 -736 label
+(1.198V) {/Helvetica cf} 2 16 0.000 1.000 -688 -784 label
+(1.204V) {/Helvetica cf} 2 16 0.000 1.000 -688 -832 label
+(1.211V) {/Helvetica cf} 2 16 0.000 1.000 -688 -880 label
+(1.217V) {/Helvetica cf} 2 16 0.000 1.000 -688 -928 label
+(1.224V) {/Helvetica cf} 2 16 0.000 1.000 -688 -976 label
+(1.238V) {/Helvetica cf} 2 16 0.000 1.000 -688 -1072 label
+(1.246V) {/Helvetica cf} 2 16 0.000 1.000 -688 -1120 label
+(1.254V) {/Helvetica cf} 2 16 0.000 1.000 -688 -1168 label
+(1.261V) {/Helvetica cf} 2 16 0.000 1.000 -688 -1216 label
+(1.270V) {/Helvetica cf} 2 16 0.000 1.000 -688 -1264 label
+(1.278V) {/Helvetica cf} 2 16 0.000 1.000 -688 -1312 label
+(1.287V) {/Helvetica cf} 2 16 0.000 1.000 -688 -1360 label
+(Temperature coefficients) {/Helvetica cf} 2 16 0.000 1.000 -320 -640 label
+(-40\312C to 125\312C:  35.78 ppm/\312C) {/Helvetica cf} 2 16 0.000 1.000 -320 
+-704 label
+(0\312C to 85\312C: 21.58 ppm/\312C) {/Helvetica cf} 2 16 0.000 1.000 -320 -768 
+label
+pgsave restore showpage
+
+%%Page: theory 2
+%%PageOrientation: Portrait
+%%PageBoundingBox: 0 0 612 792
+/pgsave save def bop
+0.5838 inchscale
+2.6000 setlinewidth 605 1400 translate
+
+(sg13cmos5l_ocd_ip__bandgap) {/Helvetica-BoldISO cf} 2 16 0.000 1.500 -256 1824 
+label
+1 1.000 -256 1792 1808 1792 2 polygon
+(Design:  Theory of operation) {/Helvetica cf} 2 16 0.000 1.000 -256 1728 label
+(pFET \(feedback node\).) {CR} 
+(bandgap reference, a variant of the Kuijk topology, with the output voltage taken directly from the drain of the) 
+{CR} 
+(This bandgap design was ported from a design for sky130 by Christoph Weiser.  It is a standard voltage-mode) 
+{/Helvetica cf} 6 28 0.000 1.000 -256 1632 label
+(The reference voltage is defined by) {/Helvetica cf} 2 28 0.000 1.000 -256 
+1440 label
+(T) {ss} (\) ln\(8\) V) {ns} (2) {ss} ( / R) {ns} (1) {ss} ( + \(R) {ns} (BE1) 
+{ss} ( = V) {ns} (bg) {ss} (V) {/Helvetica cf} 20 16 0.000 1.000 192 1312 label
+1.000 270.000 1216 1072 analog::opamp
+1.000 0.000 1408 1232 analog::pmos
+1 1.000 1344 1232 1088 1232 2 polygon
+1 1.000 1216 1152 1216 1232 2 polygon
+-1.000 0.000 1024 1232 analog::pmos
+1.000 0.000 1024 1296 analog::vdd
+1.000 0.000 1408 1296 analog::vdd
+1.000 0.000 1216 1232 generic::dot
+1 1.000 1408 1168 1408 1104 2 polygon
+1 1.000 1024 1168 1024 1104 2 polygon
+1.000 0.000 1408 1040 analog::resistor
+1.000 0.000 1024 1040 analog::resistor
+(1) {ss} (R) {/Helvetica cf} 4 23 0.000 1.000 992 1040 label
+(1) {ss} (R) {/Helvetica cf} 4 23 0.000 1.000 1488 1040 label
+1 1.000 1408 976 1408 880 2 polygon
+1 1.000 1024 976 1024 720 2 polygon
+1 1.000 1024 928 1168 928 1168 992 3 polygon
+1 1.000 1264 992 1264 928 1408 928 3 polygon
+1.000 0.000 1408 816 analog::resistor
+(2) {ss} (R) {/Helvetica cf} 4 23 0.000 1.000 1488 816 label
+1 1.000 1408 752 1408 720 2 polygon
+-1.000 0.000 1024 656 analog::pnp
+1.000 0.000 1408 656 analog::pnp
+1 1.000 1024 592 1024 528 1408 528 1408 592 4 polygon
+1 1.000 1344 656 1088 656 2 polygon
+1 1.000 1216 656 1216 528 2 polygon
+1.000 0.000 1216 656 generic::dot
+1.000 0.000 1216 528 generic::dot
+1.000 0.000 1216 528 analog::gnd
+(8x) {/Helvetica cf} 2 20 0.000 1.000 1408 656 label
+1.000 0.000 1024 928 generic::dot
+1.000 0.000 1408 928 generic::dot
+1 1.000 1408 1136 1504 1136 2 polygon
+1.000 0.000 1408 1136 generic::dot
+1.000 0.000 1504 1136 generic::circle
+(bg) {ss} (V) {/Helvetica cf} 4 20 0.000 1.000 1552 1136 label
+(.) {/Helvetica cf} (W) {/Symbol cf} (k) {hS} (82.59) {CR} ( value of) {ns} (1) 
+{ss} 
+(In this layout, the unit resistor is set to 6882.5 ohms, so a stack of 12 devices in series makes the nominal R) 
+{/Helvetica cf} 14 16 0.000 1.000 -256 224 label
+( is ) {ns} (1) {ss} (to R) {ns} (2 ) {ss} (The ratio of R) {/Helvetica cf} 10 
+16 0.000 1.000 -256 736 label
+(\265A) {hS} {/HelveticaISO cf} ( = 6.52) {ns} (target) {ss} 
+(The target current through the single bipolar is I) {/Helvetica cf} 9 28 0.000 
+1.000 -256 1152 label
+(V.) {hS} ( at this current is 0.7115) {ns} (BE1) {ss} (By simulation, V) 
+{/Helvetica cf} 8 28 0.000 1.000 -256 1088 label
+(mV.) {hS} (at room temperature is 25.9) {ns} (T ) {ss} (V) {/Helvetica cf} 8 
+28 0.000 1.000 -256 1024 label
+( is therefore) {ns} (2) {ss} (The nominal R) {/Helvetica cf} 6 28 0.000 1.000 
+-256 928 label
+(W) {/Symbol cf} (k) {hS} ( = 8.259) {ns} (target) {ss} ( ln\(8\) / I) {ns} (T) 
+{ss} ( = V) {ns} (2) {ss} (R) {/Helvetica cf} 18 16 0.000 1.000 128 832 label
+(mV = 10.0) {hS} (V\) / 53.85) {hS} (V - 0.7115) {hS} (\(1.25) {/Helvetica cf} 
+8 16 0.000 1.000 96 608 label
+( ln\(8\)\)) {ns} (T) {ss} (\) / \(V) {ns} (BE1) {ss} ( - V) {ns} (bg) {ss} 
+(\(V) {/Helvetica cf} 14 16 0.000 1.000 96 672 label
+(where 8 is the current ratio between the bipolars.) {/Helvetica cf} 2 16 0.000 
+1.000 -256 1216 label
+( is divided into a fixed and a variable \(trimmable\) component.) {ns} (2) 
+{ss} (R) {/Helvetica cf} 6 16 0.000 1.000 -256 128 label
+(W) {/Symbol cf} {hS} ( / 12 = 6882.5) {ns} (1) {ss} ( = R) {ns} (2fixed) {ss} 
+(R) {/Helvetica cf} 13 16 0.000 1.000 -128 64 label
+(W) {/Symbol cf} (k) {hS} ( = 1.377) {ns} (2fixed) {ss} ( / 10\) - R) {ns} (1) 
+{ss} ( \(nominal\) = \(R) {ns} (2var) {ss} (R) {/Helvetica cf} 18 16 0.000 
+1.000 -128 0 label
+(.) {/Helvetica cf} (W) {/Symbol cf} {hS} (65.19) {/Helvetica cf} (\273 \) ) 
+{/Symbol cf} (therefore each resistor should be \(1,043 / 16 ) {CR} (, and) 
+{/Helvetica cf} (W) {/Symbol cf} (k) {hS} 
+(, the maximum resistance should be 1.898) {/Helvetica cf} (W) {/Symbol cf} (k) 
+{hS} (the centerpoint \(half of the resistors shorted\) be 1.377) {CR} 
+( when all FETs are turned on and all resistors shorted.  To make) 
+{/Helvetica cf} (W) {hS} {/Symbol cf} ( = 855) {ns} (2var) {ss} 
+(The minimum resistance of R) {CR} (.) {/Helvetica cf} (W) {/Symbol cf} {hS} 
+(corresponding thermometer code bit is high.  By simulation, the resistance of each FET is found to be ~53) 
+{CR} 
+(The variable resistance is made with a chain of 16 resistors, with each resistor shorted by a FET when the) 
+{/Helvetica cf} 45 28 0.000 1.000 -272 -192 label
+(word is 0x00ff \(half of the switches on, half off\).) {CR} 
+(Simulation shows the temperature response is flattest at approximately room temperature when the trim) 
+{/Helvetica cf} 4 16 0.000 1.000 -272 -512 label
+0.679 1.000 0.184 scb
+512 1.000 -272 1888 -272 -1072 1856 -1072 1856 1888 4 polygon
+sce
+(.) {ns} (1) {ss} (up R) {CR} (, it requires more than 10 of them to make) {ns} 
+(2) {ss} 
+(circuit to make up the difference.  Since the unit resistor is lower than R) 
+{CR} 
+(This implementation uses a value of the unit resistance that is lower than the nominal value and expects the trim) 
+{/Helvetica cf} 14 16 0.000 1.000 -256 384 label
+pgsave restore showpage
+
+%%Trailer
+XCIRCsave restore
+%%EOF

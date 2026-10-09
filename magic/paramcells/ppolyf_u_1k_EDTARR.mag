@@ -1,0 +1,50 @@
+magic
+tech gf180mcuD
+magscale 1 2
+timestamp 1774298276
+<< poly >>
+rect -141 412 141 426
+rect -141 380 -127 412
+rect 127 380 141 412
+rect -141 340 141 380
+rect -141 -380 141 -340
+rect -141 -412 -127 -380
+rect 127 -412 141 -380
+rect -141 -426 141 -412
+<< polycont >>
+rect -127 380 127 412
+rect -127 -412 127 -380
+<< xpolyres >>
+rect -141 -340 141 340
+<< metal1 >>
+rect -137 416 137 417
+rect -137 360 -127 416
+rect 127 360 137 416
+rect -137 359 137 360
+rect -137 -360 137 -359
+rect -137 -416 -127 -360
+rect 127 -416 137 -360
+rect -137 -417 137 -416
+<< via1 >>
+rect -127 412 127 416
+rect -127 380 127 412
+rect -127 360 127 380
+rect -127 -380 127 -360
+rect -127 -412 127 -380
+rect -127 -416 127 -412
+<< metal2 >>
+rect -127 416 127 425
+rect -127 351 127 360
+rect -127 -360 127 -351
+rect -127 -425 127 -416
+<< labels >>
+rlabel polycont 0 396 0 396 0 R1
+port 1 nsew
+rlabel polycont 0 -396 0 -396 0 R2
+port 2 nsew
+<< properties >>
+string gencell ppolyf_u_1k
+string library gf180mcu
+string MASKHINTS_CONTBAR
+string parameters w 1.41 l 3.4 m 1 nx 1 wmin 0.50 lmin 0.50 class resistor rho 1360 val 3.279k dummy 0 dw 0.0 term 0.0 sterm 0.0 caplen 0 bar 1 guard 0 glc 1 grc 1 gtc 1 gbc 1 snake 0 full_metal 1 n_guard 0 hv_guard 0 vias 1 viagb 0 viagt 0 viagl 0 viagr 0 doports 1
+<< end >>

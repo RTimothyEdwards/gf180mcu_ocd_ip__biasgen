@@ -1,0 +1,29 @@
+magic
+tech gf180mcuD
+magscale 1 2
+timestamp 1774623097
+<< metal1 >>
+rect -173 164 173 165
+rect -173 -164 -164 164
+rect 164 -164 173 164
+rect -173 -165 173 -164
+<< via1 >>
+rect -164 -164 164 164
+<< metal2 >>
+rect -164 164 164 173
+rect -164 -173 164 -164
+<< via2 >>
+rect -164 -164 164 164
+<< metal3 >>
+rect -173 -164 -164 164
+rect 164 -164 173 164
+<< via3 >>
+rect -164 -164 164 164
+<< metal4 >>
+rect -164 164 164 173
+rect -164 -173 164 -164
+<< properties >>
+string gencell via
+string library gf180mcu
+string parameters metalbot metal1 metaltop metal4 nxcuts 4 nycuts 4 orient default pattern none
+<< end >>

@@ -1,0 +1,161 @@
+magic
+tech gf180mcuD
+magscale 1 2
+timestamp 1774748448
+<< nwell >>
+rect 898 -1502 1500 2379
+<< mvnsubdiff >>
+rect 1030 2226 1376 2253
+rect 1030 2179 1117 2226
+rect 1288 2179 1376 2226
+rect 1030 2157 1376 2179
+rect 1023 -1320 1369 -1303
+rect 1023 -1364 1112 -1320
+rect 1290 -1364 1369 -1320
+rect 1023 -1378 1369 -1364
+<< mvnsubdiffcont >>
+rect 1117 2179 1288 2226
+rect 1112 -1364 1290 -1320
+<< metal1 >>
+rect 1030 2226 1376 2293
+rect 1030 2179 1117 2226
+rect 1288 2179 1376 2226
+rect 1030 2153 1376 2179
+rect 1075 1967 1389 2011
+rect 1043 1868 1389 1967
+rect 1043 1632 1075 1868
+rect 1043 1489 1389 1632
+rect 1043 1253 1075 1489
+rect 1043 1157 1389 1253
+rect 1075 1110 1389 1157
+rect 1075 830 1389 874
+rect 1043 731 1389 830
+rect 1043 494 1075 731
+rect 1043 351 1389 494
+rect 1043 115 1075 351
+rect 1043 18 1389 115
+rect 1075 -28 1389 18
+rect 1075 -307 1331 -263
+rect 1043 -406 1331 -307
+rect 1043 -643 1075 -406
+rect 1043 -786 1331 -643
+rect 1043 -1022 1075 -786
+rect 1043 -1117 1331 -1022
+rect 1075 -1165 1331 -1117
+rect 1034 -1320 1380 -1303
+rect 1034 -1364 1112 -1320
+rect 1290 -1364 1380 -1320
+rect 1034 -1378 1380 -1364
+<< metal2 >>
+rect 1030 2153 1376 2293
+<< metal3 >>
+rect 1030 2153 1376 2293
+rect 1107 1094 1175 2153
+rect 1087 -1276 1175 975
+rect 1230 -118 1298 2041
+rect 1230 -1385 1318 -237
+<< metal4 >>
+rect 1029 1059 1376 2293
+rect 1029 -78 1376 924
+rect 1029 -1215 1376 -213
+use pfet_06v0_KGSGVN  pfet_06v0_KGSGVN_0 paramcells
+array 0 8 -379 0 0 448
+timestamp 1774721386
+transform 0 1 1184 -1 0 -1093
+box -292 -205 292 243
+use via_Y6H4DQ  via_Y6H4DQ_0 paramcells
+timestamp 1774721386
+transform 1 0 1202 0 1 2223
+box -70 -70 70 70
+use via_Y6HE6N  via_Y6HE6N_0 paramcells
+timestamp 1774721386
+transform 1 0 1264 0 1 -1186
+box -29 -70 29 70
+use via_Y6HE6N  via_Y6HE6N_1
+timestamp 1774721386
+transform 1 0 1142 0 1 -993
+box -29 -70 29 70
+use via_Y6HE6N  via_Y6HE6N_2
+timestamp 1774721386
+transform 1 0 1264 0 1 -807
+box -29 -70 29 70
+use via_Y6HE6N  via_Y6HE6N_3
+timestamp 1774721386
+transform 1 0 1142 0 1 -614
+box -29 -70 29 70
+use via_Y6HE6N  via_Y6HE6N_4
+timestamp 1774721386
+transform 1 0 1264 0 1 -428
+box -29 -70 29 70
+use via_Y6HE6N  via_Y6HE6N_5
+timestamp 1774721386
+transform 1 0 1142 0 1 -235
+box -29 -70 29 70
+use via_Y6HE6N  via_Y6HE6N_6
+timestamp 1774721386
+transform 1 0 1264 0 1 -49
+box -29 -70 29 70
+use via_Y6HE6N  via_Y6HE6N_7
+timestamp 1774721386
+transform 1 0 1142 0 1 144
+box -29 -70 29 70
+use via_Y6HE6N  via_Y6HE6N_8
+timestamp 1774721386
+transform 1 0 1264 0 1 330
+box -29 -70 29 70
+use via_Y6HE6N  via_Y6HE6N_9
+timestamp 1774721386
+transform 1 0 1142 0 1 523
+box -29 -70 29 70
+use via_Y6HE6N  via_Y6HE6N_10
+timestamp 1774721386
+transform 1 0 1264 0 1 709
+box -29 -70 29 70
+use via_Y6HE6N  via_Y6HE6N_11
+timestamp 1774721386
+transform 1 0 1142 0 1 902
+box -29 -70 29 70
+use via_Y6HE6N  via_Y6HE6N_12
+timestamp 1774721386
+transform 1 0 1264 0 1 1088
+box -29 -70 29 70
+use via_Y6HE6N  via_Y6HE6N_13
+timestamp 1774721386
+transform 1 0 1142 0 1 1281
+box -29 -70 29 70
+use via_Y6HE6N  via_Y6HE6N_14
+timestamp 1774721386
+transform 1 0 1264 0 1 1467
+box -29 -70 29 70
+use via_Y6HE6N  via_Y6HE6N_15
+timestamp 1774721386
+transform 1 0 1142 0 1 1660
+box -29 -70 29 70
+use via_Y6HE6N  via_Y6HE6N_16
+timestamp 1774721386
+transform 1 0 1264 0 1 1846
+box -29 -70 29 70
+use via_Y6HE6N  via_Y6HE6N_17
+timestamp 1774721386
+transform 1 0 1142 0 1 2039
+box -29 -70 29 70
+use via_Y6HG9Q  via_Y6HG9Q_0 paramcells
+timestamp 1774721386
+transform 1 0 1200 0 1 2223
+box -111 -70 111 70
+<< labels >>
+flabel metal3 1230 -1385 1318 -1185 0 FreeSans 640 90 0 0 itail
+port 4 nsew
+flabel metal3 1100 2154 1300 2288 0 FreeSans 640 0 0 0 avdd
+port 0 nsew
+flabel metal1 1091 20 1291 84 0 FreeSans 640 0 0 0 pcasc
+port 2 nsew
+flabel metal1 1088 1157 1288 1211 0 FreeSans 640 0 0 0 pbias
+port 1 nsew
+flabel metal1 1076 -1117 1276 -1060 0 FreeSans 640 0 0 0 enb
+port 3 nsew
+flabel metal4 1198 612 1198 612 0 FreeSans 320 0 0 0 shld2
+port 9 nsew
+flabel metal4 1204 -524 1204 -524 0 FreeSans 320 0 0 0 shld3
+port 10 nsew
+<< end >>

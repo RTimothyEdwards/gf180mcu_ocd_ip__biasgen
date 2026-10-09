@@ -1,0 +1,64 @@
+magic
+tech gf180mcuD
+magscale 1 2
+timestamp 1774373177
+<< pwell >>
+rect -242 -242 242 242
+<< psubdiff >>
+rect -180 166 180 180
+rect -180 134 -88 166
+rect 88 134 180 166
+rect -180 120 180 134
+rect -180 88 -120 120
+rect -180 -88 -166 88
+rect -134 -88 -120 88
+rect 120 88 180 120
+rect -180 -120 -120 -88
+rect 120 -88 134 88
+rect 166 -88 180 88
+rect 120 -120 180 -88
+rect -180 -134 180 -120
+rect -180 -166 -88 -134
+rect 88 -166 180 -134
+rect -180 -180 180 -166
+<< psubdiffcont >>
+rect -88 134 88 166
+rect -166 -88 -134 88
+rect 134 -88 166 88
+rect -88 -166 88 -134
+<< ndiode >>
+rect -78 64 78 78
+rect -78 -64 -64 64
+rect 64 -64 78 64
+rect -78 -78 78 -64
+<< ndiodecont >>
+rect -64 -64 64 64
+<< metal1 >>
+rect -166 134 -88 166
+rect 88 134 166 166
+rect -166 88 -134 134
+rect 134 88 166 134
+rect -74 64 74 65
+rect -74 -64 -64 64
+rect 64 -64 74 64
+rect -74 -65 74 -64
+rect -166 -134 -134 -88
+rect 134 -134 166 -88
+rect -166 -166 -88 -134
+rect 88 -166 166 -134
+<< via1 >>
+rect -64 -64 64 64
+<< metal2 >>
+rect -64 64 64 73
+rect -64 -73 64 -64
+<< labels >>
+rlabel psubdiffcont 0 -150 0 -150 0 D2
+port 5 nsew
+rlabel ndiodecont 0 0 0 0 0 D1
+port 6 nsew
+<< properties >>
+string FIXED_BBOX -150 -150 150 150
+string gencell diode_nd2ps_05v0
+string library gf180mcu
+string parameters w 0.78 l 0.78 area 608.4m peri 3.12 nx 1 ny 1 dummy 0 lmin 0.45 wmin 0.45 class diode elc 1 erc 1 etc 1 ebc 1 doverlap 0 doports 1 full_metal 1 vias 1 viagb 0 viagt 0 viagl 0 viagr 0
+<< end >>

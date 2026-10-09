@@ -1,0 +1,158 @@
+magic
+tech gf180mcuD
+magscale 1 2
+timestamp 1774369900
+<< error_p >>
+rect -20 459 20 517
+rect -118 44 -50 444
+rect 50 44 118 444
+rect -20 -29 20 29
+rect -118 -444 -50 -44
+rect 50 -444 118 -44
+rect -20 -517 20 -459
+<< nwell >>
+rect -242 -568 242 568
+<< hvpmos >>
+rect -50 44 50 444
+rect -50 -444 50 -44
+<< mvpdiff >>
+rect -118 430 -50 444
+rect -118 58 -104 430
+rect -72 58 -50 430
+rect -118 44 -50 58
+rect 50 430 118 444
+rect 50 58 72 430
+rect 104 58 118 430
+rect 50 44 118 58
+rect -118 -58 -50 -44
+rect -118 -430 -104 -58
+rect -72 -430 -50 -58
+rect -118 -444 -50 -430
+rect 50 -58 118 -44
+rect 50 -430 72 -58
+rect 104 -430 118 -58
+rect 50 -444 118 -430
+<< mvpdiffc >>
+rect -104 58 -72 430
+rect 72 58 104 430
+rect -104 -430 -72 -58
+rect 72 -430 104 -58
+<< poly >>
+rect -50 504 50 518
+rect -50 472 -28 504
+rect 28 472 50 504
+rect -50 444 50 472
+rect -50 16 50 44
+rect -50 -16 -28 16
+rect 28 -16 50 16
+rect -50 -44 50 -16
+rect -50 -472 50 -444
+rect -50 -504 -28 -472
+rect 28 -504 50 -472
+rect -50 -518 50 -504
+<< polycont >>
+rect -28 472 28 504
+rect -28 -16 28 16
+rect -28 -504 28 -472
+<< metal1 >>
+rect -43 508 43 509
+rect -43 504 -20 508
+rect 20 504 43 508
+rect -43 472 -28 504
+rect 28 472 43 504
+rect -43 468 -20 472
+rect 20 468 43 472
+rect -43 467 43 468
+rect -118 429 -104 430
+rect -72 429 -58 430
+rect -118 59 -108 429
+rect -68 59 -58 429
+rect -118 58 -104 59
+rect -72 58 -58 59
+rect 58 429 72 430
+rect 104 429 118 430
+rect 58 59 68 429
+rect 108 59 118 429
+rect 58 58 72 59
+rect 104 58 118 59
+rect -43 20 43 21
+rect -43 16 -20 20
+rect 20 16 43 20
+rect -43 -16 -28 16
+rect 28 -16 43 16
+rect -43 -20 -20 -16
+rect 20 -20 43 -16
+rect -43 -21 43 -20
+rect -118 -59 -104 -58
+rect -72 -59 -58 -58
+rect -118 -429 -108 -59
+rect -68 -429 -58 -59
+rect -118 -430 -104 -429
+rect -72 -430 -58 -429
+rect 58 -59 72 -58
+rect 104 -59 118 -58
+rect 58 -429 68 -59
+rect 108 -429 118 -59
+rect 58 -430 72 -429
+rect 104 -430 118 -429
+rect -43 -468 43 -467
+rect -43 -472 -20 -468
+rect 20 -472 43 -468
+rect -43 -504 -28 -472
+rect 28 -504 43 -472
+rect -43 -508 -20 -504
+rect 20 -508 43 -504
+rect -43 -509 43 -508
+<< via1 >>
+rect -20 504 20 508
+rect -20 472 20 504
+rect -20 468 20 472
+rect -108 59 -104 429
+rect -104 59 -72 429
+rect -72 59 -68 429
+rect 68 59 72 429
+rect 72 59 104 429
+rect 104 59 108 429
+rect -20 16 20 20
+rect -20 -16 20 16
+rect -20 -20 20 -16
+rect -108 -429 -104 -59
+rect -104 -429 -72 -59
+rect -72 -429 -68 -59
+rect 68 -429 72 -59
+rect 72 -429 104 -59
+rect 104 -429 108 -59
+rect -20 -472 20 -468
+rect -20 -504 20 -472
+rect -20 -508 20 -504
+<< metal2 >>
+rect -20 508 20 517
+rect -20 459 20 468
+rect -108 429 -68 438
+rect -108 50 -68 59
+rect 68 429 108 438
+rect 68 50 108 59
+rect -20 20 20 29
+rect -20 -29 20 -20
+rect -108 -59 -68 -50
+rect -108 -438 -68 -429
+rect 68 -59 108 -50
+rect 68 -438 108 -429
+rect -20 -468 20 -459
+rect -20 -517 20 -508
+<< labels >>
+rlabel mvpdiffc -88 -244 -88 -244 0 D0
+port 1 nsew
+rlabel mvpdiffc 88 -244 88 -244 0 S0
+port 2 nsew
+rlabel polycont 0 0 0 0 0 G
+port 3 nsew
+rlabel mvpdiffc -88 244 -88 244 0 D1
+port 4 nsew
+rlabel mvpdiffc 88 244 88 244 0 S1
+port 5 nsew
+<< properties >>
+string gencell pfet_06v0
+string library gf180mcu
+string parameters w 2.0 l 0.5 m 2 ng 1 diffcov 100 polycov 100 guard 0 glc 1 grc 1 gtc 1 gbc 1 tbcov 100 rlcov 100 topc 1 botc 1 poverlap 1 doverlap 1 lmin 0.4 wmin 0.15 class mosfet compatible {pfet_05v0 pfet_06v0} full_metal 1 conn_gates 0 gate_ring 0 ccols 1 viasrc 100 viadrn 100 viagate 70 viagb 0 viagr 0 viagl 0 viagt 0 doports 1
+<< end >>

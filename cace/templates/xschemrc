@@ -1,0 +1,3 @@
+# Source the project xschemrc so that the design symbols, the PDK and
+# the ngspice model paths are all found from here.
+source [file dirname [info script]]/../../xschem/xschemrc

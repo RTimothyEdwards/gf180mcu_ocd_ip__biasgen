@@ -1,0 +1,400 @@
+magic
+tech gf180mcuD
+magscale 1 2
+timestamp 1790458259
+<< isosubstrate >>
+rect -392 3211 9184 3594
+<< metal1 >>
+rect -331 3984 9179 4084
+rect -331 3884 -131 3984
+rect 817 3576 1106 3642
+rect 2617 3576 2906 3642
+rect 4417 3576 4706 3642
+rect 6217 3576 6506 3642
+rect 8017 3576 8306 3642
+rect -331 3316 -131 3415
+rect -331 3216 9179 3316
+rect -331 3215 -131 3216
+rect -332 3119 -132 3123
+rect -332 2962 9179 3119
+rect -331 2961 9179 2962
+rect -70 2886 1433 2961
+rect 1730 2886 3233 2961
+rect 3530 2886 5033 2961
+rect 5330 2886 6833 2961
+rect 7130 2886 8633 2961
+rect -323 -40 -123 -37
+rect -23 -40 1383 9
+rect 1777 -40 3183 9
+rect 3577 -40 4983 9
+rect 5377 -40 6783 9
+rect 7177 -40 8583 9
+rect -324 -198 9182 -40
+rect -323 -199 -123 -198
+rect 541 -362 708 -198
+rect 2341 -331 2508 -198
+rect 4141 -331 4308 -198
+rect 5941 -331 6108 -198
+rect 7741 -331 7908 -198
+rect 2341 -362 2509 -331
+rect 4141 -362 4309 -331
+rect 5941 -362 6109 -331
+rect 7741 -362 7909 -331
+rect -149 -1803 51 -1692
+rect -158 -2934 42 -2820
+<< metal2 >>
+rect 997 4134 1069 4334
+rect 1010 2970 1055 4134
+rect 2788 4127 2869 4327
+rect 4596 4136 4669 4336
+rect 6400 4140 6469 4340
+rect 1174 2970 1219 3628
+rect 2810 2970 2855 4127
+rect 2974 2970 3019 3628
+rect 4610 2970 4655 4136
+rect 4774 2970 4819 3628
+rect 6410 2970 6455 4140
+rect 8195 4128 8269 4328
+rect 6574 2970 6619 3628
+rect 8210 2970 8255 4128
+rect 8374 2970 8419 3628
+rect -214 1402 247 1446
+rect -214 -869 -170 1402
+rect 1522 1380 2029 1424
+rect 3356 1380 3776 1424
+rect 5133 1393 5639 1437
+rect 1522 -52 1566 1380
+rect 3356 -43 3400 1380
+rect 128 -96 1566 -52
+rect 1794 -87 3400 -43
+rect 128 -871 172 -96
+rect 1794 -139 1838 -87
+rect 5133 -129 5177 1393
+rect 754 -183 1838 -139
+rect 1962 -173 5177 -129
+rect 6964 1384 7415 1428
+rect 754 -870 798 -183
+rect 1962 -870 2006 -173
+rect 6964 -215 7008 1384
+rect 4325 -259 7008 -215
+rect 4325 -872 4369 -259
+<< metal3 >>
+rect 998 2962 1076 3124
+rect 1157 2978 1233 3124
+rect 1009 2951 1076 2962
+rect 1168 2951 1233 2978
+rect 1009 1948 1057 2951
+rect 893 1900 1057 1948
+rect 893 1744 941 1900
+rect 1168 1757 1216 2951
+rect 2809 1948 2857 3125
+rect 2693 1900 2857 1948
+rect 2693 1731 2741 1900
+rect 2968 1731 3016 3125
+rect 4609 1948 4657 3125
+rect 4493 1900 4657 1948
+rect 4493 1731 4541 1900
+rect 4768 1731 4816 3125
+rect 6409 1948 6457 3125
+rect 6293 1900 6457 1948
+rect 6293 1731 6341 1900
+rect 6568 1731 6616 3125
+rect 8209 1948 8257 3125
+rect 8093 1900 8257 1948
+rect 8093 1731 8141 1900
+rect 8368 1731 8416 3125
+rect 8753 -296 8953 -292
+rect -8 -391 8954 -296
+<< metal4 >>
+rect -392 3935 9184 4085
+rect -392 3211 9184 3361
+rect -394 2737 9180 3124
+rect 1189 276 1435 2737
+rect -394 -217 9180 170
+use bias_pstack  bias_pstack_0
+array 0 7 288 0 0 3881
+timestamp 1774748448
+transform 1 0 954 0 -1 -1709
+box 898 -1502 1500 2379
+use bias_pstack  bias_pstack_1
+array 0 3 288 0 0 3881
+timestamp 1774748448
+transform 1 0 -256 0 -1 -1709
+box 898 -1502 1500 2379
+use bias_pstack  bias_pstack_2
+array 0 1 288 0 0 3881
+timestamp 1774748448
+transform 1 0 -890 0 -1 -1709
+box 898 -1502 1500 2379
+use bias_pstack  bias_pstack_3
+timestamp 1774748448
+transform 1 0 -1236 0 -1 -1709
+box 898 -1502 1500 2379
+use bias_pstack  bias_pstack_4
+array 0 15 288 0 0 3881
+timestamp 1774748448
+transform 1 0 3316 0 -1 -1709
+box 898 -1502 1500 2379
+use level_shift  level_shift_4
+array 0 4 1800 0 0 -2896
+timestamp 1788122513
+transform -1 0 8635 0 -1 923
+box -12 -1978 1519 918
+use gf180mcu_as_sc_mcu7t5v0__diode_2  gf180mcu_as_sc_mcu7t5v0__diode_2_0 gf180mcu_as_sc_mcu7t5v0
+timestamp 1789591744
+transform 1 0 2491 0 1 3272
+box -48 -56 336 834
+use gf180mcu_as_sc_mcu7t5v0__diode_2  gf180mcu_as_sc_mcu7t5v0__diode_2_1
+timestamp 1789591744
+transform 1 0 4291 0 1 3272
+box -48 -56 336 834
+use gf180mcu_as_sc_mcu7t5v0__diode_2  gf180mcu_as_sc_mcu7t5v0__diode_2_2
+timestamp 1789591744
+transform 1 0 6091 0 1 3272
+box -48 -56 336 834
+use gf180mcu_as_sc_mcu7t5v0__diode_2  gf180mcu_as_sc_mcu7t5v0__diode_2_3
+timestamp 1789591744
+transform 1 0 691 0 1 3272
+box -48 -56 336 834
+use gf180mcu_as_sc_mcu7t5v0__diode_2  gf180mcu_as_sc_mcu7t5v0__diode_2_4
+timestamp 1789591744
+transform 1 0 7891 0 1 3272
+box -48 -56 336 834
+use gf180mcu_as_sc_mcu7t5v0__fillcap_4  gf180mcu_as_sc_mcu7t5v0__fillcap_4_0 gf180mcu_as_sc_mcu7t5v0
+timestamp 1789591744
+transform 1 0 3163 0 1 3272
+box -48 -56 432 834
+use gf180mcu_as_sc_mcu7t5v0__fillcap_4  gf180mcu_as_sc_mcu7t5v0__fillcap_4_1
+timestamp 1789591744
+transform 1 0 4963 0 1 3272
+box -48 -56 432 834
+use gf180mcu_as_sc_mcu7t5v0__fillcap_4  gf180mcu_as_sc_mcu7t5v0__fillcap_4_2
+timestamp 1789591744
+transform 1 0 6763 0 1 3272
+box -48 -56 432 834
+use gf180mcu_as_sc_mcu7t5v0__fillcap_4  gf180mcu_as_sc_mcu7t5v0__fillcap_4_3
+timestamp 1789591744
+transform 1 0 1363 0 1 3272
+box -48 -56 432 834
+use gf180mcu_as_sc_mcu7t5v0__fillcap_4  gf180mcu_as_sc_mcu7t5v0__fillcap_4_4
+timestamp 1789591744
+transform 1 0 8563 0 1 3272
+box -48 -56 432 834
+use gf180mcu_as_sc_mcu7t5v0__inv_2  gf180mcu_as_sc_mcu7t5v0__inv_2_0 gf180mcu_as_sc_mcu7t5v0
+timestamp 1789591744
+transform 1 0 2779 0 1 3272
+box -48 -56 432 834
+use gf180mcu_as_sc_mcu7t5v0__inv_2  gf180mcu_as_sc_mcu7t5v0__inv_2_1
+timestamp 1789591744
+transform 1 0 4579 0 1 3272
+box -48 -56 432 834
+use gf180mcu_as_sc_mcu7t5v0__inv_2  gf180mcu_as_sc_mcu7t5v0__inv_2_2
+timestamp 1789591744
+transform 1 0 6379 0 1 3272
+box -48 -56 432 834
+use gf180mcu_as_sc_mcu7t5v0__inv_2  gf180mcu_as_sc_mcu7t5v0__inv_2_3
+timestamp 1789591744
+transform 1 0 979 0 1 3272
+box -48 -56 432 834
+use gf180mcu_as_sc_mcu7t5v0__inv_2  gf180mcu_as_sc_mcu7t5v0__inv_2_4
+timestamp 1789591744
+transform 1 0 8179 0 1 3272
+box -48 -56 432 834
+use via_Y6HC2N  via_Y6HC2N_0 paramcells
+timestamp 1774721386
+transform 1 0 -191 0 1 -808
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_1
+timestamp 1774721386
+transform 1 0 149 0 1 -808
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_2
+timestamp 1774721386
+transform 1 0 774 0 1 -807
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_3
+timestamp 1774721386
+transform 1 0 1984 0 1 -807
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_4
+timestamp 1774721386
+transform 1 0 4345 0 1 -808
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_5
+timestamp 1774721386
+transform 0 1 3032 -1 0 3606
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_6
+timestamp 1774721386
+transform 0 1 2762 -1 0 3608
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_7
+timestamp 1774721386
+transform 0 1 1232 -1 0 3606
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_8
+timestamp 1774721386
+transform 0 1 962 -1 0 3608
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_9
+timestamp 1774721386
+transform 0 1 4832 -1 0 3606
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_10
+timestamp 1774721386
+transform 0 1 4562 -1 0 3608
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_11
+timestamp 1774721386
+transform 0 1 6632 -1 0 3606
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_12
+timestamp 1774721386
+transform 0 1 6362 -1 0 3608
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_13
+timestamp 1774721386
+transform 0 1 8432 -1 0 3606
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_14
+timestamp 1774721386
+transform 0 1 8162 -1 0 3608
+box -29 -70 29 70
+use via_Y6Z2DQ  via_Y6Z2DQ_0 paramcells
+timestamp 1774721386
+transform 0 -1 2836 -1 0 3041
+box -70 -29 70 29
+use via_Y6Z2DQ  via_Y6Z2DQ_1
+timestamp 1774721386
+transform 0 -1 1198 -1 0 3042
+box -70 -29 70 29
+use via_Y6Z2DQ  via_Y6Z2DQ_2
+timestamp 1774721386
+transform 0 -1 1036 -1 0 3041
+box -70 -29 70 29
+use via_Y6Z2DQ  via_Y6Z2DQ_3
+timestamp 1774721386
+transform 0 -1 2998 -1 0 3042
+box -70 -29 70 29
+use via_Y6Z2DQ  via_Y6Z2DQ_4
+timestamp 1774721386
+transform 0 -1 4636 -1 0 3041
+box -70 -29 70 29
+use via_Y6Z2DQ  via_Y6Z2DQ_5
+timestamp 1774721386
+transform 0 -1 4798 -1 0 3042
+box -70 -29 70 29
+use via_Y6Z2DQ  via_Y6Z2DQ_6
+timestamp 1774721386
+transform 0 -1 6436 -1 0 3041
+box -70 -29 70 29
+use via_Y6Z2DQ  via_Y6Z2DQ_7
+timestamp 1774721386
+transform 0 -1 6598 -1 0 3042
+box -70 -29 70 29
+use via_Y6Z2DQ  via_Y6Z2DQ_8
+timestamp 1774721386
+transform 0 -1 8236 -1 0 3041
+box -70 -29 70 29
+use via_Y6Z2DQ  via_Y6Z2DQ_9
+timestamp 1774721386
+transform 0 -1 8398 -1 0 3042
+box -70 -29 70 29
+use via_Z2RFBL  via_Z2RFBL_1 paramcells
+timestamp 1774721386
+transform 0 1 2494 -1 0 83
+box -70 -461 70 461
+use via_Z2RFBL  via_Z2RFBL_2
+timestamp 1774721386
+transform 0 1 4294 -1 0 83
+box -70 -461 70 461
+use via_Z2RFBL  via_Z2RFBL_3
+timestamp 1774721386
+transform 0 1 694 -1 0 83
+box -70 -461 70 461
+use via_Z2RFBL  via_Z2RFBL_4
+timestamp 1774721386
+transform 0 1 6094 -1 0 83
+box -70 -461 70 461
+use via_Z2RFBL  via_Z2RFBL_5
+timestamp 1774721386
+transform 0 1 7894 -1 0 83
+box -70 -461 70 461
+use via_Z2RFBL  via_Z2RFBL_6
+timestamp 1774721386
+transform 0 1 482 -1 0 2832
+box -70 -461 70 461
+use via_Z2RFBL  via_Z2RFBL_7
+timestamp 1774721386
+transform 0 1 2282 -1 0 2832
+box -70 -461 70 461
+use via_Z2RFBL  via_Z2RFBL_8
+timestamp 1774721386
+transform 0 1 4082 -1 0 2832
+box -70 -461 70 461
+use via_Z2RFBL  via_Z2RFBL_9
+timestamp 1774721386
+transform 0 1 5882 -1 0 2832
+box -70 -461 70 461
+use via_Z2RFBL  via_Z2RFBL_10
+timestamp 1774721386
+transform 0 1 7682 -1 0 2832
+box -70 -461 70 461
+use via_Z29PWH  via_Z29PWH_0 paramcells
+timestamp 1774721386
+transform 1 0 1935 0 1 4039
+box -461 -29 461 29
+use via_Z29PWH  via_Z29PWH_1
+timestamp 1774721386
+transform 1 0 1915 0 1 3255
+box -461 -29 461 29
+use via_Z29PWH  via_Z29PWH_2
+timestamp 1774721386
+transform 1 0 5537 0 1 3263
+box -461 -29 461 29
+use via_Z29PWH  via_Z29PWH_3
+timestamp 1774721386
+transform 1 0 3725 0 1 4033
+box -461 -29 461 29
+use via_Z29PWH  via_Z29PWH_4
+timestamp 1774721386
+transform 1 0 3727 0 1 3267
+box -461 -29 461 29
+use via_Z29PWH  via_Z29PWH_5
+timestamp 1774721386
+transform 1 0 5515 0 1 4035
+box -461 -29 461 29
+use via_Z29PWH  via_Z29PWH_6
+timestamp 1774721386
+transform 1 0 7299 0 1 3255
+box -461 -29 461 29
+use via_Z29PWH  via_Z29PWH_7
+timestamp 1774721386
+transform 1 0 7303 0 1 4033
+box -461 -29 461 29
+<< labels >>
+flabel metal1 -149 -1803 51 -1692 0 FreeSans 1120 180 0 0 pcasc
+port 3 nsew
+flabel metal1 -158 -2934 42 -2820 0 FreeSans 1120 180 0 0 pbias
+port 4 nsew
+flabel metal3 8753 -391 8953 -292 0 FreeSans 1120 180 0 0 source_ibias
+port 11 nsew
+flabel metal1 -323 -199 -123 -37 0 FreeSans 1120 180 0 0 avdd
+port 13 nsew
+flabel metal1 -331 3215 -131 3415 0 FreeSans 1120 180 0 0 dvss
+port 1 nsew
+flabel metal1 -331 3884 -131 4084 0 FreeSans 1120 180 0 0 dvdd
+port 0 nsew
+flabel metal1 -332 2962 -132 3123 0 FreeSans 1600 180 0 0 avss
+port 2 nsew
+flabel metal2 4596 4136 4669 4336 0 FreeSans 1120 180 0 0 source_ena[2]
+port 7 nsew
+flabel metal2 2788 4127 2869 4327 0 FreeSans 1120 180 0 0 source_ena[1]
+port 8 nsew
+flabel metal2 6400 4140 6469 4340 0 FreeSans 1120 180 0 0 source_ena[3]
+port 6 nsew
+flabel metal2 997 4134 1069 4334 0 FreeSans 1120 180 0 0 source_ena[0]
+port 9 nsew
+flabel metal2 8195 4128 8269 4328 0 FreeSans 1120 180 0 0 source_ena[4]
+port 5 nsew
+<< end >>

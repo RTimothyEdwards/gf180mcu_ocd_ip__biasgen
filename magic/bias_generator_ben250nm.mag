@@ -1,0 +1,224 @@
+magic
+tech gf180mcuD
+magscale 1 2
+timestamp 1790458259
+<< isosubstrate >>
+rect -2016 3018 1015 3418
+<< metal1 >>
+rect -2013 3789 1015 3889
+rect -2013 3777 -1813 3789
+rect -877 3381 -587 3447
+rect 576 3381 866 3447
+rect -2011 3121 -1811 3127
+rect -2012 3021 1015 3121
+rect -2012 2906 1015 2924
+rect -2013 2766 1015 2906
+rect -1993 2689 988 2766
+rect -1993 2688 -629 2689
+rect -1939 -235 -533 -172
+rect -468 -235 938 -172
+rect -1984 -393 1015 -235
+rect -1859 -2002 -1659 -1878
+rect -1862 -3144 -1662 -3021
+<< metal2 >>
+rect -902 3926 -809 4126
+rect 570 3926 635 4126
+rect -1039 3046 -994 3433
+rect -875 3142 -830 3926
+rect -875 3097 -777 3142
+rect -1039 3001 -914 3046
+rect -959 2782 -914 3001
+rect -822 2783 -777 3097
+rect 414 2994 459 3433
+rect 578 3120 623 3926
+rect 578 3075 725 3120
+rect 414 2949 556 2994
+rect 511 2782 556 2949
+rect 680 2783 725 3075
+rect -1939 -290 -1689 -248
+rect -1939 -1071 -1897 -290
+rect -1592 -1074 -1550 -281
+rect -1249 -932 -1209 -350
+<< metal3 >>
+rect -978 2774 -900 2932
+rect -819 2774 -743 2932
+rect 494 2774 572 2932
+rect 653 2774 729 2932
+rect -951 1707 -903 2774
+rect -1023 1659 -903 1707
+rect -1023 1581 -975 1659
+rect -805 1569 -757 2774
+rect 174 2193 214 2613
+rect 72 2153 214 2193
+rect -579 1243 -414 1291
+rect -1816 -289 -1768 1183
+rect -579 -239 -531 1243
+rect 72 1059 112 2153
+rect 519 1707 567 2774
+rect 447 1659 567 1707
+rect 447 1536 495 1659
+rect 665 1536 713 2774
+rect -1624 -241 -531 -239
+rect -1624 -281 -1613 -241
+rect -1491 -281 -531 -241
+rect -1624 -287 -531 -281
+rect -457 1019 112 1059
+rect -457 -341 -417 1019
+rect -1114 -381 -417 -341
+rect -1948 -528 -1299 -445
+rect -1387 -533 -1299 -528
+rect -1041 -533 1061 -445
+<< metal4 >>
+rect -1978 3740 1015 3890
+rect -1978 3016 1015 3166
+rect -2034 2542 1015 2929
+rect -2034 -412 1015 -25
+use bias_nstack  bias_nstack_0
+array 0 7 288 0 0 -3678
+timestamp 1774748448
+transform 1 0 -2271 0 -1 -1898
+box 1015 -1385 1389 2293
+use bias_nstack  bias_nstack_1
+timestamp 1774748448
+transform 1 0 -2963 0 -1 -1898
+box 1015 -1385 1389 2293
+use bias_nstack  bias_nstack_3
+timestamp 1774748448
+transform 1 0 -2617 0 -1 -1898
+box 1015 -1385 1389 2293
+use level_shift  level_shift_0
+timestamp 1788122513
+transform -1 0 990 0 -1 728
+box -12 -1978 1519 918
+use level_shift  level_shift_4
+timestamp 1788122513
+transform -1 0 -481 0 -1 728
+box -12 -1978 1519 918
+use gf180mcu_as_sc_mcu7t5v0__diode_2  gf180mcu_as_sc_mcu7t5v0__diode_2_0 gf180mcu_as_sc_mcu7t5v0
+timestamp 1789591744
+transform -1 0 942 0 1 3077
+box -48 -56 336 834
+use gf180mcu_as_sc_mcu7t5v0__diode_2  gf180mcu_as_sc_mcu7t5v0__diode_2_4
+timestamp 1789591744
+transform -1 0 -511 0 1 3077
+box -48 -56 336 834
+use gf180mcu_as_sc_mcu7t5v0__fillcap_4  gf180mcu_as_sc_mcu7t5v0__fillcap_4_0 gf180mcu_as_sc_mcu7t5v0
+timestamp 1789591744
+transform -1 0 270 0 1 3077
+box -48 -56 432 834
+use gf180mcu_as_sc_mcu7t5v0__fillcap_4  gf180mcu_as_sc_mcu7t5v0__fillcap_4_2
+timestamp 1789591744
+transform -1 0 -1183 0 1 3077
+box -48 -56 432 834
+use gf180mcu_as_sc_mcu7t5v0__inv_2  gf180mcu_as_sc_mcu7t5v0__inv_2_0 gf180mcu_as_sc_mcu7t5v0
+timestamp 1789591744
+transform -1 0 654 0 1 3077
+box -48 -56 432 834
+use gf180mcu_as_sc_mcu7t5v0__inv_2  gf180mcu_as_sc_mcu7t5v0__inv_2_4
+timestamp 1789591744
+transform -1 0 -799 0 1 3077
+box -48 -56 432 834
+use via_Y6HC2N  via_Y6HC2N_0 paramcells
+timestamp 1774721386
+transform 1 0 -1918 0 1 -1000
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_1
+timestamp 1774721386
+transform 1 0 -1572 0 1 -1002
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_2
+timestamp 1774721386
+transform 1 0 -1229 0 1 -1002
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_3
+timestamp 1774721386
+transform 0 -1 671 -1 0 3413
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_4
+timestamp 1774721386
+transform 0 -1 401 -1 0 3411
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_5
+timestamp 1774721386
+transform 0 1 -1179 -1 0 -556
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_13
+timestamp 1774721386
+transform 0 -1 -1052 -1 0 3411
+box -29 -70 29 70
+use via_Y6HC2N  via_Y6HC2N_14
+timestamp 1774721386
+transform 0 -1 -782 -1 0 3413
+box -29 -70 29 70
+use via_Y6Z2DQ  via_Y6Z2DQ_0 paramcells
+timestamp 1774721386
+transform 0 1 -930 -1 0 2853
+box -70 -29 70 29
+use via_Y6Z2DQ  via_Y6Z2DQ_1
+timestamp 1774721386
+transform 0 1 -784 -1 0 2853
+box -70 -29 70 29
+use via_Y6Z2DQ  via_Y6Z2DQ_2
+timestamp 1774721386
+transform 0 1 540 -1 0 2853
+box -70 -29 70 29
+use via_Y6Z2DQ  via_Y6Z2DQ_3
+timestamp 1774721386
+transform 0 1 686 -1 0 2853
+box -70 -29 70 29
+use via_Y6Z2DQ  via_Y6Z2DQ_4
+timestamp 1774721386
+transform -1 0 -1552 0 -1 -261
+box -70 -29 70 29
+use via_Y6Z2DQ  via_Y6Z2DQ_5
+timestamp 1774721386
+transform -1 0 -1736 0 -1 -269
+box -70 -29 70 29
+use via_Y6Z2DQ  via_Y6Z2DQ_6
+timestamp 1774721386
+transform -1 0 -1184 0 -1 -361
+box -70 -29 70 29
+use via_Z2RFBL  via_Z2RFBL_0 paramcells
+timestamp 1774721386
+transform 0 1 -1214 1 0 -101
+box -70 -461 70 461
+use via_Z2RFBL  via_Z2RFBL_1
+timestamp 1774721386
+transform 0 1 -1484 1 0 2629
+box -70 -461 70 461
+use via_Z2RFBL  via_Z2RFBL_2
+timestamp 1774721386
+transform 0 1 256 1 0 -101
+box -70 -461 70 461
+use via_Z2RFBL  via_Z2RFBL_4
+timestamp 1774721386
+transform 0 1 -34 1 0 2629
+box -70 -461 70 461
+use via_Z29PWH  via_Z29PWH_0 paramcells
+timestamp 1774721386
+transform -1 0 -278 0 1 3080
+box -461 -29 461 29
+use via_Z29PWH  via_Z29PWH_6
+timestamp 1774721386
+transform -1 0 -280 0 1 3842
+box -461 -29 461 29
+<< labels >>
+flabel metal1 -1859 -2002 -1659 -1878 0 FreeSans 1600 180 0 0 ncasc
+port 20 nsew
+flabel metal1 -1862 -3144 -1662 -3021 0 FreeSans 1600 180 0 0 nbias
+port 12 nsew
+flabel metal3 -1948 -528 -1748 -445 0 FreeSans 1120 180 0 0 sink_ibias
+port 19 nsew
+flabel metal1 -2011 3021 -1811 3127 0 FreeSans 1600 180 0 0 dvss
+port 1 nsew
+flabel metal1 -2013 3777 -1813 3889 0 FreeSans 1600 180 0 0 dvdd
+port 0 nsew
+flabel metal1 -2013 2766 -1813 2906 0 FreeSans 1600 180 0 0 avss
+port 2 nsew
+flabel metal1 -1984 -393 -1784 -254 0 FreeSans 1600 180 0 0 avdd
+port 13 nsew
+flabel metal2 570 3926 635 4126 0 FreeSans 1120 0 0 0 sink_ena[1]
+port 17 nsew
+flabel metal2 -902 3950 -809 4126 0 FreeSans 1120 180 0 0 sink_ena[0]
+port 18 nsew
+<< end >>

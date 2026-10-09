@@ -1,0 +1,88 @@
+magic
+tech gf180mcuD
+magscale 1 2
+timestamp 1774397579
+<< error_p >>
+rect -23 115 23 173
+rect -23 -173 23 -115
+<< hvnmos >>
+rect -45 -100 45 100
+<< mvndiff >>
+rect -113 86 -45 100
+rect -113 -86 -99 86
+rect -67 -86 -45 86
+rect -113 -100 -45 -86
+rect 45 86 113 100
+rect 45 -86 67 86
+rect 99 -86 113 86
+rect 45 -100 113 -86
+<< mvndiffc >>
+rect -99 -86 -67 86
+rect 67 -86 99 86
+<< poly >>
+rect -45 160 45 174
+rect -45 128 -23 160
+rect 23 128 45 160
+rect -45 100 45 128
+rect -45 -128 45 -100
+rect -45 -160 -23 -128
+rect 23 -160 45 -128
+rect -45 -174 45 -160
+<< polycont >>
+rect -23 128 23 160
+rect -23 -160 23 -128
+<< metal1 >>
+rect -43 164 43 165
+rect -43 124 -23 164
+rect 23 124 43 164
+rect -43 123 43 124
+rect -113 85 -99 86
+rect -67 85 -53 86
+rect -113 -85 -103 85
+rect -63 -85 -53 85
+rect -113 -86 -99 -85
+rect -67 -86 -53 -85
+rect 53 85 67 86
+rect 99 85 113 86
+rect 53 -85 63 85
+rect 103 -85 113 85
+rect 53 -86 67 -85
+rect 99 -86 113 -85
+rect -43 -124 43 -123
+rect -43 -164 -23 -124
+rect 23 -164 43 -124
+rect -43 -165 43 -164
+<< via1 >>
+rect -23 160 23 164
+rect -23 128 23 160
+rect -23 124 23 128
+rect -103 -85 -99 85
+rect -99 -85 -67 85
+rect -67 -85 -63 85
+rect 63 -85 67 85
+rect 67 -85 99 85
+rect 99 -85 103 85
+rect -23 -128 23 -124
+rect -23 -160 23 -128
+rect -23 -164 23 -160
+<< metal2 >>
+rect -23 164 23 173
+rect -23 115 23 124
+rect -103 85 -63 94
+rect -103 -94 -63 -85
+rect 63 85 103 94
+rect 63 -94 103 -85
+rect -23 -124 23 -115
+rect -23 -173 23 -164
+<< labels >>
+rlabel mvndiffc -83 0 -83 0 0 D
+port 1 nsew
+rlabel mvndiffc 83 0 83 0 0 S
+port 2 nsew
+rlabel polycont 0 144 0 144 0 G
+port 3 nsew
+<< properties >>
+string gencell nfet_06v0
+string library gf180mcu
+string parameters w 1.0 l 0.45 m 1 ng 1 diffcov 100 polycov 100 guard 0 glc 1 grc 1 gtc 1 gbc 1 tbcov 100 rlcov 100 topc 1 botc 1 poverlap 0 doverlap 1 lmin 0.45 wmin 0.15 class mosfet compatible {nfet_05v0 nfet_06v0} full_metal 1 conn_gates 0 gate_ring 0 doports 1 viasrc 100 viadrn 100 viagate 100 ccols 1 viagb 0 viagr 0 viagl 0 viagt 0
+<< end >>
