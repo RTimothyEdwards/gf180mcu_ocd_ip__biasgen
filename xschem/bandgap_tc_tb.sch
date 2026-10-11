@@ -38,8 +38,11 @@ meas dc vbgmin_m40to125 min v(vbg) from=-40 to=125
 meas dc vbgmin_m0to85 min v(vbg) from=0 to=85
 meas dc vbgmax_m0to85 max v(vbg) from=0 to=85
 **
-let tempco_m40_125_ppmC=1e6*(vbgmax_m40to125 - vbgmin_m40to125)/165/3.35
-let tempco_m0_85_ppmC=1e6*(vbgmax_m0to85 - vbgmin_m0to85)/85/3.35
+*** The 1.25 here became 3.3-something in the port:  porting.txt maps
+*** 1.2 -> 3.3 with no word boundary, so it fired inside the literal.
+*** Divide by the measured output instead -- nothing left to damage.
+let tempco_m40_125_ppmC=1e6*(vbgmax_m40to125 - vbgmin_m40to125)/165/vbg_27
+let tempco_m0_85_ppmC=1e6*(vbgmax_m0to85 - vbgmin_m0to85)/85/vbg_27
 **
 print tempco_m40_125_ppmC
 print tempco_m0_85_ppmC

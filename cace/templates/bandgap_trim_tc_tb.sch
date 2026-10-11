@@ -38,8 +38,21 @@ meas dc vbg_27 find v(vbg) at=27
 meas dc vbg_m40 find v(vbg) at=-40
 meas dc vbg_125 find v(vbg) at=125
 **
-let tempco_m40_125_ppmC=1e6*(vbgmax_m40to125 - vbgmin_m40to125)/165/3.35
-let tempco_m0_85_ppmC=1e6*(vbgmax_m0to85 - vbgmin_m0to85)/85/3.35
+*** The denominator is the MEASURED output, not a constant.  It used to
+*** be a literal 1.25 (the IHP bandgap nominal), and the port rewrote it
+*** to 3.3-something -- porting.txt maps 1.2 -> 3.3 with no word
+*** boundary, so the rule fired inside the number.  That understated
+*** every tempco here by 2.6x, and it was invisible because the result
+*** is still a plausible-looking number.  Dividing by vbg_27, measured
+*** eight lines up, leaves nothing for a substitution to damage and
+*** self-normalises per corner.
+***
+*** NO 1e6 SCALING EITHER:  the value goes out in base units and CACE
+*** applies the prefix from the parameter unit: field.  Pre-scaling here
+*** AND declaring unit: ppm/C scales it twice -- that is what turned
+*** 118 ppm/C into 118417000 ppm/C in the summary table.
+let tempco_m40_125_ppmC=(vbgmax_m40to125 - vbgmin_m40to125)/165/vbg_27
+let tempco_m0_85_ppmC=(vbgmax_m0to85 - vbgmin_m0to85)/85/vbg_27
 ***
 *** SIGNED slope, which the min/max tempco above cannot give.
 *** Too much CTAT (low trim) makes this negative, too much PTAT
@@ -47,7 +60,8 @@ let tempco_m0_85_ppmC=1e6*(vbgmax_m0to85 - vbgmin_m0to85)/85/3.35
 *** trim=16 proves the flat point lies inside the trim range.
 *** That is the bracket test, and it needs no search and no
 *** assumption about what the output voltage ought to be.
-let vslope_mV=1e3*(vbg_125 - vbg_m40)
+*** Volts, not millivolts:  unit: mV in the datasheet does the scaling.
+let vslope_mV=(vbg_125 - vbg_m40)
 **
 print tempco_m40_125_ppmC
 print tempco_m0_85_ppmC
@@ -69,6 +83,28 @@ C {devices/code_shown.sym} -380 550 0 0 {name=s2 only_toplevel=false value="*** 
 *** There is also no separate hv/lv MOS library here;  the one MOS
 *** section covers both the 3.3 V and 5.0 V devices.
 .include CACE\{PDK_ROOT\}/CACE\{PDK\}/libs.tech/ngspice/design.ngspice
+
+*** MONTE CARLO SWITCHES.  design.ngspice sets both to 0, so these must
+*** be re-declared AFTER it is included;  a later .param wins.  They
+*** are given inline defaults of 0 below, so the corner parameters are
+*** unaffected -- verified by checking that the result does not move
+*** with the seed when both are 0.
+***
+***   sw_stat_global    inter-die process variation
+***   sw_stat_mismatch  intra-die device-to-device mismatch
+***
+*** Kept as two conditions rather than one because for this circuit they
+*** differ by more than an order of magnitude.
+.param sw_stat_global=CACE\{mc_global=0\}
+.param sw_stat_mismatch=CACE\{mc_mismatch=0\}
+
+*** The seed must advance with the iteration or every MC sample is
+*** identical.  The iteration count defaults to 0 for non-MC runs.
+*** NOTE: prose in this block must contain no braces and no CACE
+*** token syntax.  An unescaped brace breaks xschem's record parsing
+*** (it reports SKIP RECORD and the netlist comes out truncated), and
+*** an escaped one would be substituted by CACE as if it were real.
+.option SEED=CACE[CACE\{seed=12345\} + CACE\{iterations=0\}]
 .lib CACE\{PDK_ROOT\}/CACE\{PDK\}/libs.tech/ngspice/sm141064.ngspice CACE\{corner\}
 .lib CACE\{PDK_ROOT\}/CACE\{PDK\}/libs.tech/ngspice/sm141064.ngspice bjt_CACE\{corner_pnp\}
 .lib CACE\{PDK_ROOT\}/CACE\{PDK\}/libs.tech/ngspice/sm141064.ngspice diode_CACE\{corner_dio\}

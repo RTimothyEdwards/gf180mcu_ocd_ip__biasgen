@@ -476,7 +476,7 @@ model=nfet_05v0
 spiceprefix=X
 }
 C {gf180mcu_fd_pr/pfet_05v0.sym} -100 -330 0 1 {name=M11
-L=4.0u
+L=0.5u
 W=1.0u
 nf=1
 m=4
@@ -491,9 +491,9 @@ spiceprefix=X
 }
 C {gf180mcu_fd_pr/pfet_05v0.sym} 110 -390 0 0 {name=M3
 L=0.5u
-W=0.5u
+W=1.0u
 nf=1
-m=4
+m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
 as="'int((nf+2)/2) * W/nf * 0.18u'"

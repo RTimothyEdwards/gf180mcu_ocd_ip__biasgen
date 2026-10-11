@@ -306,40 +306,34 @@ parameters:
       vb2_2x:
         display: ibias1u_2 at 2x bias
         description: >
-          FAILS AT 3.3 V WITH THE 05v0 AMPLIFIERS, and this is the one
-          thing the device change cost.  The node sits two series
-          diode-connected pFETs below vdd, and the 05v0 threshold raised
-          each of them:  measured against the 03v3 version the node
-          dropped a uniform 0.33 V at every corner and both supplies.
-          At 5 V that is irrelevant -- 1.98 to 2.66 V of margin.  At
-          3.3 V in the ss corner it is 0.486 V at NOMINAL current and
-          0.283 V at twice it, so the stack is compressed at the
-          operating point, not merely out of trim range.
-          Scaling both pFET mirror families in se_folded_cascode_p_5v by
-          4 (XM22/XM23/XM25 1.0 -> 4.0 um, XM1/XM30/XM31 2.0 -> 8.0 um)
-          restores it to 0.745 V nominal and 0.625 V at 2x, clearing the
-          floor.  That is not free:  XM30 and XM31 are the folding
-          devices in the signal path, so their gm and the compensation
-          move with it.
+          RESOLVED.  This node sits two series diode-connected pFETs
+          below vdd, and moving to 05v0 raised both thresholds:  the
+          node dropped a uniform 0.33 V against the 03v3 version at
+          every corner, which put it below the floor at 3.3 V in the
+          slow corner at nominal current, not merely out of trim range.
+          Fixed by shortening the bias mirror family in
+          se_folded_cascode_p_5v from L=4.0 to L=0.5 um, all three
+          members together so the ratio is preserved.  0.844 V nominal
+          and 0.713 V at 2x, against 0.486 / 0.283 before.  PSRR,
+          output impedance, drive, noise and settling are unchanged --
+          the cascode's output impedance survives because the devices
+          below it, on gate 'mirr', are still L=4.0.
         unit: V
         minimum:
           value: 0.6
       vb3_2x:
         display: class-AB bias at 2x bias
         description: >
-          Same mechanism as vb2_2x and slightly worse, because the lower
-          of its two series diodes is W=1.0 um rather than 2.0 um:
-          0.385 V nominal and 0.136 V at 2x, in the ss corner at 3.3 V.
-          At 5 V it has 1.84 to 2.54 V of margin.
-          HERE THERE IS A FREE FIX:  in se_folded_cascode_np_ab_5v
-          nothing mirrors off the bias node -- XM11 is the only device
-          with its gate there, so it is a pure series diode and its
-          width changes no ratio.  Widening XM11 from 1.0 to 8.0 um
-          gives 0.614 V nominal, clearing the floor;  16.0 um gives
-          0.661 V.  Neither clears the 2x point (0.456 and 0.513 V),
-          because the recovery is logarithmic in width.
-          So the nominal operating point can be made legal at 3.3 V for
-          nothing;  the 2x stress margin cannot.
+          RESOLVED, same mechanism as vb2_2x.  In
+          se_folded_cascode_np_ab_5v nothing mirrors off the bias node
+          -- one device has its gate there, so it is a pure series diode
+          and its geometry changes no ratio.  Shortening it from L=4.0
+          to L=0.5 um gives 0.783 V nominal and 0.638 V at 2x, against
+          0.385 / 0.136 before.
+          NOTE the 2x point has only 38 mV of margin.  That device is
+          W=1.0 L=0.5 m=1, so W/L is 2;  m=4 would make it 8 and costs
+          nothing, since no ratio depends on it.  Worth having if the
+          bias is ever trimmed above 2x nominal.
         unit: V
         minimum:
           value: 0.6
@@ -792,4 +786,72 @@ parameters:
       Ibias2:
         typical: 0
       Ibias3:
+        typical: 0
+
+  # -------------------------------------------------------------------
+  # MONTE CARLO.
+  #
+  # Mismatch is the reason this parameter exists.  Shortening the bias
+  # mirror family from L=4.0 to L=0.5 um to recover headroom took its
+  # W*L from 8 to 1 um^2, and sigma_Vth goes as 1/sqrt(W*L), so that
+  # trade cost about a factor of 2.8 in mirror matching.  No corner run
+  # can see it:  sw_stat_mismatch is 0 in every corner section, so the
+  # whole corner sweep is mismatch-free.
+  #
+  # One histogram per parameter.  Two plot entries under one parameter
+  # makes CACE abort after the iterations have already run.
+  # -------------------------------------------------------------------
+  voltgen_accuracy_mc:
+    display: Monte Carlo output accuracy
+    description: >
+      Output error spread at the nominal supply and a mid-range code,
+      with both statistical switches on.  The quantity of interest is
+      the sigma, not the pass/fail:  the limits below are the corner
+      limits, and a mismatch distribution is expected to be wider.
+    unit: V
+    spec:
+      err_V:
+        display: Output error
+        unit: mV
+        minimum:
+          value: -150
+        maximum:
+          value: 50
+    tool:
+      ngspice:
+        template: voltgen_dc_tb.sch
+        collate: iterations
+        format: ascii
+        suffix: .data
+        variables: [vout_V, err_V, linereg_VperV]
+    plot:
+      voltgen_mc_err:
+        type: histogram
+        xaxis: err_V
+        limits: auto
+    conditions:
+      iterations:
+        display: Iterations
+        description: Monte Carlo sample count
+        minimum: 1
+        maximum: 50
+        step: linear
+        stepsize: 1
+      corner:
+        typical: statistical
+      corner_res:
+        typical: statistical
+      corner_cap:
+        typical: statistical
+      mc_global:
+        display: Global variation
+        typical: 1
+      mc_mismatch:
+        display: Mismatch
+        typical: 1
+      Vdd:
+        typical: 5.0
+      s:
+        typical: 3
+      high:
         typical: 0

@@ -14,7 +14,8 @@
 ## Pins
 
 - vdd
-  + Description: 5.0 V analog supply
+  + Description: 3.3 V analog supply.  The bandgap core and its output buffer are built from 3.3 V devices.  Only the voltage bias generator downstream of it may run from a 5 V rail.
+
   + Direction: inout
   + Type: power
   + Vmin: 3.0
@@ -27,8 +28,8 @@
   + Description: 3.3 V digital supply;  the trim bits and ena are in this domain
   + Direction: inout
   + Type: power
-  + Vmin: 1.08
-  + Vmax: 1.32
+  + Vmin: 3.0
+  + Vmax: 3.6
 - dvss
   + Description: Digital ground
   + Direction: inout

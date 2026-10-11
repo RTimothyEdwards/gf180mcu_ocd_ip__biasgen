@@ -32,6 +32,31 @@ C {devices/code_shown.sym} -400 40 0 0 {name=s1 only_toplevel=false value=".opti
 *** Keep that in mind when reading a corner sweep that looks suspiciously
 *** flat:  it is the PDK, not the circuit.
 .include CACE\{PDK_ROOT\}/CACE\{PDK\}/libs.tech/ngspice/design.ngspice
+
+*** MONTE CARLO SWITCHES.  design.ngspice sets both of these to 0, so
+*** they have to be re-declared AFTER it is included;  a later .param
+*** wins.  They are given inline defaults of 0 in the lines below, so
+*** every corner parameter is unaffected and only the MC parameters turn
+*** them on.  Verified: with both at 0 the result does not move when the
+*** seed changes.
+***
+***   sw_stat_global    inter-die process variation
+***   sw_stat_mismatch  intra-die device-to-device mismatch
+***
+*** The PDK calls both=1 the realistic setting.  They are separate
+*** conditions because for this circuit they differ by more than an
+*** order of magnitude, and knowing which one dominates is the whole
+*** point of running it.
+.param sw_stat_global=CACE\{mc_global=0\}
+.param sw_stat_mismatch=CACE\{mc_mismatch=0\}
+
+*** The seed must advance with the iteration or every MC sample is
+*** identical.  The iteration count defaults to 0 for non-MC runs.
+*** NOTE: prose in this block must contain no braces and no CACE
+*** token syntax.  An unescaped brace breaks xschem's record parsing
+*** (it reports SKIP RECORD and the netlist comes out truncated), and
+*** an escaped one would be substituted by CACE as if it were real.
+.option SEED=CACE[CACE\{seed=12345\} + CACE\{iterations=0\}]
 .lib CACE\{PDK_ROOT\}/CACE\{PDK\}/libs.tech/ngspice/sm141064.ngspice CACE\{corner\}
 .lib CACE\{PDK_ROOT\}/CACE\{PDK\}/libs.tech/ngspice/sm141064.ngspice diode_CACE\{corner_dio\}
 .lib CACE\{PDK_ROOT\}/CACE\{PDK\}/libs.tech/ngspice/sm141064.ngspice res_CACE\{corner_res\}
