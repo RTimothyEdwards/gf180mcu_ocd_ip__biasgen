@@ -10,7 +10,7 @@ PROJECT=gf180mcu_ocd_ip__voltgen
 echo "Running GDS and LEF generation on ${project}"
 magic -dnull -noconsole -rcfile ${PDK_ROOT}/${PDK}/libs.tech/magic/${PDK}.magicrc << EOF
 # Read the standard cells from foundry GDS
-gds read ${PDK_ROOT}/${PDK}/libs.ref/gf180mcu_as_sc_mcu7t5v0/gds/gf180mcu_as_sc_mcu7t5v0.gds 
+gds read ${PDK_ROOT}/${PDK}/libs.ref/gf180mcu_as_sc_mcu7t3v3/gds/gf180mcu_as_sc_mcu7t3v3.gds 
 load ${PROJECT}
 select top cell
 expand

@@ -53,7 +53,7 @@ C {devices/code_shown.sym} -380 550 0 0 {name=s2 only_toplevel=false value=".lib
 .lib CACE\{PDK_ROOT\}/CACE\{PDK\}/libs.tech/ngspice/models/cornerRES.lib res_CACE\{corner_res\}
 .lib CACE\{PDK_ROOT\}/CACE\{PDK\}/libs.tech/ngspice/models/cornerCAP.lib cap_CACE\{corner_cap\}
 
-.include CACE\{PDK_ROOT\}/CACE\{PDK\}/libs.ref/gf180mcu_as_sc_mcu7t5v0/spice/gf180mcu_as_sc_mcu7t5v0.spice
+.include CACE\{PDK_ROOT\}/CACE\{PDK\}/libs.ref/gf180mcu_as_sc_mcu7t3v3/spice/gf180mcu_as_sc_mcu7t3v3.spice
 
 *** The DUT.  CACE netlists it separately (schematic, layout, pex
 *** or rcx, per --source) and only copies the SYMBOL into the run

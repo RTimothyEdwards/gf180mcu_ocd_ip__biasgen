@@ -12,7 +12,7 @@ export NETGEN_COLUMNS=75
 cat > netgen.tcl << EOF
 # Tcl script for project ${project} LVS
 set circuit1 [readnet spice ../netlist/layout/${project}.spice]
-set circuit2 [readnet spice ${PDK_ROOT}/${PDK}/libs.ref/gf180mcu_as_sc_mcu7t5v0/spice/gf180mcu_as_sc_mcu7t5v0.spice]
+set circuit2 [readnet spice ${PDK_ROOT}/${PDK}/libs.ref/gf180mcu_as_sc_mcu7t3v3/spice/gf180mcu_as_sc_mcu7t3v3.spice]
 readnet ../netlist/schematic/${project}.spice \$circuit2
 lvs "\$circuit1 ${project}" "\$circuit2 ${project}" \
 ${PDK_ROOT}/${PDK}/libs.tech/netgen/${PDK}_setup.tcl \

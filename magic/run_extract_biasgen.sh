@@ -9,7 +9,7 @@ project=gf180mcu_ocd_ip__biasgen
 
 echo "Running netlist extraction on $project"
 magic -dnull -noconsole -rcfile ${PDK_ROOT}/${PDK}/libs.tech/magic/${PDK}.magicrc << EOF
-addpath ../../../magic/gf180mcu_as_sc_mcu7t5v0
+addpath ../../../magic/gf180mcu_as_sc_mcu7t3v3
 load $project
 select top cell
 extract path extfiles
