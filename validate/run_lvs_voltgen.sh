@@ -3,7 +3,7 @@
 # Run LVS on the bandgap
 #
 export PDK_ROOT=${PDK_ROOT:-/usr/share/pdk}
-export PDK_ROOT=${PDK:-gf180mcuD}
+export PDK=${PDK:-gf180mcuD}
 
 project=gf180mcu_ocd_ip__voltgen
 

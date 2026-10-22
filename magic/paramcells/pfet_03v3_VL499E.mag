@@ -1,0 +1,436 @@
+magic
+tech gf180mcuD
+timestamp 1792525705
+<< error_p >>
+rect -22 100 -21 104
+rect 12 100 13 104
+rect -29 94 -27 96
+rect -31 86 -27 94
+rect 27 94 29 96
+rect 27 86 31 94
+rect -22 48 -21 53
+rect 12 48 13 53
+rect -22 -2 -21 2
+rect 12 -2 13 2
+rect -22 -53 -21 -48
+rect 12 -53 13 -48
+rect -22 -104 -21 -100
+rect 12 -104 13 -100
+<< nwell >>
+rect -39 -114 39 114
+<< pmos >>
+rect -22 56 -12 96
+rect 12 56 22 96
+rect -22 5 -12 45
+rect 12 5 22 45
+rect -22 -45 -12 -5
+rect 12 -45 22 -5
+rect -22 -96 -12 -56
+rect 12 -96 22 -56
+<< pdiff >>
+rect -29 94 -22 96
+rect -31 93 -22 94
+rect -31 60 -29 93
+rect -25 60 -22 93
+rect -31 58 -22 60
+rect -29 56 -22 58
+rect -12 94 -4 96
+rect 4 94 12 96
+rect -12 93 -3 94
+rect -12 60 -9 93
+rect -4 60 -3 93
+rect -12 58 -3 60
+rect 3 93 12 94
+rect 3 60 4 93
+rect 9 60 12 93
+rect 3 58 12 60
+rect -12 56 -4 58
+rect 4 56 12 58
+rect 22 94 29 96
+rect 22 93 31 94
+rect 22 60 25 93
+rect 29 60 31 93
+rect 22 58 31 60
+rect 22 56 29 58
+rect -29 43 -22 45
+rect -31 42 -22 43
+rect -31 8 -29 42
+rect -25 8 -22 42
+rect -31 7 -22 8
+rect -29 5 -22 7
+rect -12 43 -4 45
+rect 4 43 12 45
+rect -12 42 -3 43
+rect -12 8 -9 42
+rect -4 8 -3 42
+rect -12 7 -3 8
+rect 3 42 12 43
+rect 3 8 4 42
+rect 9 8 12 42
+rect 3 7 12 8
+rect -12 5 -4 7
+rect 4 5 12 7
+rect 22 43 29 45
+rect 22 42 31 43
+rect 22 8 25 42
+rect 29 8 31 42
+rect 22 7 31 8
+rect 22 5 29 7
+rect -29 -7 -22 -5
+rect -31 -8 -22 -7
+rect -31 -42 -29 -8
+rect -25 -42 -22 -8
+rect -31 -43 -22 -42
+rect -29 -45 -22 -43
+rect -12 -7 -4 -5
+rect 4 -7 12 -5
+rect -12 -8 -3 -7
+rect -12 -42 -9 -8
+rect -4 -42 -3 -8
+rect -12 -43 -3 -42
+rect 3 -8 12 -7
+rect 3 -42 4 -8
+rect 9 -42 12 -8
+rect 3 -43 12 -42
+rect -12 -45 -4 -43
+rect 4 -45 12 -43
+rect 22 -7 29 -5
+rect 22 -8 31 -7
+rect 22 -42 25 -8
+rect 29 -42 31 -8
+rect 22 -43 31 -42
+rect 22 -45 29 -43
+rect -29 -58 -22 -56
+rect -31 -60 -22 -58
+rect -31 -93 -29 -60
+rect -25 -93 -22 -60
+rect -31 -94 -22 -93
+rect -29 -96 -22 -94
+rect -12 -58 -4 -56
+rect 4 -58 12 -56
+rect -12 -60 -3 -58
+rect -12 -93 -9 -60
+rect -4 -93 -3 -60
+rect -12 -94 -3 -93
+rect 3 -60 12 -58
+rect 3 -93 4 -60
+rect 9 -93 12 -60
+rect 3 -94 12 -93
+rect -12 -96 -4 -94
+rect 4 -96 12 -94
+rect 22 -58 29 -56
+rect 22 -60 31 -58
+rect 22 -93 25 -60
+rect 29 -93 31 -60
+rect 22 -94 31 -93
+rect 22 -96 29 -94
+<< pdiffc >>
+rect -29 60 -25 93
+rect -9 60 -4 93
+rect 4 60 9 93
+rect 25 60 29 93
+rect -29 8 -25 42
+rect -9 8 -4 42
+rect 4 8 9 42
+rect 25 8 29 42
+rect -29 -42 -25 -8
+rect -9 -42 -4 -8
+rect 4 -42 9 -8
+rect 25 -42 29 -8
+rect -29 -93 -25 -60
+rect -9 -93 -4 -60
+rect 4 -93 9 -60
+rect 25 -93 29 -60
+<< polysilicon >>
+rect -22 104 -12 106
+rect -22 100 -21 104
+rect -13 100 -12 104
+rect -22 96 -12 100
+rect 12 104 22 106
+rect 12 100 13 104
+rect 21 100 22 104
+rect 12 96 22 100
+rect -22 53 -12 56
+rect -22 48 -21 53
+rect -13 48 -12 53
+rect -22 45 -12 48
+rect 12 53 22 56
+rect 12 48 13 53
+rect 21 48 22 53
+rect 12 45 22 48
+rect -22 2 -12 5
+rect -22 -2 -21 2
+rect -13 -2 -12 2
+rect -22 -5 -12 -2
+rect 12 2 22 5
+rect 12 -2 13 2
+rect 21 -2 22 2
+rect 12 -5 22 -2
+rect -22 -48 -12 -45
+rect -22 -53 -21 -48
+rect -13 -53 -12 -48
+rect -22 -56 -12 -53
+rect 12 -48 22 -45
+rect 12 -53 13 -48
+rect 21 -53 22 -48
+rect 12 -56 22 -53
+rect -22 -100 -12 -96
+rect -22 -104 -21 -100
+rect -13 -104 -12 -100
+rect -22 -106 -12 -104
+rect 12 -100 22 -96
+rect 12 -104 13 -100
+rect 21 -104 22 -100
+rect 12 -106 22 -104
+<< polycontact >>
+rect -21 100 -13 104
+rect 13 100 21 104
+rect -21 48 -13 53
+rect 13 48 21 53
+rect -21 -2 -13 2
+rect 13 -2 21 2
+rect -21 -53 -13 -48
+rect 13 -53 21 -48
+rect -21 -104 -13 -100
+rect 13 -104 21 -100
+<< metal1 >>
+rect -22 100 -21 104
+rect -13 100 -12 104
+rect 12 100 13 104
+rect 21 100 22 104
+rect -29 93 -25 94
+rect -9 93 -4 94
+rect 4 93 9 94
+rect 25 93 29 94
+rect -31 60 -30 93
+rect -25 60 -23 93
+rect -11 60 -9 93
+rect -4 60 -3 93
+rect 3 60 4 93
+rect 9 60 11 93
+rect 23 60 25 93
+rect 30 60 31 93
+rect -29 58 -25 60
+rect -9 58 -4 60
+rect 4 58 9 60
+rect 25 58 29 60
+rect -22 48 -21 53
+rect -13 48 -12 53
+rect 12 48 13 53
+rect 21 48 22 53
+rect -29 42 -25 43
+rect -9 42 -4 43
+rect 4 42 9 43
+rect 25 42 29 43
+rect -31 8 -30 42
+rect -25 8 -23 42
+rect -11 8 -9 42
+rect -4 8 -3 42
+rect 3 8 4 42
+rect 9 8 11 42
+rect 23 8 25 42
+rect 30 8 31 42
+rect -29 7 -25 8
+rect -9 7 -4 8
+rect 4 7 9 8
+rect 25 7 29 8
+rect -22 -2 -21 2
+rect -13 -2 -12 2
+rect 12 -2 13 2
+rect 21 -2 22 2
+rect -29 -8 -25 -7
+rect -9 -8 -4 -7
+rect 4 -8 9 -7
+rect 25 -8 29 -7
+rect -31 -42 -30 -8
+rect -25 -42 -23 -8
+rect -11 -42 -9 -8
+rect -4 -42 -3 -8
+rect 3 -42 4 -8
+rect 9 -42 11 -8
+rect 23 -42 25 -8
+rect 30 -42 31 -8
+rect -29 -43 -25 -42
+rect -9 -43 -4 -42
+rect 4 -43 9 -42
+rect 25 -43 29 -42
+rect -22 -53 -21 -48
+rect -13 -53 -12 -48
+rect 12 -53 13 -48
+rect 21 -53 22 -48
+rect -29 -60 -25 -58
+rect -9 -60 -4 -58
+rect 4 -60 9 -58
+rect 25 -60 29 -58
+rect -31 -93 -30 -60
+rect -25 -93 -23 -60
+rect -11 -93 -9 -60
+rect -4 -93 -3 -60
+rect 3 -93 4 -60
+rect 9 -93 11 -60
+rect 23 -93 25 -60
+rect 30 -93 31 -60
+rect -29 -94 -25 -93
+rect -9 -94 -4 -93
+rect 4 -94 9 -93
+rect 25 -94 29 -93
+rect -22 -104 -21 -100
+rect -13 -104 -12 -100
+rect 12 -104 13 -100
+rect 21 -104 22 -100
+<< via1 >>
+rect -30 60 -29 93
+rect -29 60 -25 93
+rect -25 60 -25 93
+rect -9 60 -9 93
+rect -9 60 -4 93
+rect -4 60 -4 93
+rect 4 60 4 93
+rect 4 60 9 93
+rect 9 60 9 93
+rect 25 60 25 93
+rect 25 60 29 93
+rect 29 60 30 93
+rect -30 8 -29 42
+rect -29 8 -25 42
+rect -25 8 -25 42
+rect -9 8 -9 42
+rect -9 8 -4 42
+rect -4 8 -4 42
+rect 4 8 4 42
+rect 4 8 9 42
+rect 9 8 9 42
+rect 25 8 25 42
+rect 25 8 29 42
+rect 29 8 30 42
+rect -30 -42 -29 -8
+rect -29 -42 -25 -8
+rect -25 -42 -25 -8
+rect -9 -42 -9 -8
+rect -9 -42 -4 -8
+rect -4 -42 -4 -8
+rect 4 -42 4 -8
+rect 4 -42 9 -8
+rect 9 -42 9 -8
+rect 25 -42 25 -8
+rect 25 -42 29 -8
+rect 29 -42 30 -8
+rect -30 -93 -29 -60
+rect -29 -93 -25 -60
+rect -25 -93 -25 -60
+rect -9 -93 -9 -60
+rect -9 -93 -4 -60
+rect -4 -93 -4 -60
+rect 4 -93 4 -60
+rect 4 -93 9 -60
+rect 9 -93 9 -60
+rect 25 -93 25 -60
+rect 25 -93 29 -60
+rect 29 -93 30 -60
+<< metal2 >>
+rect -30 93 -24 94
+rect -30 60 -30 93
+rect -25 60 -24 93
+rect -30 58 -24 60
+rect -10 93 -4 94
+rect -10 60 -9 93
+rect -4 60 -4 93
+rect -10 58 -4 60
+rect 4 93 10 94
+rect 4 60 4 93
+rect 9 60 10 93
+rect 4 58 10 60
+rect 24 93 30 94
+rect 24 60 25 93
+rect 30 60 30 93
+rect 24 58 30 60
+rect -30 42 -24 43
+rect -30 8 -30 42
+rect -25 8 -24 42
+rect -30 7 -24 8
+rect -10 42 -4 43
+rect -10 8 -9 42
+rect -4 8 -4 42
+rect -10 7 -4 8
+rect 4 42 10 43
+rect 4 8 4 42
+rect 9 8 10 42
+rect 4 7 10 8
+rect 24 42 30 43
+rect 24 8 25 42
+rect 30 8 30 42
+rect 24 7 30 8
+rect -30 -8 -24 -7
+rect -30 -42 -30 -8
+rect -25 -42 -24 -8
+rect -30 -43 -24 -42
+rect -10 -8 -4 -7
+rect -10 -42 -9 -8
+rect -4 -42 -4 -8
+rect -10 -43 -4 -42
+rect 4 -8 10 -7
+rect 4 -42 4 -8
+rect 9 -42 10 -8
+rect 4 -43 10 -42
+rect 24 -8 30 -7
+rect 24 -42 25 -8
+rect 30 -42 30 -8
+rect 24 -43 30 -42
+rect -30 -60 -24 -58
+rect -30 -93 -30 -60
+rect -25 -93 -24 -60
+rect -30 -94 -24 -93
+rect -10 -60 -4 -58
+rect -10 -93 -9 -60
+rect -4 -93 -4 -60
+rect -10 -94 -4 -93
+rect 4 -60 10 -58
+rect 4 -93 4 -60
+rect 9 -93 10 -60
+rect 4 -94 10 -93
+rect 24 -60 30 -58
+rect 24 -93 25 -60
+rect 30 -93 30 -60
+rect 24 -94 30 -93
+<< labels >>
+rlabel pdiffc -27 -76 -27 -76 0 D0_0
+port 1 nsew
+rlabel pdiffc -7 -76 -7 -76 0 S0_0
+port 2 nsew
+rlabel polycontact -17 -51 -17 -51 0 G0
+port 3 nsew
+rlabel pdiffc -27 -25 -27 -25 0 D0_1
+port 4 nsew
+rlabel pdiffc -7 -25 -7 -25 0 S0_1
+port 5 nsew
+rlabel pdiffc -27 25 -27 25 0 D0_2
+port 6 nsew
+rlabel pdiffc -7 25 -7 25 0 S0_2
+port 7 nsew
+rlabel pdiffc -27 76 -27 76 0 D0_3
+port 8 nsew
+rlabel pdiffc -7 76 -7 76 0 S0_3
+port 9 nsew
+rlabel pdiffc 27 -76 27 -76 0 D1_0
+port 10 nsew
+rlabel pdiffc 7 -76 7 -76 0 S1_0
+port 11 nsew
+rlabel polycontact 17 -51 17 -51 0 G1
+port 12 nsew
+rlabel pdiffc 27 -25 27 -25 0 D1_1
+port 13 nsew
+rlabel pdiffc 7 -25 7 -25 0 S1_1
+port 14 nsew
+rlabel pdiffc 27 25 27 25 0 D1_2
+port 15 nsew
+rlabel pdiffc 7 25 7 25 0 S1_2
+port 16 nsew
+rlabel pdiffc 27 76 27 76 0 D1_3
+port 17 nsew
+rlabel pdiffc 7 76 7 76 0 S1_3
+port 18 nsew
+<< properties >>
+string gencell pfet_03v3
+string library gf180mcu
+string parameters w 2.0 l 0.5 m 4 nf 2 diffcov 90 polycov 20 guard 0 glc 1 grc 1 gtc 0 gbc 0 tbcov 100 rlcov 100 topc 1 botc 1 poverlap 1 doverlap 0 lmin 0.5 wmin 0.3 class mosfet full_metal 0 viasrc 90 viadrn 90 viagate 0 viagb 0 viagr 0 viagl 0 viagt 0 doports 1 compatible {pfet_03v3 pfet_05v0 pfet_06v0}
+<< end >>

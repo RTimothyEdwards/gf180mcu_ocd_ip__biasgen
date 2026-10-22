@@ -1,6 +1,6 @@
 magic
 tech gf180mcuD
-magscale 1 2
+magscale 3 26
 timestamp 1787966249
 << isosubstrate >>
 rect -2876 1658 12206 2058
@@ -106,23 +106,23 @@ array 0 15 288 0 0 3678
 timestamp 1774748448
 transform 1 0 1591 0 -1 -1898
 box 1015 -1385 1389 2293
-use level_shift  level_shift_0
+use level_shift_5v  level_shift_5v_0
 timestamp 1787966249
 transform 0 -1 320 -1 0 1329
 box -12 -1978 1519 918
-use level_shift  level_shift_1
+use level_shift_5v  level_shift_5v_1
 timestamp 1787966249
 transform 0 1 4164 -1 0 1329
 box -12 -1978 1519 918
-use level_shift  level_shift_2
+use level_shift_5v  level_shift_5v_2
 timestamp 1787966249
 transform 0 -1 5886 -1 0 1329
 box -12 -1978 1519 918
-use level_shift  level_shift_3
+use level_shift_5v  level_shift_5v_3
 timestamp 1787966249
 transform 0 1 9730 -1 0 1329
 box -12 -1978 1519 918
-use level_shift  level_shift_4
+use level_shift_5v  level_shift_5v_4
 timestamp 1787966249
 transform 0 1 -1402 -1 0 1329
 box -12 -1978 1519 918

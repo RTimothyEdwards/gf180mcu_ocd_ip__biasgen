@@ -1,0 +1,94 @@
+magic
+tech gf180mcuD
+magscale 1 10
+timestamp 1792268143
+<< error_p >>
+rect -125 107 -104 124
+rect -138 -59 -104 107
+rect -125 -76 -104 -59
+rect 104 107 125 124
+rect 104 -59 138 107
+rect 104 -76 125 -59
+rect -49 -158 -37 -106
+<< nwell >>
+rect -224 -254 224 254
+<< pmos >>
+rect -50 -76 50 124
+<< pdiff >>
+rect -125 107 -50 124
+rect -138 94 -50 107
+rect -138 -46 -125 94
+rect -79 -46 -50 94
+rect -138 -59 -50 -46
+rect -125 -76 -50 -59
+rect 50 107 125 124
+rect 50 94 138 107
+rect 50 -46 79 94
+rect 125 -46 138 94
+rect 50 -59 138 -46
+rect 50 -76 125 -59
+<< pdiffc >>
+rect -125 -46 -79 94
+rect 79 -46 125 94
+<< polysilicon >>
+rect -50 124 50 168
+rect -50 -109 50 -76
+rect -50 -155 -37 -109
+rect 37 -155 50 -109
+rect -50 -168 50 -155
+<< polycontact >>
+rect -37 -155 37 -109
+<< metal1 >>
+rect -125 97 -79 105
+rect 79 97 125 105
+rect -128 94 -76 97
+rect -128 85 -125 94
+rect -79 85 -76 94
+rect -128 -46 -125 -37
+rect -79 -46 -76 -37
+rect -128 -49 -76 -46
+rect 76 94 128 97
+rect 76 85 79 94
+rect 125 85 128 94
+rect 76 -46 79 -37
+rect 125 -46 128 -37
+rect 76 -49 128 -46
+rect -125 -57 -79 -49
+rect 79 -57 125 -49
+rect -49 -158 -37 -106
+rect 37 -158 49 -106
+<< via1 >>
+rect -128 -37 -125 85
+rect -125 -37 -79 85
+rect -79 -37 -76 85
+rect 76 -37 79 85
+rect 79 -37 125 85
+rect 125 -37 128 85
+rect -37 -109 37 -106
+rect -37 -155 37 -109
+rect -37 -158 37 -155
+<< metal2 >>
+rect -130 85 -74 97
+rect -130 -37 -128 85
+rect -76 -37 -74 85
+rect -130 -49 -74 -37
+rect 74 85 130 97
+rect 74 -37 76 85
+rect 128 -37 130 85
+rect 74 -49 130 -37
+rect -39 -106 39 -94
+rect -39 -158 -37 -106
+rect 37 -158 39 -106
+rect -39 -170 39 -158
+<< labels >>
+rlabel pdiffc -102 24 -102 24 0 D
+port 1 nsew
+rlabel pdiffc 102 24 102 24 0 S
+port 2 nsew
+rlabel polycontact 0 -132 0 -132 0 G
+port 3 nsew
+<< properties >>
+string gencell pfet_03v3
+string library gf180mcu
+string parameters w 1.0 l 0.5 m 1 nf 1 diffcov 80 polycov 100 guard 0 glc 0 grc 0 gtc 0 gbc 0 tbcov 100 rlcov 100 topc 0 botc 1 poverlap 0 doverlap 1 lmin 0.5 wmin 0.3 class mosfet full_metal 0 viasrc 70 viadrn 70 viagate 100 viagb 0 viagr 0 viagl 0 viagt 0 doports 1 compatible {pfet_03v3 pfet_05v0 pfet_06v0}
+<< end >>

@@ -9,8 +9,7 @@ P 4 5 1750 0 1750 -890 2420 -890 2420 -0 1750 0 {}
 T {se_folded_cascode_p_5v} 20 -870 0 0 0.4 0.4 {}
 T {Dummies} 1770 -880 0 0 0.4 0.4 {}
 T {input array} 1860 -830 0 0 0.3 0.3 {}
-T {pbias} 2150 -830 0 0 0.3 0.3 {}
-T {nbias} 1890 -640 0 0 0.3 0.3 {}
+T {nbias} 1880 -420 0 0 0.3 0.3 {}
 N 990 -450 1010 -450 { lab=inn}
 N 670 -450 710 -450 { lab=inp}
 N 750 -450 780 -450 { lab=vdd}
@@ -104,32 +103,42 @@ N 1900 -780 1900 -770 {lab=vdd}
 N 1830 -780 1900 -780 {lab=vdd}
 N 1830 -740 1860 -740 {lab=vdd}
 N 1830 -780 1830 -740 {lab=vdd}
-N 2180 -740 2240 -740 { lab=vdd}
-N 2180 -790 2180 -770 {lab=vdd}
-N 2080 -790 2180 -790 {lab=vdd}
-N 2080 -740 2080 -700 {lab=vdd}
-N 2080 -700 2180 -700 {lab=vdd}
-N 2180 -710 2180 -700 {lab=vdd}
-N 2080 -740 2140 -740 {lab=vdd}
-N 2080 -790 2080 -740 {lab=vdd}
-N 2180 -790 2240 -790 {lab=vdd}
-N 2240 -790 2240 -740 {lab=vdd}
-N 1840 -530 1890 -530 { lab=vss}
-N 1930 -530 1980 -530 { lab=vss}
-N 1930 -600 1930 -560 { lab=vss}
-N 1840 -600 1840 -530 { lab=vss}
-N 1840 -600 1930 -600 { lab=vss}
-N 1930 -600 1980 -600 {lab=vss}
-N 1980 -600 1980 -530 {lab=vss}
-N 1930 -500 1930 -480 {lab=vss}
-N 1840 -480 1930 -480 {lab=vss}
-N 1840 -530 1840 -480 {lab=vss}
+N 1830 -310 1880 -310 { lab=vss}
+N 1920 -310 1970 -310 { lab=vss}
+N 1920 -380 1920 -340 { lab=vss}
+N 1830 -380 1830 -310 { lab=vss}
+N 1830 -380 1920 -380 { lab=vss}
+N 1920 -380 1970 -380 {lab=vss}
+N 1970 -380 1970 -310 {lab=vss}
+N 1920 -280 1920 -260 {lab=vss}
+N 1830 -260 1920 -260 {lab=vss}
+N 1830 -310 1830 -260 {lab=vss}
 N 560 -710 560 -590 {lab=vdd}
 N 560 -560 630 -560 {lab=vdd}
 N 630 -710 630 -560 {lab=vdd}
 N 280 -510 560 -510 {lab=bias}
 N 560 -530 560 -510 {lab=bias}
 N 500 -560 520 -560 {lab=ena}
+N 2160 -560 2220 -560 { lab=vdd}
+N 2160 -530 2160 -510 {lab=vdd}
+N 2090 -510 2160 -510 {lab=vdd}
+N 2090 -560 2090 -510 {lab=vdd}
+N 2160 -600 2220 -600 {lab=vdd}
+N 2220 -600 2220 -560 {lab=vdd}
+N 2160 -600 2160 -590 {lab=vdd}
+N 2090 -600 2160 -600 {lab=vdd}
+N 2090 -560 2120 -560 {lab=vdd}
+N 2090 -600 2090 -560 {lab=vdd}
+N 2100 -300 2150 -300 { lab=vss}
+N 2190 -300 2240 -300 { lab=vss}
+N 2190 -370 2190 -330 { lab=vss}
+N 2100 -370 2100 -300 { lab=vss}
+N 2100 -370 2190 -370 { lab=vss}
+N 2190 -370 2240 -370 {lab=vss}
+N 2240 -370 2240 -300 {lab=vss}
+N 2190 -270 2190 -250 {lab=vss}
+N 2100 -250 2190 -250 {lab=vss}
+N 2100 -300 2100 -250 {lab=vss}
 C {devices/ipin.sym} 1010 -450 2 0 {name=p3 lab=inn}
 C {devices/ipin.sym} 670 -450 0 0 {name=p4 lab=inp}
 C {devices/lab_wire.sym} 750 -450 0 1 {name=l16 sig_type=std_logic lab=vdd}
@@ -172,8 +181,7 @@ C {devices/lab_wire.sym} 1460 -580 0 1 {name=l7 sig_type=std_logic lab=nd11
 }
 C {ipin.sym} 500 -560 0 0 {name=p1 lab=ena}
 C {devices/lab_wire.sym} 1900 -740 0 1 {name=l12 sig_type=std_logic lab=vdd}
-C {devices/lab_wire.sym} 2180 -740 0 1 {name=l13 sig_type=std_logic lab=vdd}
-C {devices/lab_wire.sym} 1930 -530 0 1 {name=l14 sig_type=std_logic lab=vss}
+C {devices/lab_wire.sym} 1920 -310 0 1 {name=l14 sig_type=std_logic lab=vss}
 C {gf180mcu_fd_pr/nfet_05v0.sym} 400 -410 0 0 {name=M16
 L=4.0u
 W=1.0u
@@ -412,11 +420,11 @@ sa=0 sb=0 sd=0
 model=nfet_05v0
 spiceprefix=X
 }
-C {gf180mcu_fd_pr/nfet_05v0.sym} 1910 -530 0 0 {name=M7
+C {gf180mcu_fd_pr/nfet_05v0.sym} 1900 -310 0 0 {name=M7
 L=1.0u
 W=1.0u
 nf=1
-m=16
+m=14
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
 as="'int((nf+2)/2) * W/nf * 0.18u'"
@@ -440,11 +448,12 @@ sa=0 sb=0 sd=0
 model=pfet_05v0
 spiceprefix=X
 }
-C {gf180mcu_fd_pr/pfet_05v0.sym} 2160 -740 0 0 {name=M9
-L=1.0u
-W=1.0u
+C {devices/lab_wire.sym} 2160 -560 0 1 {name=l15 sig_type=std_logic lab=vdd}
+C {gf180mcu_fd_pr/pfet_05v0.sym} 2140 -560 0 0 {name=M10
+L=4.0u
+W=2.0u
 nf=1
-m=8
+m=4
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
 as="'int((nf+2)/2) * W/nf * 0.18u'"
@@ -452,5 +461,20 @@ ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
 nrd="'0.18u / W'" nrs="'0.18u / W'"
 sa=0 sb=0 sd=0
 model=pfet_05v0
+spiceprefix=X
+}
+C {devices/lab_wire.sym} 2190 -300 0 1 {name=l17 sig_type=std_logic lab=vss}
+C {gf180mcu_fd_pr/nfet_05v0.sym} 2170 -300 0 0 {name=M11
+L=2.0u
+W=1.0u
+nf=1
+m=2
+ad="'int((nf+1)/2) * W/nf * 0.18u'"
+pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
+as="'int((nf+2)/2) * W/nf * 0.18u'"
+ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
+nrd="'0.18u / W'" nrs="'0.18u / W'"
+sa=0 sb=0 sd=0
+model=nfet_05v0
 spiceprefix=X
 }

@@ -174,6 +174,33 @@ N 1630 120 1630 130 {lab=vss}
 N 1630 40 1630 60 {lab=#net1}
 N 1630 90 1660 90 { lab=vss}
 N 1540 90 1590 90 {lab=ena}
+N 2030 -540 2030 -500 {lab=vdd}
+N 1930 -540 2030 -540 {lab=vdd}
+N 1930 -540 1930 -390 {lab=vdd}
+N 1930 -390 2030 -390 {lab=vdd}
+N 2030 -440 2030 -390 {lab=vdd}
+N 1930 -470 1990 -470 {lab=vdd}
+N 2030 -540 2120 -540 {lab=vdd}
+N 2120 -540 2120 -470 {lab=vdd}
+N 2030 -470 2120 -470 {lab=vdd}
+N 2290 -120 2360 -120 { lab=vss}
+N 2250 -200 2250 -150 {lab=vss}
+N 2140 -200 2250 -200 {lab=vss}
+N 2140 -120 2140 -40 {lab=vss}
+N 2140 -40 2250 -40 {lab=vss}
+N 2250 -90 2250 -40 {lab=vss}
+N 2140 -120 2250 -120 {lab=vss}
+N 2140 -200 2140 -120 {lab=vss}
+N 2360 -200 2360 -120 {lab=vss}
+N 2250 -200 2360 -200 {lab=vss}
+N 2260 -460 2310 -460 {lab=vdd}
+N 2260 -540 2260 -460 {lab=vdd}
+N 2260 -540 2450 -540 {lab=vdd}
+N 2450 -540 2450 -400 {lab=vdd}
+N 2350 -400 2450 -400 {lab=vdd}
+N 2350 -430 2350 -400 {lab=vdd}
+N 2350 -540 2350 -490 {lab=vdd}
+N 2350 -460 2450 -460 {lab=vdd}
 C {devices/iopin.sym} -590 -560 2 0 {name=p5 lab=vdd}
 C {devices/iopin.sym} -120 -210 1 0 {name=p2 lab=bias}
 C {devices/lab_wire.sym} 1030 -500 0 0 {name=l4 sig_type=std_logic lab=vdd}
@@ -230,11 +257,11 @@ C {devices/lab_wire.sym} 1990 50 0 1 {name=l18 sig_type=std_logic lab=vss}
 C {devices/lab_wire.sym} 1950 -120 0 0 {name=l22 sig_type=std_logic lab=vss}
 C {devices/lab_wire.sym} 2000 -120 0 1 {name=l38 sig_type=std_logic lab=vbn2}
 C {gf180mcu_fd_pr/cap_mim_2f0fF.sym} 1550 -220 1 0 {name=C2
-W=26.5e-6
-L=26.5e-6
+W=12.0e-6
+L=19.0e-6
 model=cap_mim_2f0_m4m5_noshield
 spiceprefix=X
-m=1}
+m=3}
 C {gf180mcu_fd_pr/pfet_03v3.sym} -440 -490 0 1 {name=M1
 L=1.0u
 W=1.0u
@@ -253,7 +280,7 @@ C {gf180mcu_fd_pr/pfet_03v3.sym} -100 -330 0 1 {name=M3
 L=0.5u
 W=1.0u
 nf=1
-m=4
+m=12
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
 as="'int((nf+2)/2) * W/nf * 0.18u'"
@@ -574,9 +601,9 @@ spiceprefix=X
 C {devices/ipin.sym} 60 -390 2 1 {name=p9 lab=ena}
 C {gf180mcu_fd_pr/pfet_03v3.sym} 1450 -460 0 0 {name=M26
 L=0.28u
-W=0.5u
+W=1.0u
 nf=1
-m=4
+m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
 as="'int((nf+2)/2) * W/nf * 0.18u'"
@@ -591,7 +618,7 @@ C {gf180mcu_fd_pr/nfet_03v3.sym} 1610 90 0 0 {name=M27
 L=0.28u
 W=4u
 nf=1
-m=4
+m=8
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
 as="'int((nf+2)/2) * W/nf * 0.18u'"
@@ -603,3 +630,48 @@ spiceprefix=X
 }
 C {devices/lab_wire.sym} 1630 90 0 1 {name=l39 sig_type=std_logic lab=vss}
 C {lab_pin.sym} 1540 90 0 0 {name=p12 sig_type=std_logic lab=ena}
+C {gf180mcu_fd_pr/pfet_03v3.sym} 2010 -470 0 0 {name=M2
+L=4.0u
+W=1.0u
+nf=1
+m=4
+ad="'int((nf+1)/2) * W/nf * 0.18u'"
+pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
+as="'int((nf+2)/2) * W/nf * 0.18u'"
+ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
+nrd="'0.18u / W'" nrs="'0.18u / W'"
+sa=0 sb=0 sd=0
+model=pfet_03v3
+spiceprefix=X
+}
+C {devices/lab_wire.sym} 2030 -540 0 1 {name=l2 sig_type=std_logic lab=vdd}
+C {devices/lab_wire.sym} 2250 -120 0 0 {name=l40 sig_type=std_logic lab=vss}
+C {gf180mcu_fd_pr/nfet_03v3.sym} 2270 -120 0 1 {name=M28
+L=4u
+W=2u
+nf=1
+m=4
+ad="'int((nf+1)/2) * W/nf * 0.18u'"
+pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
+as="'int((nf+2)/2) * W/nf * 0.18u'"
+ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
+nrd="'0.18u / W'" nrs="'0.18u / W'"
+sa=0 sb=0 sd=0
+model=nfet_03v3
+spiceprefix=X
+}
+C {gf180mcu_fd_pr/pfet_03v3.sym} 2330 -460 0 0 {name=M29
+L=0.5u
+W=1.0u
+nf=1
+m=12
+ad="'int((nf+1)/2) * W/nf * 0.18u'"
+pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
+as="'int((nf+2)/2) * W/nf * 0.18u'"
+ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
+nrd="'0.18u / W'" nrs="'0.18u / W'"
+sa=0 sb=0 sd=0
+model=pfet_03v3
+spiceprefix=X
+}
+C {devices/lab_wire.sym} 2260 -540 0 1 {name=l41 sig_type=std_logic lab=vdd}

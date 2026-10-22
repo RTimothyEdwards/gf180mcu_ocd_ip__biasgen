@@ -123,7 +123,7 @@ C {devices/lab_pin.sym} -2150 580 0 1 {name=p2 sig_type=std_logic lab=dvss}
 C {devices/ipin.sym} -2190 340 0 0 {name=p3 lab=pcasc}
 C {devices/ipin.sym} -2190 360 0 0 {name=p4 lab=pbias}
 C {devices/ipin.sym} -2010 190 0 0 {name=p8 lab=source_ena[7:0]}
-C {level_shift.sym} -1680 210 0 0 {name=x9[7:0] vdd=avdd vss=avss }
+C {level_shift_5v.sym} -1680 210 0 0 {name=x9[7:0] vdd=avdd vss=avss }
 C {inv_2.sym} -1940 190 0 0 {name=x46[7:0] VDD=dvdd VNW=dvdd VPW=dvss VSS=dvss prefix=gf180mcu_as_sc_mcu7t3v3__ }
 C {fillcap_4.sym} -1920 90 0 0 {name=x23[7:0] VDD=dvdd VNW=dvdd VPW=dvss VSS=dvss prefix=gf180mcu_as_sc_mcu7t3v3__ }
 C {diode_2.sym} -1890 250 0 0 {name=x78[7:0] VDD=dvdd VNW=dvdd VPW=dvss VSS=dvss prefix=gf180mcu_as_sc_mcu7t3v3__ }

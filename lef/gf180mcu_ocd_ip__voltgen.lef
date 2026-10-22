@@ -1,0 +1,189 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO gf180mcu_ocd_ip__voltgen
+  CLASS BLOCK ;
+  FOREIGN gf180mcu_ocd_ip__voltgen ;
+  ORIGIN -8.000 76.305 ;
+  SIZE 110.730 BY 78.140 ;
+  PIN dvdd
+    ANTENNADIFFAREA 55.431999 ;
+    PORT
+      LAYER Metal1 ;
+        RECT 8.450 -69.940 9.805 -68.750 ;
+    END
+  END dvdd
+  PIN dvss
+    ANTENNADIFFAREA 24.647999 ;
+    PORT
+      LAYER Metal1 ;
+        RECT 8.585 -74.200 9.805 -72.905 ;
+    END
+  END dvss
+  PIN s[2]
+    ANTENNAGATEAREA 1.332800 ;
+    ANTENNADIFFAREA 0.438500 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 10.045 -76.280 10.480 -72.065 ;
+    END
+  END s[2]
+  PIN s[1]
+    ANTENNAGATEAREA 1.332800 ;
+    ANTENNADIFFAREA 0.438500 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 15.625 -76.270 16.075 -71.950 ;
+    END
+  END s[1]
+  PIN s[0]
+    ANTENNAGATEAREA 1.332800 ;
+    ANTENNADIFFAREA 0.438500 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 21.240 -76.300 21.685 -71.910 ;
+    END
+  END s[0]
+  PIN vbg
+    ANTENNAGATEAREA 12.000000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 9.305 -25.385 10.450 -24.860 ;
+    END
+  END vbg
+  PIN ibias1u_1
+    ANTENNADIFFAREA 5.200000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 9.305 -24.480 25.160 -23.990 ;
+    END
+  END ibias1u_1
+  PIN ibias1u_2
+    ANTENNAGATEAREA 40.000000 ;
+    ANTENNADIFFAREA 7.419200 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 117.010 -18.040 118.730 -16.885 ;
+    END
+  END ibias1u_2
+  PIN ena
+    ANTENNAGATEAREA 6.132800 ;
+    ANTENNADIFFAREA 0.438500 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 112.965 -76.305 113.430 -71.910 ;
+    END
+  END ena
+  PIN vout_buf
+    ANTENNAGATEAREA 32.000000 ;
+    ANTENNADIFFAREA 17.478399 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 115.920 -9.615 118.615 -8.460 ;
+    END
+  END vout_buf
+  PIN ena1
+    ANTENNAGATEAREA 6.132800 ;
+    ANTENNADIFFAREA 0.438500 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 116.445 -76.295 116.885 -71.895 ;
+    END
+  END ena1
+  PIN ena2
+    ANTENNAGATEAREA 6.132800 ;
+    ANTENNADIFFAREA 0.438500 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 109.525 -76.295 110.070 -71.795 ;
+    END
+  END ena2
+  PIN high
+    ANTENNAGATEAREA 6.132800 ;
+    ANTENNADIFFAREA 0.438500 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 106.235 -76.280 106.685 -71.910 ;
+    END
+  END high
+  PIN vgen_ena2_h
+    ANTENNADIFFAREA 3.120000 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 90.995 -76.290 91.375 -74.310 ;
+    END
+  END vgen_ena2_h
+  PIN vout_unbuf
+    ANTENNAGATEAREA 32.000000 ;
+    ANTENNADIFFAREA 14.080000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 9.950 -42.060 30.400 -41.295 ;
+    END
+  END vout_unbuf
+  PIN vdd
+    ANTENNAGATEAREA 67.000000 ;
+    ANTENNADIFFAREA 476.587585 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 113.850 -30.400 117.100 -28.750 ;
+    END
+  END vdd
+  PIN vss
+    ANTENNAGATEAREA 22.799999 ;
+    ANTENNADIFFAREA 472.228790 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 113.800 -0.050 117.050 1.600 ;
+    END
+  END vss
+  OBS
+      LAYER Nwell ;
+        RECT 8.090 -73.825 117.590 1.820 ;
+      LAYER Metal1 ;
+        RECT 8.500 -68.450 117.635 1.835 ;
+        RECT 10.105 -70.240 117.635 -68.450 ;
+        RECT 8.500 -72.605 117.635 -70.240 ;
+        RECT 10.105 -74.200 117.635 -72.605 ;
+      LAYER Metal2 ;
+        RECT 9.450 -71.495 117.385 1.835 ;
+        RECT 9.450 -71.610 109.225 -71.495 ;
+        RECT 9.450 -71.650 20.940 -71.610 ;
+        RECT 9.450 -71.765 15.325 -71.650 ;
+        RECT 9.450 -74.310 9.745 -71.765 ;
+        RECT 10.780 -74.310 15.325 -71.765 ;
+        RECT 16.375 -74.310 20.940 -71.650 ;
+        RECT 21.985 -74.010 105.935 -71.610 ;
+        RECT 21.985 -74.310 90.695 -74.010 ;
+        RECT 91.675 -74.310 105.935 -74.010 ;
+        RECT 106.985 -74.310 109.225 -71.610 ;
+        RECT 110.370 -71.595 117.385 -71.495 ;
+        RECT 110.370 -71.610 116.145 -71.595 ;
+        RECT 110.370 -74.310 112.665 -71.610 ;
+        RECT 113.730 -74.310 116.145 -71.610 ;
+        RECT 117.185 -74.310 117.385 -71.595 ;
+      LAYER Metal3 ;
+        RECT 10.170 -0.350 113.500 1.835 ;
+        RECT 117.350 -0.350 117.815 1.835 ;
+        RECT 10.170 -8.160 117.815 -0.350 ;
+        RECT 10.170 -9.915 115.620 -8.160 ;
+        RECT 10.170 -16.585 117.815 -9.915 ;
+        RECT 10.170 -18.340 116.710 -16.585 ;
+        RECT 10.170 -23.690 117.815 -18.340 ;
+        RECT 25.460 -24.780 117.815 -23.690 ;
+        RECT 10.750 -25.685 117.815 -24.780 ;
+        RECT 10.170 -28.450 117.815 -25.685 ;
+        RECT 10.170 -30.700 113.550 -28.450 ;
+        RECT 117.400 -30.700 117.815 -28.450 ;
+        RECT 10.170 -40.995 117.815 -30.700 ;
+        RECT 30.700 -42.360 117.815 -40.995 ;
+        RECT 10.170 -74.360 117.815 -42.360 ;
+      LAYER Metal4 ;
+        RECT 11.380 -58.900 58.950 0.805 ;
+      LAYER Metal5 ;
+        RECT 12.550 -57.900 58.665 -24.250 ;
+  END
+END gf180mcu_ocd_ip__voltgen
+END LIBRARY
+

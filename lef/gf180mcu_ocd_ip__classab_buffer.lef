@@ -1,0 +1,79 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO gf180mcu_ocd_ip__classab_buffer
+  CLASS BLOCK ;
+  FOREIGN gf180mcu_ocd_ip__classab_buffer ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 100.680 BY 44.210 ;
+  PIN out
+    ANTENNAGATEAREA 48.000000 ;
+    ANTENNADIFFAREA 14.080000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 99.510 41.245 100.665 42.400 ;
+    END
+  END out
+  PIN inp
+    ANTENNAGATEAREA 48.000000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.010 19.655 1.320 20.440 ;
+    END
+  END inp
+  PIN bias
+    ANTENNAGATEAREA 6.000000 ;
+    ANTENNADIFFAREA 5.531500 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.175 32.785 20.670 33.290 ;
+    END
+  END bias
+  PIN ena
+    ANTENNAGATEAREA 9.520000 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.185 34.080 1.340 34.590 ;
+    END
+  END ena
+  PIN vss
+    ANTENNAGATEAREA 44.000000 ;
+    ANTENNADIFFAREA 247.651947 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.105 0.000 100.590 1.330 ;
+    END
+  END vss
+  PIN vdd
+    ANTENNAGATEAREA 22.000000 ;
+    ANTENNADIFFAREA 191.660538 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.105 42.885 100.590 44.210 ;
+    END
+  END vdd
+  OBS
+      LAYER Nwell ;
+        RECT 0.105 3.185 99.960 42.280 ;
+      LAYER Metal1 ;
+        RECT 0.100 0.040 100.680 44.165 ;
+      LAYER Metal2 ;
+        RECT 0.105 0.000 100.590 44.210 ;
+      LAYER Metal3 ;
+        RECT 0.000 40.945 99.210 42.390 ;
+        RECT 0.000 34.890 99.510 40.945 ;
+        RECT 1.640 33.780 99.510 34.890 ;
+        RECT 0.000 33.590 99.510 33.780 ;
+        RECT 20.970 32.485 99.510 33.590 ;
+        RECT 0.000 20.740 99.510 32.485 ;
+        RECT 1.620 19.370 99.510 20.740 ;
+        RECT 0.000 4.200 99.510 19.370 ;
+      LAYER Metal4 ;
+        RECT 11.700 0.105 97.425 44.195 ;
+      LAYER Metal5 ;
+        RECT 16.900 11.015 97.360 25.715 ;
+  END
+END gf180mcu_ocd_ip__classab_buffer
+END LIBRARY
+

@@ -1,13 +1,13 @@
 magic
 tech gf180mcuD
-magscale 1 2
+magscale 3 26
 timestamp 1774450949
 << error_p >>
 rect -41 128 -31 160
 rect -103 -29 -63 74
 rect 63 -74 103 29
 rect -41 -160 -31 -128
-<< hvnmos >>
+<< mvnmos >>
 rect -45 -100 45 100
 << mvndiff >>
 rect -113 86 -45 100
@@ -78,7 +78,7 @@ port 2 nsew
 rlabel polycont 0 144 0 144 0 G
 port 3 nsew
 << properties >>
-string gencell nfet_06v0
+string gencell nfet_05v0
 string library gf180mcu
 string parameters w 1.0 l 0.45 m 1 ng 1 diffcov 100 polycov 100 guard 0 glc 1 grc 1 gtc 1 gbc 1 tbcov 100 rlcov 100 topc 1 botc 1 poverlap 0 doverlap 1 lmin 0.45 wmin 0.15 class mosfet compatible {nfet_05v0 nfet_06v0} full_metal 1 conn_gates 0 gate_ring 0 doports 1 viasrc +50 viadrn -50 viagate 0 ccols 1 viagb 0 viagr 0 viagl 0 viagt 0
 << end >>

@@ -1,4 +1,4 @@
-v {xschem version=3.4.6 file_version=3.3}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
@@ -84,7 +84,7 @@ C {lab_wire.sym} -1100 810 0 0 {name=p30 sig_type=std_logic lab=sink_ena_5v0[0]}
 C {lab_pin.sym} -680 910 1 1 {name=p33 sig_type=std_logic lab=avss}
 C {devices/iopin.sym} -580 710 0 0 {name=p12 lab=sink_ibias}
 C {devices/ipin.sym} -2030 690 0 0 {name=p13 lab=sink_ena[1:0]}
-C {level_shift.sym} -1700 710 0 0 {name=x4[1:0] vdd=avdd vss=avss }
+C {level_shift_5v.sym} -1700 710 0 0 {name=x4[1:0] vdd=avdd vss=avss }
 C {inv_2.sym} -1960 670 0 0 {name=x5[1:0] VDD=dvdd VNW=dvdd VPW=dvss VSS=dvss prefix=gf180mcu_as_sc_mcu7t3v3__ }
 C {lab_pin.sym} -1650 670 0 1 {name=p17 sig_type=std_logic lab=sink_ena_5v0[1:0]}
 C {lab_pin.sym} -910 780 0 0 {name=p8 sig_type=std_logic lab=shld2}
@@ -103,3 +103,4 @@ C {lab_pin.sym} -680 500 1 1 {name=p18 sig_type=std_logic lab=avss}
 C {lab_pin.sym} -1050 500 3 0 {name=p19 sig_type=std_logic lab=ncasc}
 C {lab_pin.sym} -1070 480 3 0 {name=p20 sig_type=std_logic lab=nbias}
 C {lab_pin.sym} -1100 460 1 1 {name=p3 sig_type=std_logic lab=avss}
+C {tap_2.sym} -1900 890 0 0 {name=x2[1:0] VSS=dvss VDD=dvdd prefix=gf180mcu_as_sc_mcu7t3v3__ }

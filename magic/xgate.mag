@@ -1,67 +1,57 @@
 magic
 tech gf180mcuD
-magscale 1 2
-timestamp 1788119166
+magscale 1 10
+timestamp 1792612534
 << metal1 >>
-rect 567 -300 972 -241
-rect 1248 -300 1659 -241
-rect 689 -337 846 -336
-rect 689 -377 698 -337
-rect 837 -377 846 -337
-rect 689 -378 846 -377
-rect 748 -857 784 -378
-rect 1437 -826 1473 -347
-rect 1376 -827 1533 -826
-rect 1376 -867 1385 -827
-rect 1524 -867 1533 -827
-rect 1376 -868 1533 -867
-rect 566 -963 971 -904
-rect 1248 -963 1660 -904
+rect 833 -430 845 -378
+rect 1005 -430 1017 -378
+rect 903 -981 949 -431
+rect 1553 -961 1599 -424
+rect 1481 -1013 1493 -961
+rect 1653 -1013 1665 -961
 << via1 >>
-rect 698 -377 837 -337
-rect 1385 -867 1524 -827
+rect 845 -430 1005 -378
+rect 1493 -1013 1653 -961
 << metal2 >>
-rect 506 -291 1708 -193
-rect 689 -339 698 -337
-rect 508 -377 698 -339
-rect 837 -339 846 -337
-rect 837 -377 1710 -339
-rect 508 -379 1710 -377
-rect 508 -526 1706 -428
-rect 509 -776 1711 -678
-rect 510 -827 1710 -825
-rect 510 -865 1385 -827
-rect 1376 -867 1385 -865
-rect 1524 -865 1710 -827
-rect 1524 -867 1534 -865
-rect 510 -1011 1712 -913
+rect 616 -319 1934 -206
+rect 616 -378 1934 -376
+rect 616 -430 845 -378
+rect 1005 -430 1934 -378
+rect 616 -432 1934 -430
+rect 616 -601 1934 -488
+rect 616 -903 1934 -790
+rect 616 -961 1934 -959
+rect 616 -1013 1493 -961
+rect 1653 -1013 1934 -961
+rect 616 -1015 1934 -1013
+rect 616 -1186 1934 -1073
+use nfet_05v0_CMFWB7  nfet_05v0_CMFWB7_0 paramcells
+timestamp 1792612534
+transform 1 0 1577 0 1 -696
+box -324 -456 324 456
+use pfet_05v0_EHWMPZ  pfet_05v0_EHWMPZ_0 paramcells
+timestamp 1792612534
+transform 1 0 931 0 1 -695
+box -314 -456 314 456
 use via_Y6ZG8N  via_Y6ZG8N_0 paramcells
-timestamp 1774449753
-transform 1 0 773 0 1 -262
-box -173 -29 173 29
+timestamp 1792612534
+transform 1 0 891 0 1 -282
+box -201 -37 201 40
 use via_Y6ZG8N  via_Y6ZG8N_1
-timestamp 1774449753
-transform 1 0 1457 0 1 -942
-box -173 -29 173 29
-use pfet_06v0_XLVYT6  XM1 paramcells
-timestamp 1774449753
-transform 1 0 766 0 1 -602
-box -344 -472 344 472
-use nfet_06v0_MRZNPN  XM2 paramcells
-timestamp 1774449753
-transform 1 0 1454 0 1 -602
-box -282 -410 282 410
+timestamp 1792612534
+transform 1 0 1603 0 1 -1117
+box -201 -37 201 40
 << labels >>
-flabel metal2 506 -291 706 -202 0 FreeSans 640 0 0 0 vdd
-port 1 nsew
-flabel metal2 510 -1011 710 -924 0 FreeSans 640 0 0 0 vss
-port 4 nsew
-flabel metal2 508 -526 708 -442 0 FreeSans 640 0 0 0 in
-port 2 nsew
-flabel metal2 1511 -776 1711 -687 0 FreeSans 640 0 0 0 out
+flabel metal2 1743 -903 1934 -800 0 FreeSans 738 0 0 0 out
 port 3 nsew
-flabel metal2 510 -865 710 -825 0 FreeSans 640 0 0 0 ena
-port 5 nsew
-flabel metal2 508 -379 708 -339 0 FreeSans 640 0 0 0 ena_b
+flabel metal2 616 -601 816 -505 0 FreeSans 738 0 0 0 in
+port 2 nsew
+flabel metal2 616 -432 816 -386 0 FreeSans 738 0 0 0 ena_b
 port 0 nsew
+flabel metal2 616 -1015 819 -968 0 FreeSans 738 0 0 0 ena
+port 5 nsew
+flabel metal2 616 -1186 819 -1086 0 FreeSans 738 0 0 0 vss
+port 4 nsew
+flabel metal2 616 -319 814 -217 0 FreeSans 738 0 0 0 vdd
+port 1 nsew
 << end >>

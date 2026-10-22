@@ -1,0 +1,480 @@
+magic
+tech gf180mcuD
+magscale 1 10
+timestamp 1792526189
+<< metal1 >>
+rect 4872 -6750 10448 -6678
+rect 4872 -7760 4944 -6750
+rect 5112 -6798 5188 -6750
+rect 10189 -6796 10265 -6750
+rect 5011 -6861 5244 -6798
+rect 5011 -7649 5074 -6861
+rect 5181 -7650 5244 -6861
+rect 10072 -6859 10310 -6796
+rect 5479 -7587 5542 -7010
+rect 5777 -7587 5840 -7010
+rect 6075 -7587 6138 -7010
+rect 6373 -7587 6436 -7010
+rect 6671 -7587 6734 -7010
+rect 6969 -7587 7032 -7010
+rect 7267 -7587 7330 -7010
+rect 7565 -7587 7628 -7010
+rect 7863 -7587 7926 -7010
+rect 8161 -7587 8224 -7010
+rect 8459 -7587 8522 -7010
+rect 8757 -7587 8820 -7010
+rect 9055 -7587 9118 -7010
+rect 9353 -7587 9416 -7010
+rect 9651 -7587 9714 -7010
+rect 9949 -7587 10012 -7010
+rect 10072 -7540 10135 -6859
+rect 5479 -7650 5622 -7587
+rect 5777 -7650 5920 -7587
+rect 6075 -7650 6218 -7587
+rect 6373 -7650 6516 -7587
+rect 6671 -7650 6814 -7587
+rect 6969 -7650 7112 -7587
+rect 7267 -7650 7410 -7587
+rect 7565 -7650 7708 -7587
+rect 7863 -7650 8006 -7587
+rect 8161 -7650 8304 -7587
+rect 8459 -7650 8602 -7587
+rect 8757 -7650 8900 -7587
+rect 9055 -7650 9198 -7587
+rect 9353 -7650 9496 -7587
+rect 9651 -7650 9794 -7587
+rect 9949 -7650 10092 -7587
+rect 10247 -7650 10310 -6859
+rect 4872 -7865 4948 -7760
+rect 4876 -8984 4948 -7865
+rect 5559 -7984 5622 -7650
+rect 5857 -7984 5920 -7650
+rect 6155 -7984 6218 -7650
+rect 6453 -7984 6516 -7650
+rect 6751 -7984 6814 -7650
+rect 7049 -7984 7112 -7650
+rect 7347 -7867 7410 -7650
+rect 7161 -7930 7410 -7867
+rect 7645 -7868 7708 -7650
+rect 7943 -7868 8006 -7650
+rect 8241 -7868 8304 -7650
+rect 8539 -7868 8602 -7650
+rect 8837 -7868 8900 -7650
+rect 9135 -7868 9198 -7650
+rect 9433 -7868 9496 -7650
+rect 9731 -7868 9794 -7650
+rect 10029 -7868 10092 -7650
+rect 5481 -8047 5622 -7984
+rect 5761 -8047 5920 -7984
+rect 6041 -8047 6217 -7984
+rect 6321 -8047 6516 -7984
+rect 6601 -8047 6814 -7984
+rect 6881 -8047 7111 -7984
+rect 5129 -8984 5192 -8143
+rect 5481 -8453 5544 -8047
+rect 5761 -8453 5824 -8047
+rect 6041 -8453 6104 -8047
+rect 6321 -8453 6384 -8047
+rect 6601 -8453 6664 -8047
+rect 6881 -8453 6944 -8047
+rect 7161 -8453 7224 -7930
+rect 7502 -7931 7708 -7868
+rect 7782 -7907 8006 -7868
+rect 7782 -7931 8005 -7907
+rect 8062 -7931 8305 -7868
+rect 8442 -7931 8602 -7868
+rect 8722 -7931 8900 -7868
+rect 9002 -7931 9198 -7868
+rect 9282 -7931 9496 -7868
+rect 9562 -7931 9794 -7868
+rect 9842 -7931 10092 -7868
+rect 10376 -7931 10448 -6750
+rect 7502 -7984 7565 -7931
+rect 7782 -7984 7845 -7931
+rect 8062 -7984 8125 -7931
+rect 8442 -7984 8505 -7931
+rect 8722 -7984 8785 -7931
+rect 9002 -7984 9065 -7931
+rect 9282 -7984 9345 -7931
+rect 9562 -7984 9625 -7931
+rect 9842 -7984 9905 -7931
+rect 7441 -8047 7565 -7984
+rect 7721 -8047 7845 -7984
+rect 8001 -8047 8125 -7984
+rect 8281 -8047 8505 -7984
+rect 8561 -8047 8785 -7984
+rect 8841 -8047 9065 -7984
+rect 9121 -8047 9345 -7984
+rect 9401 -8047 9625 -7984
+rect 9681 -8047 9905 -7984
+rect 10149 -8003 10448 -7931
+rect 7441 -8453 7504 -8047
+rect 7721 -8453 7784 -8047
+rect 8001 -8453 8064 -8047
+rect 8281 -8453 8344 -8047
+rect 8561 -8453 8624 -8047
+rect 8841 -8453 8904 -8047
+rect 9121 -8453 9184 -8047
+rect 9401 -8453 9464 -8047
+rect 9681 -8453 9744 -8047
+rect 9832 -8453 9895 -8133
+rect 5481 -8516 5695 -8453
+rect 5761 -8516 5975 -8453
+rect 6041 -8516 6255 -8453
+rect 6321 -8516 6535 -8453
+rect 6601 -8516 6815 -8453
+rect 6881 -8516 7095 -8453
+rect 7161 -8516 7375 -8453
+rect 7441 -8516 7655 -8453
+rect 7721 -8516 7935 -8453
+rect 8001 -8516 8215 -8453
+rect 8281 -8516 8495 -8453
+rect 8561 -8516 8775 -8453
+rect 8841 -8516 9055 -8453
+rect 9121 -8516 9335 -8453
+rect 9401 -8516 9615 -8453
+rect 9681 -8516 9895 -8453
+rect 5632 -8850 5695 -8516
+rect 5912 -8850 5975 -8516
+rect 6192 -8850 6255 -8516
+rect 6472 -8850 6535 -8516
+rect 6752 -8850 6815 -8516
+rect 7032 -8850 7095 -8516
+rect 7312 -8850 7375 -8516
+rect 7592 -8850 7655 -8516
+rect 7872 -8850 7935 -8516
+rect 8152 -8850 8215 -8516
+rect 8432 -8850 8495 -8516
+rect 8712 -8850 8775 -8516
+rect 8992 -8850 9055 -8516
+rect 9272 -8850 9335 -8516
+rect 9552 -8850 9615 -8516
+rect 9832 -8850 9895 -8516
+rect 10149 -8984 10221 -8003
+rect 10376 -8984 10448 -8003
+rect 4876 -9056 10448 -8984
+<< metal2 >>
+rect 5418 -6662 5520 -6505
+rect 5711 -6660 5813 -6505
+rect 6012 -6655 6114 -6505
+rect 5144 -7733 5200 -6795
+rect 5276 -7842 5332 -6939
+rect 5442 -7733 5498 -6662
+rect 5574 -7842 5630 -6939
+rect 5740 -7733 5796 -6660
+rect 5872 -7842 5928 -6939
+rect 6038 -7733 6094 -6655
+rect 6306 -6663 6407 -6505
+rect 6603 -6660 6705 -6505
+rect 6893 -6657 6995 -6505
+rect 6170 -7842 6226 -6939
+rect 6336 -7733 6392 -6663
+rect 6468 -7842 6524 -6939
+rect 6634 -7733 6690 -6660
+rect 6766 -7842 6822 -6939
+rect 6932 -7733 6988 -6657
+rect 7198 -6662 7299 -6505
+rect 7492 -6662 7594 -6505
+rect 7789 -6660 7890 -6505
+rect 7229 -6665 7286 -6662
+rect 7525 -6665 7584 -6662
+rect 7822 -6665 7882 -6660
+rect 8086 -6662 8188 -6505
+rect 8384 -6657 8486 -6505
+rect 8119 -6665 8180 -6662
+rect 7064 -7842 7120 -6939
+rect 7230 -7733 7286 -6665
+rect 7362 -7842 7418 -6939
+rect 7528 -7733 7584 -6665
+rect 7660 -7842 7716 -6939
+rect 7826 -7733 7882 -6665
+rect 7958 -7842 8014 -6939
+rect 8124 -7733 8180 -6665
+rect 8256 -7842 8312 -6939
+rect 8422 -7733 8478 -6657
+rect 8682 -6665 8783 -6505
+rect 8981 -6665 9082 -6505
+rect 9275 -6665 9377 -6505
+rect 9572 -6665 9673 -6505
+rect 9871 -6665 9972 -6505
+rect 8554 -7842 8610 -6939
+rect 8720 -7733 8776 -6665
+rect 8852 -7842 8908 -6939
+rect 9018 -7733 9074 -6665
+rect 9150 -7842 9206 -6939
+rect 9316 -7733 9372 -6665
+rect 9448 -7842 9504 -6939
+rect 9614 -7733 9670 -6665
+rect 9746 -7842 9802 -6939
+rect 9912 -7733 9968 -6665
+rect 10044 -7842 10100 -6939
+rect 10210 -7733 10266 -6790
+rect 5029 -7936 10481 -7842
+rect 5200 -8451 5267 -7936
+rect 5200 -8518 5397 -8451
+rect 5330 -8871 5397 -8518
+rect 9798 -8871 10481 -8791
+use nfet_03v3_33VFWN  nfet_03v3_33VFWN_0 paramcells
+timestamp 1792341469
+transform 1 0 7659 0 1 -7277
+box -2811 -610 2811 610
+use ppolyf_u_ZSPX74  ppolyf_u_ZSPX74_0 paramcells
+timestamp 1792341469
+transform 1 0 7548 0 1 -8492
+box -2696 -588 2696 588
+use res_trim_via  res_trim_via_0
+timestamp 1792368626
+transform 1 0 781 0 1 63
+box 4535 -7573 4591 -7209
+use res_trim_via  res_trim_via_1
+timestamp 1792368626
+transform 1 0 1079 0 1 63
+box 4535 -7573 4591 -7209
+use res_trim_via_2  res_trim_via_2_0
+timestamp 1792368626
+transform 1 0 793 0 1 229
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_1
+timestamp 1792368626
+transform 1 0 793 0 1 -671
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_2
+timestamp 1792368626
+transform 1 0 1091 0 1 -671
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_3
+timestamp 1792368626
+transform 1 0 1091 0 1 229
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_4
+timestamp 1792368626
+transform 1 0 1389 0 1 -671
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_5
+timestamp 1792368626
+transform 1 0 1389 0 1 229
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_6
+timestamp 1792368626
+transform 1 0 1687 0 1 -671
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_7
+timestamp 1792368626
+transform 1 0 1687 0 1 229
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_8
+timestamp 1792368626
+transform 1 0 1985 0 1 -671
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_9
+timestamp 1792368626
+transform 1 0 1985 0 1 229
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_10
+timestamp 1792368626
+transform 1 0 2283 0 1 -671
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_11
+timestamp 1792368626
+transform 1 0 2283 0 1 229
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_12
+timestamp 1792368626
+transform 1 0 2581 0 1 -671
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_13
+timestamp 1792368626
+transform 1 0 2581 0 1 229
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_14
+timestamp 1792368626
+transform 1 0 2879 0 1 -671
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_15
+timestamp 1792368626
+transform 1 0 2879 0 1 229
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_16
+timestamp 1792368626
+transform 1 0 3177 0 1 -671
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_17
+timestamp 1792368626
+transform 1 0 3177 0 1 229
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_18
+timestamp 1792368626
+transform 1 0 3475 0 1 -671
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_19
+timestamp 1792368626
+transform 1 0 3475 0 1 229
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_20
+timestamp 1792368626
+transform 1 0 3773 0 1 -671
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_21
+timestamp 1792368626
+transform 1 0 3773 0 1 229
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_22
+timestamp 1792368626
+transform 1 0 4071 0 1 -671
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_23
+timestamp 1792368626
+transform 1 0 4071 0 1 229
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_24
+timestamp 1792368626
+transform 1 0 4369 0 1 -671
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_25
+timestamp 1792368626
+transform 1 0 4369 0 1 229
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_26
+timestamp 1792368626
+transform 1 0 4667 0 1 -671
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_27
+timestamp 1792368626
+transform 1 0 4667 0 1 229
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_28
+timestamp 1792368626
+transform 1 0 4965 0 1 -671
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_29
+timestamp 1792368626
+transform 1 0 4965 0 1 229
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_30
+timestamp 1792368626
+transform 1 0 5263 0 1 -671
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_31
+timestamp 1792368626
+transform 1 0 5263 0 1 229
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_32
+timestamp 1792368626
+transform 1 0 5561 0 1 -671
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_33
+timestamp 1792368626
+transform 1 0 5561 0 1 229
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_34
+timestamp 1792368626
+transform 1 0 5859 0 1 -671
+box 4303 -7095 4421 -7015
+use res_trim_via_2  res_trim_via_2_35
+timestamp 1792368626
+transform 1 0 5859 0 1 229
+box 4303 -7095 4421 -7015
+use res_trim_via  res_trim_via_2
+timestamp 1792368626
+transform 1 0 1377 0 1 63
+box 4535 -7573 4591 -7209
+use res_trim_via  res_trim_via_3
+timestamp 1792368626
+transform 1 0 1675 0 1 63
+box 4535 -7573 4591 -7209
+use res_trim_via  res_trim_via_4
+timestamp 1792368626
+transform 1 0 1973 0 1 63
+box 4535 -7573 4591 -7209
+use res_trim_via  res_trim_via_5
+timestamp 1792368626
+transform 1 0 2271 0 1 63
+box 4535 -7573 4591 -7209
+use res_trim_via  res_trim_via_6
+timestamp 1792368626
+transform 1 0 2569 0 1 63
+box 4535 -7573 4591 -7209
+use res_trim_via  res_trim_via_7
+timestamp 1792368626
+transform 1 0 2867 0 1 63
+box 4535 -7573 4591 -7209
+use res_trim_via  res_trim_via_8
+timestamp 1792368626
+transform 1 0 3165 0 1 63
+box 4535 -7573 4591 -7209
+use res_trim_via  res_trim_via_9
+timestamp 1792368626
+transform 1 0 3463 0 1 63
+box 4535 -7573 4591 -7209
+use res_trim_via  res_trim_via_10
+timestamp 1792368626
+transform 1 0 3761 0 1 63
+box 4535 -7573 4591 -7209
+use res_trim_via  res_trim_via_11
+timestamp 1792368626
+transform 1 0 4059 0 1 63
+box 4535 -7573 4591 -7209
+use res_trim_via  res_trim_via_12
+timestamp 1792368626
+transform 1 0 4357 0 1 63
+box 4535 -7573 4591 -7209
+use res_trim_via  res_trim_via_13
+timestamp 1792368626
+transform 1 0 4655 0 1 63
+box 4535 -7573 4591 -7209
+use res_trim_via  res_trim_via_14
+timestamp 1792368626
+transform 1 0 4953 0 1 63
+box 4535 -7573 4591 -7209
+use res_trim_via  res_trim_via_15
+timestamp 1792368626
+transform 1 0 5251 0 1 63
+box 4535 -7573 4591 -7209
+use via_Y6ZQZM  via_Y6ZQZM_0 paramcells
+timestamp 1792513050
+transform 1 0 5448 0 1 -8832
+box -129 -38 129 38
+use via_Y6ZQZM  via_Y6ZQZM_2
+timestamp 1792513050
+transform 1 0 9929 0 1 -8832
+box -129 -38 129 38
+<< labels >>
+flabel metal2 5418 -6662 5520 -6505 0 FreeSans 738 90 0 0 ctrl[0]
+port 18 nsew
+flabel metal2 5711 -6660 5813 -6505 0 FreeSans 738 90 0 0 ctrl[1]
+port 17 nsew
+flabel metal2 6012 -6655 6114 -6505 0 FreeSans 738 90 0 0 ctrl[2]
+port 15 nsew
+flabel metal2 6306 -6663 6407 -6505 0 FreeSans 738 90 0 0 ctrl[3]
+port 14 nsew
+flabel metal2 6603 -6660 6705 -6505 0 FreeSans 738 90 0 0 ctrl[4]
+port 13 nsew
+flabel metal2 6893 -6657 6995 -6505 0 FreeSans 738 90 0 0 ctrl[5]
+port 12 nsew
+flabel metal2 7198 -6662 7299 -6505 0 FreeSans 738 90 0 0 ctrl[6]
+port 11 nsew
+flabel metal2 7492 -6662 7594 -6505 0 FreeSans 738 90 0 0 ctrl[7]
+port 10 nsew
+flabel metal2 7789 -6660 7890 -6505 0 FreeSans 738 90 0 0 ctrl[8]
+port 9 nsew
+flabel metal2 8086 -6662 8188 -6505 0 FreeSans 738 90 0 0 ctrl[9]
+port 8 nsew
+flabel metal2 8384 -6657 8486 -6505 0 FreeSans 738 90 0 0 ctrl[10]
+port 7 nsew
+flabel metal2 8682 -6665 8783 -6505 0 FreeSans 738 90 0 0 ctrl[11]
+port 6 nsew
+flabel metal2 8981 -6665 9082 -6505 0 FreeSans 738 90 0 0 ctrl[12]
+port 5 nsew
+flabel metal2 9275 -6665 9377 -6505 0 FreeSans 738 90 0 0 ctrl[13]
+port 4 nsew
+flabel metal2 9572 -6665 9673 -6505 0 FreeSans 738 90 0 0 ctrl[14]
+port 3 nsew
+flabel metal2 9871 -6665 9972 -6505 0 FreeSans 738 90 0 0 ctrl[15]
+port 2 nsew
+flabel metal2 10280 -8871 10481 -8791 0 FreeSans 480 0 0 0 top
+port 19 nsew
+flabel metal2 10280 -7936 10481 -7842 0 FreeSans 480 0 0 0 bot
+port 20 nsew
+flabel space 10287 -9056 10448 -8984 0 FreeSans 480 0 0 0 vss
+port 21 nsew
+<< end >>

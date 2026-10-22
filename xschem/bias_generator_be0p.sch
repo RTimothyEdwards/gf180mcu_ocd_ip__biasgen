@@ -1,4 +1,4 @@
-v {xschem version=3.4.6 file_version=3.3}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
@@ -80,7 +80,6 @@ N -1240 610 -1200 610 {lab=shld2}
 N -1180 610 -1140 610 {lab=shld3}
 N -1220 130 -1190 130 {lab=shld3}
 N -1220 110 -1190 110 {lab=shld2}
-N -2190 450 -2150 450 {lab=avdd}
 C {devices/iopin.sym} -2190 510 0 1 {name=p39 lab=avss}
 C {devices/iopin.sym} -2190 480 0 1 {name=p42 lab=avdd}
 C {devices/iopin.sym} -2190 550 0 1 {name=p98 lab=dvdd}
@@ -90,7 +89,7 @@ C {devices/lab_pin.sym} -2150 580 0 1 {name=p2 sig_type=std_logic lab=dvss}
 C {devices/ipin.sym} -2190 340 0 0 {name=p3 lab=pcasc}
 C {devices/ipin.sym} -2190 360 0 0 {name=p4 lab=pbias}
 C {devices/ipin.sym} -2010 190 0 0 {name=p8 lab=source_ena[4:0]}
-C {level_shift.sym} -1680 210 0 0 {name=x9[4:0] vdd=avdd vss=avss }
+C {level_shift_5v.sym} -1680 210 0 0 {name=x9[4:0] vdd=avdd vss=avss }
 C {inv_2.sym} -1940 190 0 0 {name=x46[4:0] VDD=dvdd VNW=dvdd VPW=dvss VSS=dvss prefix=gf180mcu_as_sc_mcu7t3v3__ }
 C {fillcap_4.sym} -1940 430 0 0 {name=x23[4:0] VDD=dvdd VNW=dvdd VPW=dvss VSS=dvss prefix=gf180mcu_as_sc_mcu7t3v3__ }
 C {diode_2.sym} -1890 250 0 0 {name=x78[4:0] VDD=dvdd VNW=dvdd VPW=dvss VSS=dvss prefix=gf180mcu_as_sc_mcu7t3v3__ }
@@ -106,7 +105,7 @@ C {bias_pstack.sym} -1200 570 0 0 {name=x10[1:0]}
 C {bias_pstack.sym} -1200 460 0 0 {name=x1[3:0]}
 C {bias_pstack.sym} -1200 350 0 0 {name=x2[7:0]}
 C {bias_pstack.sym} -1200 240 0 0 {name=x3[15:0]}
-C {lab_pin.sym} -1010 150 3 1 {name=p27 sig_type=std_logic lab=shld_vdd}
+C {lab_pin.sym} -1010 150 3 1 {name=p27 sig_type=std_logic lab=avdd}
 C {lab_wire.sym} -1420 240 0 0 {name=p10 sig_type=std_logic lab=source_ena_b_5v0[4]}
 C {lab_wire.sym} -1420 350 0 0 {name=p11 sig_type=std_logic lab=source_ena_b_5v0[3]}
 C {lab_wire.sym} -1420 460 0 0 {name=p14 sig_type=std_logic lab=source_ena_b_5v0[2]}
@@ -127,5 +126,4 @@ C {lab_pin.sym} -1240 500 0 0 {name=p19 sig_type=std_logic lab=shld2}
 C {lab_pin.sym} -1240 610 0 0 {name=p21 sig_type=std_logic lab=shld2}
 C {lab_pin.sym} -1190 110 0 1 {name=p25 sig_type=std_logic lab=shld2}
 C {lab_pin.sym} -1190 130 0 1 {name=p26 sig_type=std_logic lab=shld3}
-C {devices/iopin.sym} -2190 450 0 1 {name=p28 lab=shld_vdd}
-C {lab_pin.sym} -2150 450 0 1 {name=p29 sig_type=std_logic lab=shld_vdd}
+C {tap_2.sym} -1940 360 0 0 {name=x4[4:0] VSS=dvss VDD=dvdd prefix=gf180mcu_as_sc_mcu7t3v3__ }

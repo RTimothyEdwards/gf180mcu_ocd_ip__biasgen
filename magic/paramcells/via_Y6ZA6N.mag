@@ -1,19 +1,19 @@
 magic
 tech gf180mcuD
-magscale 1 2
-timestamp 1774379972
+magscale 1 5
+timestamp 1792612850
 << error_p >>
-rect -20 20 20 29
-rect -29 -20 20 20
-rect -20 -29 20 -20
+rect -14 14 14 19
+rect -19 -14 14 14
+rect -14 -19 14 -14
 << metal2 >>
-rect -20 20 20 29
-rect -20 -29 20 -20
+rect -14 14 14 19
+rect -14 -19 14 -14
 << via2 >>
-rect -20 -20 20 20
+rect -14 -14 14 14
 << metal3 >>
-rect -29 -20 -20 20
-rect 20 -20 29 20
+rect -19 -14 -14 14
+rect 14 -14 19 14
 << properties >>
 string gencell via
 string library gf180mcu

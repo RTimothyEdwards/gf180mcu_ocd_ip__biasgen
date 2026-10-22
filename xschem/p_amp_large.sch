@@ -69,44 +69,44 @@ N 960 270 960 330 {lab=avss}
 N 830 330 960 330 {lab=avss}
 N 960 270 990 270 {lab=avss}
 N 960 210 960 270 {lab=avss}
-C {gf180mcu_fd_pr/pfet_06v0.sym} 610 -70 0 0 {name=M7
+C {gf180mcu_fd_pr/pfet_05v0.sym} 610 -70 0 0 {name=M7
 w=20u
 l=1u
 ng=20
 m=1
-model=pfet_06v0
+model=pfet_05v0
 spiceprefix=X
 }
-C {gf180mcu_fd_pr/pfet_06v0.sym} 530 140 0 0 {name=M9
+C {gf180mcu_fd_pr/pfet_05v0.sym} 530 140 0 0 {name=M9
 w=20u
 l=0.5u
 ng=20
 m=1
-model=pfet_06v0
+model=pfet_05v0
 spiceprefix=X
 }
-C {gf180mcu_fd_pr/pfet_06v0.sym} 750 140 0 1 {name=M10
+C {gf180mcu_fd_pr/pfet_05v0.sym} 750 140 0 1 {name=M10
 w=20u
 l=0.5u
 ng=20
 m=1
-model=pfet_06v0
+model=pfet_05v0
 spiceprefix=X
 }
-C {gf180mcu_fd_pr/nfet_06v0.sym} 710 270 0 0 {name=M11
+C {gf180mcu_fd_pr/nfet_05v0.sym} 710 270 0 0 {name=M11
 w=10u
 l=0.5u
 ng=10
 m=1
-model=nfet_06v0
+model=nfet_05v0
 spiceprefix=X
 }
-C {gf180mcu_fd_pr/nfet_06v0.sym} 570 270 0 1 {name=M12
+C {gf180mcu_fd_pr/nfet_05v0.sym} 570 270 0 1 {name=M12
 w=10u
 l=0.5u
 ng=10
 m=1
-model=nfet_06v0
+model=nfet_05v0
 spiceprefix=X
 }
 C {devices/iopin.sym} 340 -140 0 1 {name=p10 lab=avdd}
@@ -116,29 +116,29 @@ C {devices/ipin.sym} 470 140 0 0 {name=p14 lab=inp}
 C {devices/ipin.sym} 810 140 0 1 {name=p15 lab=inn}
 C {devices/opin.sym} 810 210 0 0 {name=p16 lab=out}
 C {lab_pin.sym} 640 210 0 1 {name=p17 sig_type=std_logic lab=outn}
-C {gf180mcu_fd_pr/pfet_06v0.sym} 440 -70 0 1 {name=M1
+C {gf180mcu_fd_pr/pfet_05v0.sym} 440 -70 0 1 {name=M1
 w=20u
 l=1u
 ng=20
 m=1
-model=pfet_06v0
+model=pfet_05v0
 spiceprefix=X
 }
-C {gf180mcu_fd_pr/pfet_06v0.sym} 400 30 0 0 {name=M2
+C {gf180mcu_fd_pr/pfet_05v0.sym} 400 30 0 0 {name=M2
 w=20u
 l=0.5u
 ng=20
 m=1
-model=pfet_06v0
+model=pfet_05v0
 spiceprefix=X
 }
 C {devices/iopin.sym} 400 110 0 1 {name=p1 lab=ibias}
 C {ammeter.sym} 630 10 0 0 {name=Vmeas savecurrent=true spice_ignore=0}
-C {gf180mcu_fd_pr/nfet_06v0.sym} 1010 270 0 0 {name=M3
+C {gf180mcu_fd_pr/nfet_05v0.sym} 1010 270 0 0 {name=M3
 w=2u
 l=0.5u
 ng=2
 m=2
-model=nfet_06v0
+model=nfet_05v0
 spiceprefix=X
 }

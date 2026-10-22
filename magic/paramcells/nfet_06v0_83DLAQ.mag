@@ -1,47 +1,57 @@
 magic
 tech gf180mcuD
-magscale 1 2
-timestamp 1774450949
+magscale 1 10
+timestamp 1792529024
 << error_p >>
-rect -41 -141 -31 -109
-<< hvnmos >>
-rect -45 -81 45 119
+rect -51 178 51 181
+rect -69 121 -48 137
+rect 48 121 69 137
+rect -77 -77 -48 121
+rect -69 -92 -51 -77
+rect 51 -92 69 121
+rect 77 -77 80 121
+rect 114 -77 123 121
+rect -69 -93 69 -92
+rect -47 -125 47 -116
+rect -47 -162 -35 -125
+<< mvnmos >>
+rect -51 -93 51 137
 << mvndiff >>
-rect -113 105 -45 119
-rect -113 -67 -99 105
-rect -67 -67 -45 105
-rect -113 -81 -45 -67
-rect 45 105 113 119
-rect 45 -67 67 105
-rect 99 -67 113 105
-rect 45 -81 113 -67
+rect -130 121 -51 137
+rect -130 -77 -114 121
+rect -77 -77 -51 121
+rect -130 -93 -51 -77
+rect 51 121 130 137
+rect 51 -77 77 121
+rect 114 -77 130 121
+rect 51 -93 130 -77
 << mvndiffc >>
-rect -99 -67 -67 105
-rect 67 -67 99 105
-<< poly >>
-rect -45 119 45 155
-rect -45 -109 45 -81
-rect -45 -141 -31 -109
-rect 31 -141 45 -109
-rect -45 -155 45 -141
-<< polycont >>
-rect -31 -141 31 -109
+rect -114 -77 -77 121
+rect 77 -77 114 121
+<< polysilicon >>
+rect -51 137 51 178
+rect -51 -125 51 -93
+rect -51 -162 -35 -125
+rect 35 -162 51 -125
+rect -51 -178 51 -162
+<< polycontact >>
+rect -35 -162 35 -125
 << metal1 >>
-rect -109 -67 -99 105
-rect -67 -67 -57 105
-rect 57 -67 67 105
-rect 99 -67 109 105
-rect -41 -141 -31 -109
-rect 31 -141 41 -109
+rect -125 -77 -114 121
+rect -77 -77 -65 121
+rect 65 -77 77 121
+rect 114 -77 125 121
+rect -47 -162 -35 -125
+rect 35 -162 47 -125
 << labels >>
-rlabel mvndiffc -83 19 -83 19 0 D
+rlabel mvndiffc -95 21 -95 21 0 D
 port 1 nsew
-rlabel mvndiffc 83 19 83 19 0 S
+rlabel mvndiffc 95 21 95 21 0 S
 port 2 nsew
-rlabel polycont 0 -125 0 -125 0 G
+rlabel polycontact 0 -144 0 -144 0 G
 port 3 nsew
 << properties >>
-string gencell nfet_06v0
+string gencell nfet_05v0
 string library gf180mcu
 string parameters w 1.0 l 0.45 m 1 ng 1 diffcov 100 polycov 100 guard 0 glc 1 grc 1 gtc 1 gbc 1 tbcov 100 rlcov 100 topc 0 botc 1 poverlap 0 doverlap 1 lmin 0.45 wmin 0.15 class mosfet compatible {nfet_05v0 nfet_06v0} full_metal 1 conn_gates 0 gate_ring 0 doports 1 viasrc 0 viadrn 0 viagate 0 ccols 1 viagb 0 viagr 0 viagl 0 viagt 0
 << end >>

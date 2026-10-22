@@ -1,49 +1,58 @@
 magic
 tech gf180mcuD
-magscale 1 2
-timestamp 1774450949
+magscale 1 10
+timestamp 1792529024
 << error_p >>
-rect -36 -241 -26 -209
+rect -46 294 46 296
+rect -71 -192 -62 236
+rect -54 -192 -42 252
+rect 42 236 54 252
+rect -54 -208 -46 -192
+rect 46 -208 54 236
+rect 71 -192 75 236
+rect 108 -192 117 236
+rect -41 -241 41 -232
+rect -41 -278 -30 -241
 << nwell >>
-rect -232 -305 232 343
-<< hvpmos >>
-rect -40 -181 40 219
+rect -267 -351 267 395
+<< mvpmos >>
+rect -46 -208 46 252
 << mvpdiff >>
-rect -108 205 -40 219
-rect -108 -167 -94 205
-rect -62 -167 -40 205
-rect -108 -181 -40 -167
-rect 40 205 108 219
-rect 40 -167 62 205
-rect 94 -167 108 205
-rect 40 -181 108 -167
+rect -124 236 -46 252
+rect -124 -192 -108 236
+rect -71 -192 -46 236
+rect -124 -208 -46 -192
+rect 46 236 124 252
+rect 46 -192 71 236
+rect 108 -192 124 236
+rect 46 -208 124 -192
 << mvpdiffc >>
-rect -94 -167 -62 205
-rect 62 -167 94 205
-<< poly >>
-rect -40 219 40 255
-rect -40 -209 40 -181
-rect -40 -241 -26 -209
-rect 26 -241 40 -209
-rect -40 -255 40 -241
-<< polycont >>
-rect -26 -241 26 -209
+rect -108 -192 -71 236
+rect 71 -192 108 236
+<< polysilicon >>
+rect -46 252 46 294
+rect -46 -241 46 -208
+rect -46 -278 -30 -241
+rect 30 -278 46 -241
+rect -46 -294 46 -278
+<< polycontact >>
+rect -30 -278 30 -241
 << metal1 >>
-rect -104 -167 -94 205
-rect -62 -167 -52 205
-rect 52 -167 62 205
-rect 94 -167 104 205
-rect -36 -241 -26 -209
-rect 26 -241 36 -209
+rect -120 -192 -108 236
+rect -71 -192 -60 236
+rect 60 -192 71 236
+rect 108 -192 120 236
+rect -41 -278 -30 -241
+rect 30 -278 41 -241
 << labels >>
-rlabel mvpdiffc -78 19 -78 19 0 D
+rlabel mvpdiffc -90 21 -90 21 0 D
 port 1 nsew
-rlabel mvpdiffc 78 19 78 19 0 S
+rlabel mvpdiffc 90 21 90 21 0 S
 port 2 nsew
-rlabel polycont 0 -225 0 -225 0 G
+rlabel polycontact 0 -259 0 -259 0 G
 port 3 nsew
 << properties >>
-string gencell pfet_06v0
+string gencell pfet_05v0
 string library gf180mcu
 string parameters w 2.0 l 0.4 m 1 ng 1 diffcov 100 polycov 100 guard 0 glc 1 grc 1 gtc 1 gbc 1 tbcov 100 rlcov 100 topc 0 botc 1 poverlap 0 doverlap 1 lmin 0.4 wmin 0.15 class mosfet compatible {pfet_05v0 pfet_06v0} full_metal 1 conn_gates 0 gate_ring 0 ccols 1 viasrc 0 viadrn 0 viagate 0 viagb 0 viagr 0 viagl 0 viagt 0 doports 1
 << end >>

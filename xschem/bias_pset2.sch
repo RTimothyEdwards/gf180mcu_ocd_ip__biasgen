@@ -1,4 +1,4 @@
-v {xschem version=3.4.6 file_version=3.3}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
@@ -49,36 +49,54 @@ N 60 -430 130 -430 {
 lab=pcasc}
 N 420 -490 460 -490 {lab=shld2}
 N 420 -460 460 -460 {lab=shld3}
-C {gf180mcu_fd_pr/pfet_06v0.sym} 170 -510 0 0 {name=M13
-w=3u
-l=1u
-ng=1
-m=1
-model=pfet_06v0
-spiceprefix=X
-}
 C {devices/iopin.sym} 60 -510 0 1 {name=p6 lab=pbias}
 C {devices/iopin.sym} 190 -160 0 0 {name=p8 lab=itail}
-C {gf180mcu_fd_pr/pfet_06v0.sym} 170 -330 0 0 {name=M18
-w=3u
-l=1u
-ng=1
-m=1
-model=pfet_06v0
-spiceprefix=X
-}
 C {devices/ipin.sym} 100 -330 0 0 {name=p12 lab=enb}
-C {gf180mcu_fd_pr/pfet_06v0.sym} 170 -430 0 0 {name=M14
-w=3u
-l=1u
-ng=1
-m=1
-model=pfet_06v0
-spiceprefix=X
-}
 C {opin.sym} 60 -430 0 1 {name=p5 lab=pcasc}
 C {devices/iopin.sym} 60 -570 0 1 {name=p1 lab=avdd}
 C {devices/iopin.sym} 420 -490 0 1 {name=p3 lab=shld2}
 C {devices/iopin.sym} 420 -460 0 1 {name=p4 lab=shld3}
 C {lab_pin.sym} 460 -490 0 1 {name=p9 sig_type=std_logic lab=shld2}
 C {lab_pin.sym} 460 -460 0 1 {name=p10 sig_type=std_logic lab=shld3}
+C {gf180mcu_fd_pr/pfet_05v0.sym} 170 -510 0 0 {name=M1
+L=1.0u
+W=3.0u
+nf=1
+m=1
+ad="'int((nf+1)/2) * W/nf * 0.18u'"
+pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
+as="'int((nf+2)/2) * W/nf * 0.18u'"
+ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
+nrd="'0.18u / W'" nrs="'0.18u / W'"
+sa=0 sb=0 sd=0
+model=pfet_05v0
+spiceprefix=X
+}
+C {gf180mcu_fd_pr/pfet_05v0.sym} 170 -430 0 0 {name=M2
+L=1.0u
+W=3.0u
+nf=1
+m=1
+ad="'int((nf+1)/2) * W/nf * 0.18u'"
+pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
+as="'int((nf+2)/2) * W/nf * 0.18u'"
+ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
+nrd="'0.18u / W'" nrs="'0.18u / W'"
+sa=0 sb=0 sd=0
+model=pfet_05v0
+spiceprefix=X
+}
+C {gf180mcu_fd_pr/pfet_05v0.sym} 170 -330 0 0 {name=M3
+L=1.0u
+W=3.0u
+nf=1
+m=1
+ad="'int((nf+1)/2) * W/nf * 0.18u'"
+pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
+as="'int((nf+2)/2) * W/nf * 0.18u'"
+ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
+nrd="'0.18u / W'" nrs="'0.18u / W'"
+sa=0 sb=0 sd=0
+model=pfet_05v0
+spiceprefix=X
+}

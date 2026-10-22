@@ -215,7 +215,7 @@ C {devices/lab_pin.sym} 960 350 0 1 {name=p36 sig_type=std_logic lab=dvss}
 C {devices/iopin.sym} 960 590 0 0 {name=p38 lab=voltgen_sink2_ibias}
 C {devices/ipin.sym} 550 -280 0 0 {name=p51 lab=ref_sel_fine}
 C {devices/ipin.sym} 550 -300 0 0 {name=p52 lab=ref_sel_coarse}
-C {bias_generator_be0p_v2.sym} 760 1130 0 0 {name=x13}
+C {bias_generator_be0p.sym} 760 1130 0 0 {name=x13}
 C {devices/lab_pin.sym} 960 830 0 1 {name=p53 sig_type=std_logic lab=avdd}
 C {devices/lab_pin.sym} 960 850 0 1 {name=p54 sig_type=std_logic lab=avss}
 C {devices/lab_pin.sym} 960 870 0 1 {name=p55 sig_type=std_logic lab=dvdd}
@@ -259,7 +259,7 @@ C {devices/lab_pin.sym} 960 550 0 1 {name=p44 sig_type=std_logic lab=avss}
 C {devices/lab_pin.sym} 960 570 0 1 {name=p45 sig_type=std_logic lab=avss}
 C {bias_generator_ben1um.sym} 760 770 0 0 {name=x4}
 C {bias_generator_ben250nm.sym} 760 410 0 0 {name=x2}
-C {bias_generator_be0p_v2.sym} 760 1330 0 0 {name=x5}
+C {bias_generator_be0p.sym} 760 1330 0 0 {name=x5}
 C {devices/lab_pin.sym} 960 1030 0 1 {name=p46 sig_type=std_logic lab=avdd}
 C {devices/lab_pin.sym} 960 1050 0 1 {name=p47 sig_type=std_logic lab=avss}
 C {devices/lab_pin.sym} 960 1070 0 1 {name=p48 sig_type=std_logic lab=dvdd}
@@ -268,7 +268,7 @@ C {devices/iopin.sym} 960 1150 0 0 {name=p57 lab=idac1_source_ibias}
 C {devices/ipin.sym} 390 1150 0 0 {name=p59 lab=idac1_source[4:0]}
 C {devices/lab_pin.sym} 960 1110 0 1 {name=p60 sig_type=std_logic lab=avdd}
 C {devices/lab_pin.sym} 960 1130 0 1 {name=p61 sig_type=std_logic lab=avdd}
-C {bias_generator_be0p_v2.sym} 760 1530 0 0 {name=x6}
+C {bias_generator_be0p.sym} 760 1530 0 0 {name=x6}
 C {devices/lab_pin.sym} 960 1230 0 1 {name=p65 sig_type=std_logic lab=avdd}
 C {devices/lab_pin.sym} 960 1250 0 1 {name=p66 sig_type=std_logic lab=avss}
 C {devices/lab_pin.sym} 960 1270 0 1 {name=p67 sig_type=std_logic lab=dvdd}

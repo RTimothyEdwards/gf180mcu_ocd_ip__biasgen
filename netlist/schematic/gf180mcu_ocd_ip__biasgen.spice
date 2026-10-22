@@ -12,7 +12,7 @@ x1 avdd ena vbg net1 avss dvdd dvss ref_sel_vbg ref_in dvss nbias pcasc pbias ne
 * noconn #net1
 * noconn #net2
 x13 dvdd dvss avdd pcasc pbias voltgen_source[4] voltgen_source[3] voltgen_source[2] voltgen_source[1] voltgen_source[0]
-+ voltgen_source_ibias avss avdd avdd bias_generator_be0p_v2
++ voltgen_source_ibias avss avdd avdd bias_generator_be0p
 x8[4] net4 avss ncasc nbias avss avss avss bias_nstack
 x8[3] net4 avss ncasc nbias avss avss avss bias_nstack
 x8[2] net4 avss ncasc nbias avss avss avss bias_nstack
@@ -33,9 +33,9 @@ x4 dvdd dvss avdd nbias avss voltgen_sink2[2] voltgen_sink2[1] voltgen_sink2[0] 
 + bias_generator_ben1um
 x2 dvdd dvss avdd nbias avss bandgap_sink2[1] bandgap_sink2[0] bandgap_sink2_ibias ncasc avss avss bias_generator_ben250nm
 x5 dvdd dvss avdd pcasc pbias idac1_source[4] idac1_source[3] idac1_source[2] idac1_source[1] idac1_source[0] idac1_source_ibias
-+ avss avdd avdd bias_generator_be0p_v2
++ avss avdd avdd bias_generator_be0p
 x6 dvdd dvss avdd pcasc pbias idac2_source[4] idac2_source[3] idac2_source[2] idac2_source[1] idac2_source[0] idac2_source_ibias
-+ avss avdd avdd bias_generator_be0p_v2
++ avss avdd avdd bias_generator_be0p
 .ends
 
 * expanding   symbol:  bias_generator_fe.sym # of pins=19
@@ -50,12 +50,12 @@ x13[1] avdd pbias pcasc enb_test0_5v0 src_test0 shld2 avdd bias_pstack
 x13[0] avdd pbias pcasc enb_test0_5v0 src_test0 shld2 avdd bias_pstack
 x17[1] snk_test0 ena_test0_5v0 ncasc nbias avss avss avss bias_nstack
 x17[0] snk_test0 ena_test0_5v0 ncasc nbias avss avss avss bias_nstack
-x1 ref_sel_vbg net2 enb_vbg_5v0 avdd avss level_shift
-x11 net5 ena_snk_test0 ena_test0_5v0 avdd avss level_shift
-x23 ena_src_test0 net4 enb_test0_5v0 avdd avss level_shift
+x1 ref_sel_vbg net2 enb_vbg_5v0 avdd avss level_shift_5v
+x11 net5 ena_snk_test0 ena_test0_5v0 avdd avss level_shift_5v
+x23 ena_src_test0 net4 enb_test0_5v0 avdd avss level_shift_5v
 x24 dvdd dvdd dvss dvss net3 ena gf180mcu_as_sc_mcu7t3v3__inv_2
 x35 dvdd dvdd dvss dvss net2 ref_sel_vbg gf180mcu_as_sc_mcu7t3v3__inv_2
-x36 net3 ena ena_5v0 avdd avss level_shift
+x36 net3 ena ena_5v0 avdd avss level_shift_5v
 Vmeas vfb net10 0
 .save i(vmeas)
 x19[2] avdd pbias pcasc enb_std_5v0 vfb shld2 avdd bias_pstack
@@ -74,7 +74,7 @@ x7 dvdd dvdd dvss dvss ena_src_test0 gf180mcu_as_sc_mcu7t3v3__diode_2
 x8 dvdd dvdd dvss dvss ena_snk_test0 gf180mcu_as_sc_mcu7t3v3__diode_2
 x9 dvdd dvdd dvss dvss net4 ena_src_test0 gf180mcu_as_sc_mcu7t3v3__inv_2
 x10 dvdd dvdd dvss dvss net5 ena_snk_test0 gf180mcu_as_sc_mcu7t3v3__inv_2
-x12 net2 ref_sel_vbg ena_vbg_5v0 avdd avss level_shift
+x12 net2 ref_sel_vbg ena_vbg_5v0 avdd avss level_shift_5v
 x1[15] nset ena_5v0 ncasc nbias avss avss avss bias_nset
 x1[14] nset ena_5v0 ncasc nbias avss avss avss bias_nset
 x1[13] nset ena_5v0 ncasc nbias avss avss avss bias_nset
@@ -113,12 +113,12 @@ x2[3] avdd pbias pcasc enb_fine_5v0 vfb shld2 avdd bias_pstack
 x2[2] avdd pbias pcasc enb_fine_5v0 vfb shld2 avdd bias_pstack
 x2[1] avdd pbias pcasc enb_fine_5v0 vfb shld2 avdd bias_pstack
 x2[0] avdd pbias pcasc enb_fine_5v0 vfb shld2 avdd bias_pstack
-x15 net9 net8 enb_fine_5v0 avdd avss level_shift
+x15 net9 net8 enb_fine_5v0 avdd avss level_shift_5v
 x16 dvdd dvdd dvss dvss net9 net8 gf180mcu_as_sc_mcu7t3v3__inv_2
 x13 avdd pbias pcasc enb_coarse_5v0 vfb shld2 avdd bias_pstack
-x19 net12 net11 enb_coarse_5v0 avdd avss level_shift
+x19 net12 net11 enb_coarse_5v0 avdd avss level_shift_5v
 x20 dvdd dvdd dvss dvss net12 net11 gf180mcu_as_sc_mcu7t3v3__inv_2
-x21 net14 net13 enb_std_5v0 avdd avss level_shift
+x21 net14 net13 enb_std_5v0 avdd avss level_shift_5v
 x22 dvdd dvdd dvss dvss net14 net13 gf180mcu_as_sc_mcu7t3v3__inv_2
 x30 avdd dummypbias pcasc enb_vbg_5v0 net6 pbias avdd bias_pset2
 x2 dvdd dvdd dvss dvss ref_sel_coarse gf180mcu_as_sc_mcu7t3v3__diode_2
@@ -137,20 +137,27 @@ x27 dvdd dvdd dvss dvss net13 ref_sel_vbg net17 gf180mcu_as_sc_mcu7t3v3__nand2_2
 x28 dvdd dvdd dvss dvss net18 ref_sel_fine gf180mcu_as_sc_mcu7t3v3__inv_2
 x29 dvdd dvdd dvss dvss net16 net18 ref_sel_coarse gf180mcu_as_sc_mcu7t3v3__nor2_2
 XR1 net7 ref_in avss ppolyf_u_1k r_width=1e-6 r_length=848e-6 m=1
+x32[6] dvss dvdd gf180mcu_as_sc_mcu7t3v3__tap_2
+x32[5] dvss dvdd gf180mcu_as_sc_mcu7t3v3__tap_2
+x32[4] dvss dvdd gf180mcu_as_sc_mcu7t3v3__tap_2
+x32[3] dvss dvdd gf180mcu_as_sc_mcu7t3v3__tap_2
+x32[2] dvss dvdd gf180mcu_as_sc_mcu7t3v3__tap_2
+x32[1] dvss dvdd gf180mcu_as_sc_mcu7t3v3__tap_2
+x32[0] dvss dvdd gf180mcu_as_sc_mcu7t3v3__tap_2
 .ends
 
 
-* expanding   symbol:  bias_generator_be0p_v2.sym # of pins=10
-** sym_path: /home/tim/gits/gf180mcu_ocd_chipalooza/dependencies/gf180mcu_ocd_ip__biasgen/xschem/bias_generator_be0p_v2.sym
-** sch_path: /home/tim/gits/gf180mcu_ocd_chipalooza/dependencies/gf180mcu_ocd_ip__biasgen/xschem/bias_generator_be0p_v2.sch
-.subckt bias_generator_be0p_v2 dvdd dvss avdd pcasc pbias source_ena[4] source_ena[3] source_ena[2] source_ena[1] source_ena[0]
+* expanding   symbol:  bias_generator_be0p.sym # of pins=10
+** sym_path: /home/tim/gits/gf180mcu_ocd_chipalooza/dependencies/gf180mcu_ocd_ip__biasgen/xschem/bias_generator_be0p.sym
+** sch_path: /home/tim/gits/gf180mcu_ocd_chipalooza/dependencies/gf180mcu_ocd_ip__biasgen/xschem/bias_generator_be0p.sch
+.subckt bias_generator_be0p dvdd dvss avdd pcasc pbias source_ena[4] source_ena[3] source_ena[2] source_ena[1] source_ena[0]
 + source_ibias avss shld2 shld3
 *.PININFO avss:B avdd:B dvdd:B dvss:B pcasc:I pbias:I source_ena[4:0]:I source_ibias:B shld2:B shld3:B
-x9[4] source_ena[4] net1[4] source_ena_b_5v0[4] avdd avss level_shift
-x9[3] source_ena[3] net1[3] source_ena_b_5v0[3] avdd avss level_shift
-x9[2] source_ena[2] net1[2] source_ena_b_5v0[2] avdd avss level_shift
-x9[1] source_ena[1] net1[1] source_ena_b_5v0[1] avdd avss level_shift
-x9[0] source_ena[0] net1[0] source_ena_b_5v0[0] avdd avss level_shift
+x9[4] source_ena[4] net1[4] source_ena_b_5v0[4] avdd avss level_shift_5v
+x9[3] source_ena[3] net1[3] source_ena_b_5v0[3] avdd avss level_shift_5v
+x9[2] source_ena[2] net1[2] source_ena_b_5v0[2] avdd avss level_shift_5v
+x9[1] source_ena[1] net1[1] source_ena_b_5v0[1] avdd avss level_shift_5v
+x9[0] source_ena[0] net1[0] source_ena_b_5v0[0] avdd avss level_shift_5v
 x46[4] dvdd dvdd dvss dvss net1[4] source_ena[4] gf180mcu_as_sc_mcu7t3v3__inv_2
 x46[3] dvdd dvdd dvss dvss net1[3] source_ena[3] gf180mcu_as_sc_mcu7t3v3__inv_2
 x46[2] dvdd dvdd dvss dvss net1[2] source_ena[2] gf180mcu_as_sc_mcu7t3v3__inv_2
@@ -197,6 +204,11 @@ x3[3] avdd pbias pcasc source_ena_b_5v0[4] source_ibias shld2 shld3 bias_pstack
 x3[2] avdd pbias pcasc source_ena_b_5v0[4] source_ibias shld2 shld3 bias_pstack
 x3[1] avdd pbias pcasc source_ena_b_5v0[4] source_ibias shld2 shld3 bias_pstack
 x3[0] avdd pbias pcasc source_ena_b_5v0[4] source_ibias shld2 shld3 bias_pstack
+x4[4] dvss dvdd gf180mcu_as_sc_mcu7t3v3__tap_2
+x4[3] dvss dvdd gf180mcu_as_sc_mcu7t3v3__tap_2
+x4[2] dvss dvdd gf180mcu_as_sc_mcu7t3v3__tap_2
+x4[1] dvss dvdd gf180mcu_as_sc_mcu7t3v3__tap_2
+x4[0] dvss dvdd gf180mcu_as_sc_mcu7t3v3__tap_2
 .ends
 
 
@@ -206,11 +218,11 @@ x3[0] avdd pbias pcasc source_ena_b_5v0[4] source_ibias shld2 shld3 bias_pstack
 .subckt bias_nstack itail ena ncasc nbias avss shld2 shld3
 *.PININFO avss:B ena:I nbias:I itail:B ncasc:I shld2:B shld3:B
 XM1 itail ena net2 avss nfet_05v0 L=1.0u W=3.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
 XM2 net2 ncasc net1 avss nfet_05v0 L=1.0u W=3.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
 XM3 net1 nbias avss avss nfet_05v0 L=1.0u W=3.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
 .ends
 
 
@@ -220,11 +232,11 @@ XM3 net1 nbias avss avss nfet_05v0 L=1.0u W=3.0u nf=1 ad='int((nf+1)/2) * W/nf *
 .subckt bias_pstack avdd pbias pcasc enb itail shld2 shld3
 *.PININFO avdd:B itail:B enb:I pcasc:I pbias:I shld2:B shld3:B
 XM1 net1 pbias avdd avdd pfet_05v0 L=1.0u W=3.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
 XM2 net2 pcasc net1 avdd pfet_05v0 L=1.0u W=3.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
 XM3 itail enb net2 avdd pfet_05v0 L=1.0u W=3.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
 .ends
 
 
@@ -244,9 +256,9 @@ x1[1] sink_ibias sink_ena_5v0[0] ncasc nbias avss shld2 shld3 bias_nstack
 x1[0] sink_ibias sink_ena_5v0[0] ncasc nbias avss shld2 shld3 bias_nstack
 x2 sink_ibias sink_ena_5v0[1] ncasc nbias avss shld2 shld3 bias_nstack
 x3 sink_ibias sink_ena_5v0[2] ncasc nbias avss shld2 shld3 bias_nstack
-x4[2] net1[2] sink_ena[2] sink_ena_5v0[2] avdd avss level_shift
-x4[1] net1[1] sink_ena[1] sink_ena_5v0[1] avdd avss level_shift
-x4[0] net1[0] sink_ena[0] sink_ena_5v0[0] avdd avss level_shift
+x4[2] net1[2] sink_ena[2] sink_ena_5v0[2] avdd avss level_shift_5v
+x4[1] net1[1] sink_ena[1] sink_ena_5v0[1] avdd avss level_shift_5v
+x4[0] net1[0] sink_ena[0] sink_ena_5v0[0] avdd avss level_shift_5v
 x5[2] dvdd dvdd dvss dvss net1[2] sink_ena[2] gf180mcu_as_sc_mcu7t3v3__inv_2
 x5[1] dvdd dvdd dvss dvss net1[1] sink_ena[1] gf180mcu_as_sc_mcu7t3v3__inv_2
 x5[0] dvdd dvdd dvss dvss net1[0] sink_ena[0] gf180mcu_as_sc_mcu7t3v3__inv_2
@@ -260,6 +272,9 @@ x2[3] dummy_ibias avss ncasc nbias avss shld2 shld3 bias_nstack
 x2[2] dummy_ibias avss ncasc nbias avss shld2 shld3 bias_nstack
 x2[1] dummy_ibias avss ncasc nbias avss shld2 shld3 bias_nstack
 x2[0] dummy_ibias avss ncasc nbias avss shld2 shld3 bias_nstack
+x3[2] dvss dvdd gf180mcu_as_sc_mcu7t3v3__tap_2
+x3[1] dvss dvdd gf180mcu_as_sc_mcu7t3v3__tap_2
+x3[0] dvss dvdd gf180mcu_as_sc_mcu7t3v3__tap_2
 .ends
 
 
@@ -274,8 +289,8 @@ x6[1] dvdd dvdd dvss dvss sink_ena[1] gf180mcu_as_sc_mcu7t3v3__diode_2
 x6[0] dvdd dvdd dvss dvss sink_ena[0] gf180mcu_as_sc_mcu7t3v3__diode_2
 x2 sink_ibias sink_ena_5v0[1] ncasc nbias avss shld2 shld3 bias_nstack
 x3 sink_ibias sink_ena_5v0[0] ncasc nbias avss shld2 shld3 bias_nstack
-x4[1] net1[1] sink_ena[1] sink_ena_5v0[1] avdd avss level_shift
-x4[0] net1[0] sink_ena[0] sink_ena_5v0[0] avdd avss level_shift
+x4[1] net1[1] sink_ena[1] sink_ena_5v0[1] avdd avss level_shift_5v
+x4[0] net1[0] sink_ena[0] sink_ena_5v0[0] avdd avss level_shift_5v
 x5[1] dvdd dvdd dvss dvss net1[1] sink_ena[1] gf180mcu_as_sc_mcu7t3v3__inv_2
 x5[0] dvdd dvdd dvss dvss net1[0] sink_ena[0] gf180mcu_as_sc_mcu7t3v3__inv_2
 x1[7] dummy_bias avss ncasc nbias avss shld2 shld3 bias_nstack
@@ -286,30 +301,32 @@ x1[3] dummy_bias avss ncasc nbias avss shld2 shld3 bias_nstack
 x1[2] dummy_bias avss ncasc nbias avss shld2 shld3 bias_nstack
 x1[1] dummy_bias avss ncasc nbias avss shld2 shld3 bias_nstack
 x1[0] dummy_bias avss ncasc nbias avss shld2 shld3 bias_nstack
+x2[1] dvss dvdd gf180mcu_as_sc_mcu7t3v3__tap_2
+x2[0] dvss dvdd gf180mcu_as_sc_mcu7t3v3__tap_2
 .ends
 
 
-* expanding   symbol:  level_shift.sym # of pins=3
-** sym_path: /home/tim/gits/gf180mcu_ocd_chipalooza/dependencies/gf180mcu_ocd_ip__biasgen/xschem/level_shift.sym
-** sch_path: /home/tim/gits/gf180mcu_ocd_chipalooza/dependencies/gf180mcu_ocd_ip__biasgen/xschem/level_shift.sch
-.subckt level_shift in_n in_p out vdd vss
+* expanding   symbol:  level_shift_5v.sym # of pins=3
+** sym_path: /home/tim/gits/gf180mcu_ocd_chipalooza/dependencies/gf180mcu_ocd_ip__biasgen/xschem/level_shift_5v.sym
+** sch_path: /home/tim/gits/gf180mcu_ocd_chipalooza/dependencies/gf180mcu_ocd_ip__biasgen/xschem/level_shift_5v.sch
+.subckt level_shift_5v in_n in_p out vdd vss
 *.PININFO in_n:I in_p:I out:O
-XM9 net1 S1_N vdd vdd pfet_03v3 L=0.5u W=1u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=2
-XM2 S1_N net1 vdd vdd pfet_03v3 L=0.5u W=1u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=2
-XM4 S2_N S1_N vdd vdd pfet_03v3 L=0.5u W=2u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=2
-XM5 out S2_N vdd vdd pfet_03v3 L=0.5u W=2u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=2
-XM7 net1 in_p vss vss nfet_03v3 L=0.5u W=4u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=2
-XM1 S1_N in_n vss vss nfet_03v3 L=0.5u W=4u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=2
-XM3 S2_N S1_N vss vss nfet_03v3 L=0.5u W=1u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=2
-XM6 out S2_N vss vss nfet_03v3 L=0.5u W=1u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=2
+XM8 net1 in_p vss vss nfet_05v0 L=0.6u W=4.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=2 par=2
+XM10 net1 S1_N vdd vdd pfet_05v0 L=0.5u W=1.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=2 par=2
+XM2 out S2_N vdd vdd pfet_05v0 L=0.5u W=2.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=4 par=4
+XM9 S1_N net1 vdd vdd pfet_05v0 L=0.5u W=1.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=2 par=2
+XM4 S2_N S1_N vdd vdd pfet_05v0 L=0.5u W=2.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=2 par=2
+XM1 S1_N in_n vss vss nfet_05v0 L=0.6u W=4.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=2 par=2
+XM3 S2_N S1_N vss vss nfet_05v0 L=0.6u W=1.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=2 par=2
+XM5 out S2_N vss vss nfet_05v0 L=0.6u W=1.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=4 par=4
 .ends
 
 
@@ -318,12 +335,12 @@ XM6 out S2_N vss vss nfet_03v3 L=0.5u W=1u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u
 ** sch_path: /home/tim/gits/gf180mcu_ocd_chipalooza/dependencies/gf180mcu_ocd_ip__biasgen/xschem/bias_nset.sch
 .subckt bias_nset itail ena ncasc nbias avss shld2 shld3
 *.PININFO avss:B ena:I itail:B nbias:O ncasc:O shld2:B shld3:B
-XM3 nbias nbias avss avss nfet_06v0 L=0.70u W=0.30u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
-XM6 ncasc ncasc nbias avss nfet_06v0 L=0.70u W=0.30u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
-XM12 itail ena ncasc avss nfet_06v0 L=0.70u W=0.30u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+XM1 nbias nbias avss avss nfet_05v0 L=1.0u W=3.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
+XM2 ncasc ncasc nbias avss nfet_05v0 L=1.0u W=3.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
+XM3 itail ena ncasc avss nfet_05v0 L=1.0u W=3.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
 .ends
 
 
@@ -332,12 +349,12 @@ XM12 itail ena ncasc avss nfet_06v0 L=0.70u W=0.30u nf=1 ad='int((nf+1)/2) * W/n
 ** sch_path: /home/tim/gits/gf180mcu_ocd_chipalooza/dependencies/gf180mcu_ocd_ip__biasgen/xschem/bias_pset.sch
 .subckt bias_pset avdd pbias pcasc enb itail shld3
 *.PININFO pbias:B itail:B enb:I pcasc:O avdd:B shld3:B
-XM13 pbias pbias avdd avdd pfet_06v0 L=0.55u W=0.30u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
-XM18 itail enb pcasc avdd pfet_06v0 L=0.55u W=0.30u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
-XM14 pcasc pcasc pbias avdd pfet_06v0 L=0.55u W=0.30u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+XM1 pbias pbias avdd avdd pfet_05v0 L=1.0u W=3.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
+XM2 pcasc pcasc pbias avdd pfet_05v0 L=1.0u W=3.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
+XM3 itail enb pcasc avdd pfet_05v0 L=1.0u W=3.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
 .ends
 
 
@@ -347,19 +364,21 @@ XM14 pcasc pcasc pbias avdd pfet_06v0 L=0.55u W=0.30u nf=1 ad='int((nf+1)/2) * W
 .subckt bias_amp_large avdd out inn inp nbias avss ena
 *.PININFO inp:I nbias:I inn:I out:O avdd:B avss:B ena:I
 XM8 out outn avdd avdd pfet_05v0 L=0.50u W=10.0u nf=10 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
 XM9 net1 nbias avss avss nfet_05v0 L=0.60u W=20.0u nf=20 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
 XM1 vcom ena net1 avss nfet_05v0 L=0.60u W=20.0u nf=20 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
 XM4 outn inp vcom avss nfet_05v0 L=0.60u W=20.0u nf=20 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
 XM5 out inn vcom avss nfet_05v0 L=0.60u W=20.0u nf=20 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
 XM2 outn outn avdd avdd pfet_05v0 L=0.50u W=10.0u nf=10 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
-XM3 avdd avdd avdd avdd pfet_05v0 L=0.50u W=2.0u nf=2 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
+XM3 avdd avdd avdd avdd pfet_05v0 L=0.50u W=4.0u nf=4 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
+XM6 avss nbias avss avss nfet_05v0 L=0.60u W=6.0u nf=6 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
 .ends
 
 
@@ -368,11 +387,11 @@ XM3 avdd avdd avdd avdd pfet_05v0 L=0.50u W=2.0u nf=2 ad='int((nf+1)/2) * W/nf *
 ** sch_path: /home/tim/gits/gf180mcu_ocd_chipalooza/dependencies/gf180mcu_ocd_ip__biasgen/xschem/bias_pset2.sch
 .subckt bias_pset2 avdd pbias pcasc enb itail shld2 shld3
 *.PININFO pbias:B itail:B enb:I pcasc:O avdd:B shld2:B shld3:B
-XM13 pbias pbias avdd avdd pfet_06v0 L=0.55u W=0.30u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
-XM18 itail enb pcasc avdd pfet_06v0 L=0.55u W=0.30u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
-XM14 pcasc pcasc pbias avdd pfet_06v0 L=0.55u W=0.30u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
-+ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+XM1 pbias pbias avdd avdd pfet_05v0 L=1.0u W=3.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
+XM2 pcasc pcasc pbias avdd pfet_05v0 L=1.0u W=3.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
+XM3 itail enb pcasc avdd pfet_05v0 L=1.0u W=3.0u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1 par=1
 .ends
 

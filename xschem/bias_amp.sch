@@ -80,44 +80,44 @@ N -10 80 70 80 {
 lab=vcom}
 N -10 30 140 30 {
 lab=avss}
-C {gf180mcu_fd_pr/nfet_06v0.sym} 50 210 0 0 {name=M1
+C {gf180mcu_fd_pr/nfet_05v0.sym} 50 210 0 0 {name=M1
 w=10u
 l=1u
 ng=10
 m=1
-model=nfet_06v0
+model=nfet_05v0
 spiceprefix=X
 }
-C {gf180mcu_fd_pr/pfet_06v0.sym} 170 -70 0 0 {name=M2
+C {gf180mcu_fd_pr/pfet_05v0.sym} 170 -70 0 0 {name=M2
 w=5u
 l=0.5u
 ng=5
 m=1
-model=pfet_06v0
+model=pfet_05v0
 spiceprefix=X
 }
-C {gf180mcu_fd_pr/pfet_06v0.sym} 10 -70 0 1 {name=M3
+C {gf180mcu_fd_pr/pfet_05v0.sym} 10 -70 0 1 {name=M3
 w=5u
 l=0.5u
 ng=5
 m=1
-model=pfet_06v0
+model=pfet_05v0
 spiceprefix=X
 }
-C {gf180mcu_fd_pr/nfet_06v0.sym} -30 30 0 0 {name=M4
+C {gf180mcu_fd_pr/nfet_05v0.sym} -30 30 0 0 {name=M4
 w=10u
 l=0.5u
 ng=10
 m=1
-model=nfet_06v0
+model=nfet_05v0
 spiceprefix=X
 }
-C {gf180mcu_fd_pr/nfet_06v0.sym} 210 30 0 1 {name=M5
+C {gf180mcu_fd_pr/nfet_05v0.sym} 210 30 0 1 {name=M5
 w=10u
 l=0.5u
 ng=10
 m=1
-model=nfet_06v0
+model=nfet_05v0
 spiceprefix=X
 }
 C {devices/ipin.sym} -100 30 0 0 {name=p1 lab=inp}
@@ -126,12 +126,12 @@ C {devices/ipin.sym} 270 30 0 1 {name=p5 lab=inn}
 C {devices/opin.sym} 340 -20 0 0 {name=p6 lab=out}
 C {devices/iopin.sym} -120 -140 0 1 {name=p3 lab=avdd}
 C {devices/iopin.sym} -100 290 0 1 {name=p4 lab=avss}
-C {gf180mcu_fd_pr/nfet_06v0.sym} 50 130 0 0 {name=M6
+C {gf180mcu_fd_pr/nfet_05v0.sym} 50 130 0 0 {name=M6
 w=10u
 l=0.5u
 ng=10
 m=1
-model=nfet_06v0
+model=nfet_05v0
 spiceprefix=X
 }
 C {devices/ipin.sym} -100 130 0 0 {name=p7 lab=ena}

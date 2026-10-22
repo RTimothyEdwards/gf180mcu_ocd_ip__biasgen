@@ -1,6 +1,6 @@
 magic
 tech gf180mcuD
-magscale 1 2
+magscale 3 26
 timestamp 1787966249
 << isosubstrate >>
 rect 5694 4033 74886 4433
@@ -180,35 +180,35 @@ array 0 127 288 0 0 3881
 timestamp 1774748448
 transform 1 0 38062 0 -1 473
 box 898 -1502 1500 2379
-use level_shift  level_shift_0
+use level_shift_5v  level_shift_5v_0
 timestamp 1787966249
 transform 0 1 26948 -1 0 3706
 box -12 -1978 1519 918
-use level_shift  level_shift_1
+use level_shift_5v  level_shift_5v_1
 timestamp 1787966249
 transform 0 -1 23104 -1 0 3706
 box -12 -1978 1519 918
-use level_shift  level_shift_2
+use level_shift_5v  level_shift_5v_2
 timestamp 1787966249
 transform 0 1 21382 -1 0 3706
 box -12 -1978 1519 918
-use level_shift  level_shift_3
+use level_shift_5v  level_shift_5v_3
 timestamp 1787966249
 transform 0 -1 17538 -1 0 3706
 box -12 -1978 1519 918
-use level_shift  level_shift_4
+use level_shift_5v  level_shift_5v_4
 timestamp 1787966249
 transform 0 1 15816 -1 0 3706
 box -12 -1978 1519 918
-use level_shift  level_shift_5
+use level_shift_5v  level_shift_5v_5
 timestamp 1787966249
 transform 0 -1 11972 -1 0 3706
 box -12 -1978 1519 918
-use level_shift  level_shift_6
+use level_shift_5v  level_shift_5v_6
 timestamp 1787966249
 transform 0 1 10250 -1 0 3706
 box -12 -1978 1519 918
-use level_shift  level_shift_7
+use level_shift_5v  level_shift_5v_7
 timestamp 1787966249
 transform 0 -1 6406 -1 0 3706
 box -12 -1978 1519 918

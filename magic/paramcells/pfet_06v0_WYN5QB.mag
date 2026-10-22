@@ -1,90 +1,127 @@
 magic
 tech gf180mcuD
-magscale 1 2
-timestamp 1774369900
+magscale 1 10
+timestamp 1792343708
 << error_p >>
-rect -168 -100 -100 100
-rect 100 -100 168 100
+rect -102 177 -101 189
+rect -90 184 90 195
+rect -102 143 -101 155
+rect -90 148 -88 184
+rect 88 148 90 184
+rect 101 177 102 189
+rect -90 147 90 148
+rect -90 143 -88 147
+rect 88 143 90 147
+rect 101 143 102 155
+rect -90 132 -80 143
+rect 80 132 90 143
+rect -136 99 -126 108
+rect -140 98 -126 99
+rect -194 86 -193 98
+rect -194 -98 -193 -86
+rect -182 -98 -180 98
+rect -140 -98 -130 98
+rect -146 -108 -126 -98
+rect -115 -99 -111 115
+rect 111 99 115 115
+rect 182 99 192 108
+rect 136 -98 138 98
+rect 140 -98 144 99
+rect 177 98 192 99
+rect 177 -98 188 98
+rect 193 86 194 98
+rect 193 -98 194 -86
+rect 136 -108 146 -98
+rect 177 -99 192 -98
+rect 182 -108 192 -99
+rect -115 -115 115 -114
+rect -102 -155 -101 -143
+rect -90 -147 90 -137
+rect -102 -189 -101 -177
+rect -90 -189 -88 -147
+rect 88 -189 90 -147
+rect 101 -155 102 -143
+rect 101 -189 102 -177
 << nwell >>
-rect -292 -224 292 224
-<< hvpmos >>
-rect -100 -100 100 100
+rect -336 -258 336 258
+<< mvpmos >>
+rect -115 -115 115 115
 << mvpdiff >>
-rect -168 86 -100 100
-rect -168 -86 -154 86
-rect -122 -86 -100 86
-rect -168 -100 -100 -86
-rect 100 86 168 100
-rect 100 -86 122 86
-rect 154 -86 168 86
-rect 100 -100 168 -86
+rect -193 99 -115 115
+rect -193 -99 -177 99
+rect -140 -99 -115 99
+rect -193 -115 -115 -99
+rect 115 99 193 115
+rect 115 -99 140 99
+rect 177 -99 193 99
+rect 115 -115 193 -99
 << mvpdiffc >>
-rect -154 -86 -122 86
-rect 122 -86 154 86
-<< poly >>
-rect -100 160 100 174
-rect -100 128 -78 160
-rect 78 128 100 160
-rect -100 100 100 128
-rect -100 -128 100 -100
-rect -100 -160 -78 -128
-rect 78 -160 100 -128
-rect -100 -174 100 -160
-<< polycont >>
-rect -78 128 78 160
-rect -78 -160 78 -128
+rect -177 -99 -140 99
+rect 140 -99 177 99
+<< polysilicon >>
+rect -115 184 115 200
+rect -115 147 -90 184
+rect 90 147 115 184
+rect -115 115 115 147
+rect -115 -147 115 -115
+rect -115 -184 -90 -147
+rect 90 -184 115 -147
+rect -115 -200 115 -184
+<< polycontact >>
+rect -90 147 90 184
+rect -90 -184 90 -147
 << metal1 >>
-rect -88 164 88 165
-rect -88 124 -78 164
-rect 78 124 88 164
-rect -88 123 88 124
-rect -168 85 -154 86
-rect -122 85 -108 86
-rect -168 -85 -158 85
-rect -118 -85 -108 85
-rect -168 -86 -154 -85
-rect -122 -86 -108 -85
-rect 108 85 122 86
-rect 154 85 168 86
-rect 108 -85 118 85
-rect 158 -85 168 85
-rect 108 -86 122 -85
-rect 154 -86 168 -85
-rect -88 -124 88 -123
-rect -88 -164 -78 -124
-rect 78 -164 88 -124
-rect -88 -165 88 -164
+rect -101 189 101 190
+rect -101 143 -90 189
+rect 90 143 101 189
+rect -101 141 101 143
+rect -193 98 -177 99
+rect -140 98 -124 99
+rect -193 -98 -182 98
+rect -136 -98 -124 98
+rect -193 -99 -177 -98
+rect -140 -99 -124 -98
+rect 124 98 140 99
+rect 177 98 193 99
+rect 124 -98 136 98
+rect 182 -98 193 98
+rect 124 -99 140 -98
+rect 177 -99 193 -98
+rect -101 -143 101 -141
+rect -101 -189 -90 -143
+rect 90 -189 101 -143
+rect -101 -190 101 -189
 << via1 >>
-rect -78 160 78 164
-rect -78 128 78 160
-rect -78 124 78 128
-rect -158 -85 -154 85
-rect -154 -85 -122 85
-rect -122 -85 -118 85
-rect 118 -85 122 85
-rect 122 -85 154 85
-rect 154 -85 158 85
-rect -78 -128 78 -124
-rect -78 -160 78 -128
-rect -78 -164 78 -160
+rect -90 184 90 189
+rect -90 147 90 184
+rect -90 143 90 147
+rect -182 -98 -177 98
+rect -177 -98 -140 98
+rect -140 -98 -136 98
+rect 136 -98 140 98
+rect 140 -98 177 98
+rect 177 -98 182 98
+rect -90 -147 90 -143
+rect -90 -184 90 -147
+rect -90 -189 90 -184
 << metal2 >>
-rect -78 164 78 173
-rect -78 115 78 124
-rect -158 85 -118 94
-rect -158 -94 -118 -85
-rect 118 85 158 94
-rect 118 -94 158 -85
-rect -78 -124 78 -115
-rect -78 -173 78 -164
+rect -90 189 90 199
+rect -90 132 90 143
+rect -182 98 -136 108
+rect -182 -108 -136 -98
+rect 136 98 182 108
+rect 136 -108 182 -98
+rect -90 -143 90 -132
+rect -90 -199 90 -189
 << labels >>
-rlabel mvpdiffc -138 0 -138 0 0 D
+rlabel mvpdiffc -159 0 -159 0 0 D
 port 187 nsew
-rlabel mvpdiffc 138 0 138 0 0 S
+rlabel mvpdiffc 159 0 159 0 0 S
 port 188 nsew
-rlabel polycont 0 144 0 144 0 G
+rlabel polycontact 0 166 0 166 0 G
 port 189 nsew
 << properties >>
-string gencell pfet_06v0
+string gencell pfet_05v0
 string library gf180mcu
 string parameters w 1.0 l 1.0 m 1 ng 1 diffcov 100 polycov 100 guard 0 glc 1 grc 1 gtc 1 gbc 1 tbcov 100 rlcov 100 topc 1 botc 1 poverlap 0 doverlap 1 lmin 0.4 wmin 0.15 class mosfet compatible {pfet_05v0 pfet_06v0} full_metal 1 conn_gates 0 gate_ring 0 ccols 1 viasrc 100 viadrn 100 viagate 100 viagb 0 viagr 0 viagl 0 viagt 0 doports 1
 << end >>

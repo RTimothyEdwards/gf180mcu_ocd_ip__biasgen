@@ -1,0 +1,109 @@
+
+Circuit 1 cell nfet_05v0 and Circuit 2 cell nfet_05v0 are black boxes.
+Warning: Equate pins:  cell nfet_05v0 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell nfet_05v0 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: nfet_05v0                                                         |Circuit 2: nfet_05v0                                                         
+-----------------------------------------------------------------------------|-----------------------------------------------------------------------------
+1                                                                            |1                                                                            
+2                                                                            |2                                                                            
+3                                                                            |3                                                                            
+4                                                                            |4                                                                            
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes nfet_05v0 and nfet_05v0 are equivalent.
+
+Circuit 1 cell pfet_05v0 and Circuit 2 cell pfet_05v0 are black boxes.
+Warning: Equate pins:  cell pfet_05v0 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell pfet_05v0 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: pfet_05v0                                                         |Circuit 2: pfet_05v0                                                         
+-----------------------------------------------------------------------------|-----------------------------------------------------------------------------
+1                                                                            |1                                                                            
+2                                                                            |2                                                                            
+3                                                                            |3                                                                            
+4                                                                            |4                                                                            
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes pfet_05v0 and pfet_05v0 are equivalent.
+
+Circuit 1 cell cap_mim_2f0_m4m5_noshield and Circuit 2 cell cap_mim_2f0_m4m5_noshield are black boxes.
+Warning: Equate pins:  cell cap_mim_2f0_m4m5_noshield is a placeholder, treated as a black box.
+Warning: Equate pins:  cell cap_mim_2f0_m4m5_noshield is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: cap_mim_2f0_m4m5_noshield                                         |Circuit 2: cap_mim_2f0_m4m5_noshield                                         
+-----------------------------------------------------------------------------|-----------------------------------------------------------------------------
+1                                                                            |1                                                                            
+2                                                                            |2                                                                            
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes cap_mim_2f0_m4m5_noshield and cap_mim_2f0_m4m5_noshield are equivalent.
+Flattening unmatched subcell nfet_05v0_XHQ8ZW in circuit se_folded_cascode_np_ab_5v (0)(1 instance)
+Flattening unmatched subcell nfet_05v0_R9L2XL in circuit se_folded_cascode_np_ab_5v (0)(1 instance)
+Flattening unmatched subcell nfet_05v0_6VJ5RZ in circuit se_folded_cascode_np_ab_5v (0)(1 instance)
+Flattening unmatched subcell pfet_05v0_T5C93T in circuit se_folded_cascode_np_ab_5v (0)(1 instance)
+Flattening unmatched subcell cap_mim_2p0fF_C3477V in circuit se_folded_cascode_np_ab_5v (0)(1 instance)
+Flattening unmatched subcell nfet_05v0_HB5B8U in circuit se_folded_cascode_np_ab_5v (0)(1 instance)
+Flattening unmatched subcell pfet_05v0_YEDGTJ in circuit se_folded_cascode_np_ab_5v (0)(2 instances)
+Flattening unmatched subcell nfet_05v0_XRMCLC in circuit se_folded_cascode_np_ab_5v (0)(1 instance)
+Flattening unmatched subcell pfet_05v0_YE3MY2 in circuit se_folded_cascode_np_ab_5v (0)(1 instance)
+Flattening unmatched subcell pfet_05v0_24XKES in circuit se_folded_cascode_np_ab_5v (0)(1 instance)
+Flattening unmatched subcell pfet_05v0_9BJ35S in circuit se_folded_cascode_np_ab_5v (0)(1 instance)
+Flattening unmatched subcell pfet_05v0_9TM96F in circuit se_folded_cascode_np_ab_5v (0)(1 instance)
+Flattening unmatched subcell nfet_05v0_CH5GF9 in circuit se_folded_cascode_np_ab_5v (0)(1 instance)
+Flattening unmatched subcell pfet_05v0_ZM48YZ in circuit se_folded_cascode_np_ab_5v (0)(2 instances)
+
+Class se_folded_cascode_np_ab_5v (0):  Merged 249 parallel devices.
+Class se_folded_cascode_np_ab_5v (1):  Merged 2 parallel devices.
+Subcircuit summary:
+Circuit 1: se_folded_cascode_np_ab_5v                                        |Circuit 2: se_folded_cascode_np_ab_5v                                        
+-----------------------------------------------------------------------------|-----------------------------------------------------------------------------
+nfet_05v0 (144->13)                                                          |nfet_05v0 (144->13)                                                          
+pfet_05v0 (130->14)                                                          |pfet_05v0 (130->14)                                                          
+cap_mim_2f0_m4m5_noshield (3->1)                                             |cap_mim_2f0_m4m5_noshield (3->1)                                             
+Number of devices: 28                                                        |Number of devices: 28                                                        
+Number of nets: 19                                                           |Number of nets: 19                                                           
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: se_folded_cascode_np_ab_5v                                        |Circuit 2: se_folded_cascode_np_ab_5v                                        
+-----------------------------------------------------------------------------|-----------------------------------------------------------------------------
+vdd                                                                          |vdd                                                                          
+vss                                                                          |vss                                                                          
+inn                                                                          |inn                                                                          
+inp                                                                          |inp                                                                          
+out                                                                          |out                                                                          
+ena                                                                          |ena                                                                          
+bias                                                                         |bias                                                                         
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes se_folded_cascode_np_ab_5v and se_folded_cascode_np_ab_5v are equivalent.
+
+Subcircuit summary:
+Circuit 1: gf180mcu_ocd_ip__classab_buffer_5v                                |Circuit 2: gf180mcu_ocd_ip__classab_buffer_5v                                
+-----------------------------------------------------------------------------|-----------------------------------------------------------------------------
+se_folded_cascode_np_ab_5v (1)                                               |se_folded_cascode_np_ab_5v (1)                                               
+Number of devices: 1                                                         |Number of devices: 1                                                         
+Number of nets: 6                                                            |Number of nets: 6                                                            
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: gf180mcu_ocd_ip__classab_buffer_5v                                |Circuit 2: gf180mcu_ocd_ip__classab_buffer_5v                                
+-----------------------------------------------------------------------------|-----------------------------------------------------------------------------
+out                                                                          |out                                                                          
+vdd                                                                          |vdd                                                                          
+inp                                                                          |inp                                                                          
+vss                                                                          |vss                                                                          
+bias                                                                         |bias                                                                         
+ena                                                                          |ena                                                                          
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes gf180mcu_ocd_ip__classab_buffer_5v and gf180mcu_ocd_ip__classab_buffer_5v are equivalent.
+
+Final result: Circuits match uniquely.
+.

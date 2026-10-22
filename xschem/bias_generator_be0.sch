@@ -134,7 +134,7 @@ C {devices/ipin.sym} -2190 340 0 0 {name=p3 lab=pcasc}
 C {devices/ipin.sym} -2190 360 0 0 {name=p4 lab=pbias}
 C {devices/ipin.sym} -2190 380 0 0 {name=p5 lab=nbias}
 C {devices/ipin.sym} -2010 190 0 0 {name=p8 lab=source_ena[4:0]}
-C {level_shift.sym} -1680 210 0 0 {name=x9[4:0] vdd=avdd vss=avss }
+C {level_shift_5v.sym} -1680 210 0 0 {name=x9[4:0] vdd=avdd vss=avss }
 C {inv_2.sym} -1940 190 0 0 {name=x46[4:0] VDD=dvdd VNW=dvdd VPW=dvss VSS=dvss prefix=gf180mcu_as_sc_mcu7t3v3__ }
 C {fillcap_4.sym} -1940 430 0 0 {name=x23[3:0] VDD=dvdd VNW=dvdd VPW=dvss VSS=dvss prefix=gf180mcu_as_sc_mcu7t3v3__ }
 C {diode_2.sym} -1890 250 0 0 {name=x78[4:0] VDD=dvdd VNW=dvdd VPW=dvss VSS=dvss prefix=gf180mcu_as_sc_mcu7t3v3__ }
@@ -176,6 +176,6 @@ C {lab_wire.sym} -1430 1010 0 0 {name=p32 sig_type=std_logic lab=sink_ena_5v0[4]
 C {lab_pin.sym} -1010 1080 1 1 {name=p33 sig_type=std_logic lab=avss}
 C {devices/iopin.sym} -910 690 0 0 {name=p12 lab=sink_ibias}
 C {devices/ipin.sym} -2030 650 0 0 {name=p13 lab=sink_ena[4:0]}
-C {level_shift.sym} -1700 670 0 0 {name=x4[4:0] vdd=avdd vss=avss }
+C {level_shift_5v.sym} -1700 670 0 0 {name=x4[4:0] vdd=avdd vss=avss }
 C {inv_2.sym} -1960 630 0 0 {name=x5[4:0] VDD=dvdd VNW=dvdd VPW=dvss VSS=dvss prefix=gf180mcu_as_sc_mcu7t3v3__ }
 C {lab_pin.sym} -1650 630 0 1 {name=p17 sig_type=std_logic lab=sink_ena_5v0[4:0]}

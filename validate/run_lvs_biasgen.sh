@@ -1,11 +1,11 @@
 #!/bin/sh
 #
-# Run LVS on the bandgap
+# Run LVS on the current bias generator
 #
 export PDK_ROOT=${PDK_ROOT:-/usr/share/pdk}
 export PDK=${PDK:-gf180mcuD}
 
-project=gf180mcu_ocd_ip__biasgen2
+project=gf180mcu_ocd_ip__biasgen
 
 export NETGEN_COLUMNS=75
 

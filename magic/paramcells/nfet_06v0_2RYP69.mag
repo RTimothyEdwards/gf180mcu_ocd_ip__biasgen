@@ -1,65 +1,88 @@
 magic
 tech gf180mcuD
-magscale 1 2
-timestamp 1774721386
-<< hvnmos >>
-rect -100 -81 100 119
+magscale 1 10
+timestamp 1791907747
+<< error_p >>
+rect -115 178 115 181
+rect -136 121 -126 130
+rect -140 120 -126 121
+rect -194 108 -193 120
+rect -194 -76 -193 -64
+rect -182 -76 -180 120
+rect -140 -76 -130 120
+rect -140 -77 -126 -76
+rect -115 -77 -111 137
+rect 111 121 115 137
+rect 182 121 192 130
+rect 136 -76 138 120
+rect 140 -77 144 121
+rect 177 120 192 121
+rect 177 -76 188 120
+rect 193 108 194 120
+rect 193 -76 194 -64
+rect 177 -77 192 -76
+rect -136 -86 -126 -77
+rect 182 -86 192 -77
+rect -115 -93 115 -92
+rect -110 -125 110 -116
+<< mvnmos >>
+rect -115 -93 115 137
 << mvndiff >>
-rect -168 105 -100 119
-rect -168 -67 -154 105
-rect -122 -67 -100 105
-rect -168 -81 -100 -67
-rect 100 105 168 119
-rect 100 -67 122 105
-rect 154 -67 168 105
-rect 100 -81 168 -67
+rect -193 121 -115 137
+rect -193 -77 -177 121
+rect -140 -77 -115 121
+rect -193 -93 -115 -77
+rect 115 121 193 137
+rect 115 -77 140 121
+rect 177 -77 193 121
+rect 115 -93 193 -77
 << mvndiffc >>
-rect -154 -67 -122 105
-rect 122 -67 154 105
-<< poly >>
-rect -100 119 100 155
-rect -100 -109 100 -81
-rect -100 -141 -86 -109
-rect 86 -141 100 -109
-rect -100 -155 100 -141
-<< polycont >>
-rect -86 -141 86 -109
+rect -177 -77 -140 121
+rect 140 -77 177 121
+<< polysilicon >>
+rect -115 137 115 178
+rect -115 -125 115 -93
+rect -115 -162 -99 -125
+rect 99 -162 115 -125
+rect -115 -178 115 -162
+<< polycontact >>
+rect -99 -162 99 -125
 << metal1 >>
-rect -168 104 -154 105
-rect -122 104 -108 105
-rect -168 -66 -158 104
-rect -118 -66 -108 104
-rect -168 -67 -154 -66
-rect -122 -67 -108 -66
-rect 108 104 122 105
-rect 154 104 168 105
-rect 108 -66 118 104
-rect 158 -66 168 104
-rect 108 -67 122 -66
-rect 154 -67 168 -66
-rect -96 -141 -86 -109
-rect 86 -141 96 -109
+rect -193 120 -177 121
+rect -140 120 -124 121
+rect -193 -76 -182 120
+rect -136 -76 -124 120
+rect -193 -77 -177 -76
+rect -140 -77 -124 -76
+rect 124 120 140 121
+rect 177 120 193 121
+rect 124 -76 136 120
+rect 182 -76 193 120
+rect 124 -77 140 -76
+rect 177 -77 193 -76
+rect -110 -162 -99 -125
+rect 99 -162 110 -125
 << via1 >>
-rect -158 -66 -154 104
-rect -154 -66 -122 104
-rect -122 -66 -118 104
-rect 118 -66 122 104
-rect 122 -66 154 104
-rect 154 -66 158 104
+rect -182 -76 -177 120
+rect -177 -76 -140 120
+rect -140 -76 -136 120
+rect 136 -76 140 120
+rect 140 -76 177 120
+rect 177 -76 182 120
 << metal2 >>
-rect -158 104 -118 113
-rect -158 -75 -118 -66
-rect 118 104 158 113
-rect 118 -75 158 -66
+rect -182 120 -136 130
+rect -182 -86 -136 -76
+rect 136 120 182 130
+rect 136 -86 182 -76
 << labels >>
-rlabel mvndiffc -138 19 -138 19 0 D
+rlabel mvndiffc -159 21 -159 21 0 D
 port 1 nsew
-rlabel mvndiffc 138 19 138 19 0 S
+rlabel mvndiffc 159 21 159 21 0 S
 port 2 nsew
-rlabel polycont 0 -125 0 -125 0 G
+rlabel polycontact 0 -144 0 -144 0 G
 port 3 nsew
 << properties >>
-string gencell nfet_06v0
+string gencell nfet_05v0
 string library gf180mcu
 string parameters w 1.0 l 1.0 m 1 ng 1 diffcov 100 polycov 100 guard 0 glc 1 grc 1 gtc 1 gbc 1 tbcov 100 rlcov 100 topc 0 botc 1 poverlap 0 doverlap 1 lmin 0.45 wmin 0.15 class mosfet compatible {nfet_05v0 nfet_06v0} full_metal 1 conn_gates 0 gate_ring 0 doports 1 viasrc 100 viadrn 100 viagate 0 ccols 1 viagb 0 viagr 0 viagl 0 viagt 0
 << end >>

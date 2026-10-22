@@ -1,4 +1,4 @@
-v {xschem version=3.4.6 file_version=3.3}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {type=subcircuit
 format="@name @pinlist @symname"
@@ -11,21 +11,17 @@ L 4 130 -80 160 -80 {}
 L 4 -20 40 0 40 {}
 L 4 -20 -100 0 -100 {}
 L 4 -20 0 0 0 {}
-L 4 -20 -60 0 -60 {}
-L 4 -20 -80 0 -80 {}
 L 4 60 -10 60 20 {}
 L 4 -20 -40 0 -40 {}
 L 4 100 -100 100 -60 {}
 L 4 100 -60 130 -80 {}
 L 4 100 -100 130 -80 {}
 L 4 -20 60 0 60 {}
-B 5 -22.5 -102.5 -17.5 -97.5 {name=vdd dir=inout }
 B 5 157.5 -82.5 162.5 -77.5 {name=vbg dir=out }
-B 5 -22.5 17.5 -17.5 22.5 {name=vss dir=inout }
 B 5 -22.5 37.5 -17.5 42.5 {name=ibias1_250n dir=inout }
 B 5 -22.5 -2.5 -17.5 2.5 {name=trim[15:0] dir=in}
-B 5 -22.5 -62.5 -17.5 -57.5 {name=dvss dir=inout }
-B 5 -22.5 -82.5 -17.5 -77.5 {name=dvdd dir=inout}
+B 5 -22.5 17.5 -17.5 22.5 {name=dvss dir=inout }
+B 5 -22.5 -102.5 -17.5 -97.5 {name=dvdd dir=inout}
 B 5 -22.5 -42.5 -17.5 -37.5 {name=ena dir=in}
 B 5 -22.5 57.5 -17.5 62.5 {name=ibias2_1u dir=inout }
 P 4 2 71 -16 71 -30 {}
@@ -67,12 +63,10 @@ P 4 2 60 -73 60 -90 {}
 P 4 2 100 -80 79 -80 {}
 T {@symname} -1 -133 0 0 0.2 0.2 {}
 T {@name} 90 57 0 0 0.2 0.2 {}
-T {vdd} 45 -101 2 1 0.2 0.2 {}
 T {vbg} 155 -94 0 1 0.2 0.2 {}
-T {vss} 65 29 2 1 0.2 0.2 {}
 T {ibias1_250n} 5 49 2 1 0.2 0.2 {}
 T {trim[15:0]} 5 9 2 1 0.2 0.2 {}
-T {dvss} 5 -51 2 1 0.2 0.2 {}
-T {dvdd} 5 -71 2 1 0.2 0.2 {}
+T {dvss} 65 29 2 1 0.2 0.2 {}
+T {dvdd} 5 -101 2 1 0.2 0.2 {}
 T {ena} 5 -31 2 1 0.2 0.2 {}
 T {ibias2_1u} 5 69 2 1 0.2 0.2 {}

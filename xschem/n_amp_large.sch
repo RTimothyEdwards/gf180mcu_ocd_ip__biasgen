@@ -94,6 +94,15 @@ N 460 -140 460 -70 {lab=avdd}
 N 300 -140 460 -140 {lab=avdd}
 N 460 -70 460 -40 {lab=avdd}
 N 460 -40 520 -40 {lab=avdd}
+N 140 290 530 290 {lab=avss}
+N 530 240 530 290 {lab=avss}
+N 530 210 630 210 {lab=avss}
+N 630 210 630 290 {lab=avss}
+N 530 290 630 290 {lab=avss}
+N 530 140 530 180 {lab=avss}
+N 440 140 530 140 {lab=avss}
+N 440 140 440 290 {lab=avss}
+N 440 210 490 210 {lab=avss}
 C {devices/ipin.sym} -100 30 0 0 {name=p1 lab=inp}
 C {devices/ipin.sym} 270 30 0 1 {name=p5 lab=inn}
 C {devices/opin.sym} 340 -20 0 0 {name=p6 lab=out}
@@ -203,9 +212,9 @@ spiceprefix=X
 }
 C {gf180mcu_fd_pr/pfet_05v0.sym} 500 -70 0 0 {name=M3
 L=0.50u
-W=2.0u
-nf=2
-m=1
+W=1.0u
+nf=1
+m=6
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
 as="'int((nf+2)/2) * W/nf * 0.18u'"
@@ -213,5 +222,19 @@ ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
 nrd="'0.18u / W'" nrs="'0.18u / W'"
 sa=0 sb=0 sd=0
 model=pfet_05v0
+spiceprefix=X
+}
+C {gf180mcu_fd_pr/nfet_05v0.sym} 510 210 0 0 {name=M7
+L=0.60u
+W=8.0u
+nf=8
+m=1
+ad="'int((nf+1)/2) * W/nf * 0.18u'"
+pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
+as="'int((nf+2)/2) * W/nf * 0.18u'"
+ps="'2*int((nf+2)/2) * (W/nf + 0.18u)'"
+nrd="'0.18u / W'" nrs="'0.18u / W'"
+sa=0 sb=0 sd=0
+model=nfet_05v0
 spiceprefix=X
 }
