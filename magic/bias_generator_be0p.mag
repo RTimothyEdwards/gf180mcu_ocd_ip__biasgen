@@ -1,7 +1,7 @@
 magic
 tech gf180mcuD
 magscale 1 10
-timestamp 1792625928
+timestamp 1792873639
 << isosubstrate >>
 rect -462 4089 10675 5045
 << metal1 >>
@@ -206,7 +206,7 @@ transform 1 0 10365 0 1 4175
 box -86 -86 310 870
 use level_shift_5v  level_shift_5v_0
 array 0 4 2076 0 0 -3341
-timestamp 1792625928
+timestamp 1792626678
 transform -1 0 9995 0 -1 1294
 box -45 -2282 1809 979
 use via_Y6HC2N  via_Y6HC2N_0 paramcells

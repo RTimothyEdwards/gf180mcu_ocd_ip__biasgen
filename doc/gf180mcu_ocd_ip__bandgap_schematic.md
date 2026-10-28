@@ -12,12 +12,16 @@
 | V(125C) - V(-40C)    | ngspice              | vslope_mV            |            0 mV |          ​ |            ​ |          ​ |            ​ |          ​ |   Skip 🟧    |
 | Vbg at 27 C          | ngspice              | vbg_27               |          1.15 V |          ​ |            ​ |          ​ |        1.3 V |          ​ |   Skip 🟧    |
 | Tempco -40 to 125 C  | ngspice              | tempco_m40_125_ppmC  |               ​ |          ​ |            ​ |          ​ |    50 ppm/°C |          ​ |   Skip 🟧    |
-| Vbg at 27 C          | ngspice              | vbg_27               |          1.15 V |    1.263 V |            ​ |          ​ |        1.3 V |    1.290 V |   Pass ✅    |
+| Vbg at 27 C          | ngspice              | vbg_27               |          1.15 V |          ​ |            ​ |          ​ |        1.3 V |          ​ |   Skip 🟧    |
 | Vbg at 27 C          | ngspice              | vbg_27               |          1.15 V |          ​ |            ​ |          ​ |        1.3 V |          ​ |   Skip 🟧    |
 
 
 ## Plots
 
-## bandgap_mc_global_vbg
+## vbg_vs_trim
 
-![bandgap_mc_global_vbg](./gf180mcu_ocd_ip__bandgap/schematic/bandgap_mc_global_vbg.png)
+![vbg_vs_trim](./gf180mcu_ocd_ip__bandgap/schematic/vbg_vs_trim.png)
+
+## vslope_vs_trim
+
+![vslope_vs_trim](./gf180mcu_ocd_ip__bandgap/schematic/vslope_vs_trim.png)

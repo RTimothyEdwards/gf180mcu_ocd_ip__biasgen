@@ -1,12 +1,9 @@
 /* Behavioral verilog model for the bandgap.
  * This model produces a real-valued output based on the circuit
  * function and digital inputs.
- *
- * "v2" differs from "v1" only in the layout aspect ratio;  the
- * schematic and this model are unchanged between them.
  */
 
-module gf180mcu_ocd_ip__bandgap_v2 (
+module gf180mcu_ocd_ip__bandgap (
     `ifdef USE_POWER_PINS
 	inout wire dvdd,
 	inout wire dvss,
@@ -72,7 +69,7 @@ end
  * from "ppolyf_u_1k" to "ppolyf_u".  With ppolyf_u_1k the trim covered a far wider
  * range than needed AND sat badly off-centre;  with ppolyf_u, and no other
  * change, the curve lands on the flattest part of the tempco at
- * EXACTLY half trim.  So j = 8 -> 3.331 V is the nominal setting, and
+ * EXACTLY half trim.  So j = 8 -> 1.231 V is the nominal setting, and
  * it is the middle of the code range rather than an arbitrary point.
  *
  * Shape:  asymptotically straight at high trim, rolling off at low
@@ -88,30 +85,66 @@ end
  * so these are nominal values only.
  */
 
+/* CHARACTERISED FOR GF180MCU 2026-10-28, from the SCHEMATIC netlist.
+ *
+ * Source:  the "bandgap_trim_curve" CACE parameter, which runs the tempco
+ * testbench at all seventeen thermometer codes and reports vbg at 27 C.
+ * Reproduce with
+ *     cace gf180mcu_ocd_ip__bandgap.yaml -p bandgap_trim_curve \
+ *          --source schematic
+ * and transcribe vbg_27 for trim = 0 .. 16, in order, from
+ * simulation_summary.csv.
+ *
+ * "--source schematic" IS DELIBERATE.  CACE defaults to --source best,
+ * which prefers the RCX netlist now that the layout exists, so leaving it
+ * off silently characterises something else.  The RCX view currently
+ * disagrees with the schematic substantially:  vbg = 2.24 .. 2.66 V, and
+ * the signed slope does not change sign anywhere in the trim range, so
+ * the flat point is not reachable at all.
+ *
+ * THE CAUSE IS NOT ESTABLISHED.  It is most likely a real degradation
+ * from the extracted parasitics rather than a netlist defect;  magic does
+ * issue warnings during extraction around the bipolar emitters, which is
+ * where to look first.  Note that when magic loses a resistor network it
+ * falls back to the ideal case, which would make the extracted result
+ * optimistic, not pessimistic --- so that alone does not explain this.
+ *
+ * Until that is understood, the schematic is the authority for this
+ * table.  Re-characterise from the RCX netlist once it is trusted:  that
+ * is the view that predicts silicon.
+ *
+ * The flat point lands at trim = 8, exactly half trim:  the signed slope
+ * crosses zero between code 8 (-0.21 mV) and code 9 (+6.72 mV), and the
+ * tempco at code 8 is 9.3 ppm/degC over -40 to 125 C.
+ *
+ * BANDGAP_TRIM_V in the harness chip's verilog/dv/harness.py duplicates
+ * this table ON PURPOSE, so a test cannot agree with whatever the model
+ * happens to say.  Both must be updated together.
+ */
 function real vbg_trimmed;
     input [4:0] jj;
     begin
 	case (jj)
-	    5'd0:  vbg_trimmed = 1.184;
-	    5'd1:  vbg_trimmed = 1.188;
-	    5'd2:  vbg_trimmed = 1.192;
-	    5'd3:  vbg_trimmed = 1.198;
-	    5'd4:  vbg_trimmed = 3.304;
-	    5'd5:  vbg_trimmed = 3.311;
-	    5'd6:  vbg_trimmed = 3.317;
-	    5'd7:  vbg_trimmed = 3.324;
-	    5'd8:  vbg_trimmed = 3.331;	/* nominal:  half trim */
-	    5'd9:  vbg_trimmed = 3.338;
-	    5'd10: vbg_trimmed = 3.346;
-	    5'd11: vbg_trimmed = 3.354;
-	    5'd12: vbg_trimmed = 3.361;
-	    5'd13: vbg_trimmed = 3.370;
-	    5'd14: vbg_trimmed = 3.378;
-	    5'd15: vbg_trimmed = 3.387;
+	    5'd0:  vbg_trimmed = 1.138;
+	    5'd1:  vbg_trimmed = 1.140;
+	    5'd2:  vbg_trimmed = 1.146;
+	    5'd3:  vbg_trimmed = 1.155;
+	    5'd4:  vbg_trimmed = 1.165;
+	    5'd5:  vbg_trimmed = 1.176;
+	    5'd6:  vbg_trimmed = 1.187;
+	    5'd7:  vbg_trimmed = 1.199;
+	    5'd8:  vbg_trimmed = 1.212;	/* nominal:  half trim */
+	    5'd9:  vbg_trimmed = 1.225;
+	    5'd10: vbg_trimmed = 1.239;
+	    5'd11: vbg_trimmed = 1.254;
+	    5'd12: vbg_trimmed = 1.269;
+	    5'd13: vbg_trimmed = 1.286;
+	    5'd14: vbg_trimmed = 1.303;
+	    5'd15: vbg_trimmed = 1.322;
 	    /* j cannot exceed 16:  the thermometer code is 16 bits wide,
 	     * so the decoder saturates and every setting above 16 is the
 	     * same physical setting. */
-	    default: vbg_trimmed = 3.395;
+	    default: vbg_trimmed = 1.341;
 	endcase
     end
 endfunction

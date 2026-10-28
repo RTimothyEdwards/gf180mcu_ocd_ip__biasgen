@@ -272,6 +272,103 @@ parameters:
       trim:
         typical: 8
 
+  bandgap_trim_curve:
+    display: Vbg vs trim code
+    description: >
+      Vbg at 27 C at every one of the seventeen thermometer trim
+      settings, at nominal corner.
+
+      THIS IS THE TABLE THE BEHAVIOURAL MODEL NEEDS.  The trim is a
+      16-bit thermometer code, so only the number of bits set matters:
+      seventeen possible outputs, nothing to interpolate, and
+      verilog/gf180mcu_ocd_ip__bandgap.v therefore looks vbg up rather
+      than evaluating a fit.  Characterising it means running this
+      parameter and transcribing vbg_27 for trim = 0 .. 16 into that
+      table, in order.
+
+      BANDGAP_TRIM_V in the harness chip's verilog/dv/harness.py
+      duplicates the same seventeen numbers ON PURPOSE, so that a test
+      cannot agree with whatever the model happens to say.  Both have to
+      be updated together, and both currently hold IHP sg13cmos5l values
+      as placeholders.
+
+      The other three measurements come along for free because this
+      shares the tempco testbench;  tempco and the signed slope per trim
+      code are what show where the flat point actually falls, which is
+      the thing a single trim=8 run cannot tell you.
+
+      Nominal corner only.  The point is the shape of the curve against
+      trim, not the corner spread --- bandgap_tempco already walks the
+      corners at trim=8, and running 17 codes across every corner
+      combination would be 17x that cost for a table the model has no
+      way to represent.
+    unit: V
+    tool:
+      ngspice:
+        template: bandgap_trim_tc_tb.sch
+        format: ascii
+        suffix: .data
+        variables:
+          - tempco_m40_125_ppmC
+          - tempco_m0_85_ppmC
+          - vbg_27
+          - vslope_mV
+    variables:
+      vbg_27:
+        display: Vbg at 27 C
+        unit: V
+      vslope_mV:
+        display: V(125C) - V(-40C)
+        unit: mV
+      tempco_m40_125_ppmC:
+        display: Tempco -40 to 125 C
+        unit: ppm/°C
+      tempco_m0_85_ppmC:
+        display: Tempco 0 to 85 C
+        unit: ppm/°C
+    # "trim" is a CONDITION rather than a tool variable, which every other
+    # plot in this datasheet uses.  CACE supports it:  parameter.py takes
+    # the "if xvariable in conditions" branch, drops that condition from
+    # the condition set, merges the results, and puts an x-tick at each
+    # enumerated value --- which is what is wanted for 17 discrete codes
+    # rather than a continuous axis.
+    plot:
+      vbg_vs_trim:
+        type: xyplot
+        xaxis: trim
+        yaxis: vbg_27
+      vslope_vs_trim:
+        type: xyplot
+        xaxis: trim
+        yaxis: vslope_mV
+    conditions:
+      corner:
+        typical: typical
+      corner_res:
+        typical: typical
+      corner_pnp:
+        typical: typical
+      trim:
+        enumerate:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 9
+          - 10
+          - 11
+          - 12
+          - 13
+          - 14
+          - 15
+          - 16
+
+
   # -------------------------------------------------------------------
   # MONTE CARLO.
   #
