@@ -23,7 +23,6 @@ T {This section self-biases based on a resistor.  It will run the
 bias generator but is not as stable as using the bandgap
 reference.  Note that current sinks do not use a bandgap-
 referenced bias voltage, only current sources.} -1590 60 0 0 0.5 0.5 {}
-T {Note: cap is a metal fingered cap.} -880 -920 0 0 0.4 0.4 {}
 T {The "fine" setting reduces the source unit bias from 250nA to 50nA (factor of 5 reduction).
 The "coarse" setting increases the source unit bias from 250nA to 1uA (factor of 4 increase).
 The settings do not change the sink unit bias.
@@ -467,8 +466,8 @@ C {lab_pin.sym} -230 -430 0 0 {name=p55 sig_type=std_logic lab=shld2}
 C {devices/iopin.sym} -420 -580 0 1 {name=p56 lab=shld2}
 C {lab_pin.sym} -370 -580 0 1 {name=p57 sig_type=std_logic lab=shld2}
 C {gf180mcu_fd_pr/cap_mim_2f0fF.sym} -830 -1040 0 0 {name=C2
-W=11e-6
-L=11e-6
+W=5e-6
+L=23e-6
 model=cap_mim_2f0_m4m5_noshield
 spiceprefix=X
 m=1}
