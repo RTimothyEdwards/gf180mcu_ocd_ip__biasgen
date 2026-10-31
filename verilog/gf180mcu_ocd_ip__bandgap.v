@@ -5,10 +5,10 @@
 
 module gf180mcu_ocd_ip__bandgap (
     `ifdef USE_POWER_PINS
+	/* 3.3V domain only.  The IHP bandgap also had 5.0V vdd/vss pins;
+	 * the GF cell does not (see the schematic symbol). */
 	inout wire dvdd,
 	inout wire dvss,
-	inout wire vdd,
-	inout wire vss,
     `endif 
 
     input wire ena,		// Circuit enable
